@@ -68,7 +68,7 @@
             
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+          <h1 class="header-author"><a href="#">MarkBin</a></h1>
         </hgroup>
         
         
@@ -265,20 +265,20 @@
 </nav>
       <div class="body-wrap"><article id="post-20170809-python-socket" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/08/09/20170809-python-socket/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/08/09/20170809-python-socket/" class="article-date">
       <time datetime="2017-08-09T04:19:35.000Z" itemprop="datePublished">2017-08-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       python - socket 套接字编程
@@ -286,38 +286,38 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+  </header>
+  
+  <div class="article-info article-info-post">
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-        
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket/">socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/套接字/">套接字</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="SOCKET-编程"><a href="#SOCKET-编程" class="headerlink" title="SOCKET 编程"></a>SOCKET 编程</h3><p>server.py</p>
+    
+    <h3 id="SOCKET-编程"><a href="#SOCKET-编程" class="headerlink" title="SOCKET 编程"></a>SOCKET 编程</h3><p>server.py</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        c,addr = s.accept()</span><br><span class="line">        c.send((<span class="string">"你已经连接到服务器"</span> + addr[<span class="number">0</span>]).encode())</span><br><span class="line">c.close()</span><br></pre></td></tr></table></figure>
 <p>client.py</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.connect((host, port))</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (s.recv(<span class="number">1024</span>).decode())</span><br><span class="line"></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
@@ -357,7 +357,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SOCKET-编程"><span class="toc-number">1.</span> <span class="toc-text">SOCKET 编程</span></a></li></ol>
 </div>
@@ -414,8 +414,8 @@
 
 
 
-    
-        <section class="changyan" id="comments">
+
+<section class="changyan" id="comments">
   <!--<div id="uyan_frame"></div>-->
   <div id="SOHUCS"></div>
   <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
@@ -426,7 +426,7 @@
     });
   </script>
 </section>
-    
+
 
 
 
@@ -470,10 +470,9 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
     <div class="outer">

@@ -66,7 +66,7 @@
             
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+          <h1 class="header-author"><a href="#">MarkBin</a></h1>
         </hgroup>
         
         
@@ -265,20 +265,20 @@
   
     <article id="post-20170809-python-socket" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/08/09/20170809-python-socket/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/08/09/20170809-python-socket/" class="article-date">
       <time datetime="2017-08-09T04:19:35.000Z" itemprop="datePublished">2017-08-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a>
@@ -286,37 +286,37 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="SOCKET-编程"><a href="#SOCKET-编程" class="headerlink" title="SOCKET 编程"></a>SOCKET 编程</h3><p>server.py</p>
+    
+    <h3 id="SOCKET-编程"><a href="#SOCKET-编程" class="headerlink" title="SOCKET 编程"></a>SOCKET 编程</h3><p>server.py</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        c,addr = s.accept()</span><br><span class="line">        c.send((<span class="string">"你已经连接到服务器"</span> + addr[<span class="number">0</span>]).encode())</span><br><span class="line">c.close()</span><br></pre></td></tr></table></figure>
 <p>client.py</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.connect((host, port))</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (s.recv(<span class="number">1024</span>).decode())</span><br><span class="line"></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket/">socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/套接字/">套接字</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -330,24 +330,23 @@
 
 
 
-
   
     <article id="post-20170809-tcp&amp;udp" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/08/09/20170809-tcp&udp/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/08/09/20170809-tcp&udp/" class="article-date">
       <time datetime="2017-08-09T03:13:51.000Z" itemprop="datePublished">2017-08-09</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/08/09/20170809-tcp&udp/">tcp &amp; udp 协议</a>
@@ -355,13 +354,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>互连网早期的时候，主机间的互连使用的是NCP协议。这种协议本身有很多缺陷，如:不能互连不同的主机，不能互连不同的操作系统，没有纠错功能。为了改善这种缺点，大牛弄出了TCP/IP协议。现在几乎所有的操作系统都实现了TCP/IP协议栈。</p>
+    
+    <p>互连网早期的时候，主机间的互连使用的是NCP协议。这种协议本身有很多缺陷，如:不能互连不同的主机，不能互连不同的操作系统，没有纠错功能。为了改善这种缺点，大牛弄出了TCP/IP协议。现在几乎所有的操作系统都实现了TCP/IP协议栈。</p>
 <h3 id="一、TCP"><a href="#一、TCP" class="headerlink" title="一、TCP"></a>一、TCP</h3><p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议，也就是说，在收发数据前，必须和对方建立可靠的连接。</p>
 <p>一个TCP连接必须要经过三次“对话”才能建立起来，其中的过程非常复杂，只简单的描述下这三次对话的简单过程：</p>
 <ul>
@@ -425,26 +424,26 @@
 <li>5.TCP保证数据正确性，UDP可能丢包，TCP保证数据顺序，UDP不保证。 </li>
 </ul>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tcp/">tcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/udp/">udp</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -458,24 +457,23 @@
 
 
 
-
   
     <article id="post-20170701-python知识大纲" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/07/01/20170701-python知识大纲/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/07/01/20170701-python知识大纲/" class="article-date">
       <time datetime="2017-07-01T11:23:55.000Z" itemprop="datePublished">2017-07-01</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/07/01/20170701-python知识大纲/">Python 知识大纲</a>
@@ -483,13 +481,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h3><h4 id="1-1-Python-2-x-与-3-x-区别？"><a href="#1-1-Python-2-x-与-3-x-区别？" class="headerlink" title="1.1 Python 2.x 与 3.x 区别？"></a>1.1 <a href="http://www.runoob.com/python/python-2x-3x.html" target="_blank" rel="noopener">Python 2.x 与 3.x 区别？</a></h4><ul>
+    
+    <h3 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h3><h4 id="1-1-Python-2-x-与-3-x-区别？"><a href="#1-1-Python-2-x-与-3-x-区别？" class="headerlink" title="1.1 Python 2.x 与 3.x 区别？"></a>1.1 <a href="http://www.runoob.com/python/python-2x-3x.html" target="_blank" rel="noopener">Python 2.x 与 3.x 区别？</a></h4><ul>
 <li><code>Unicode 字符串</code>：Python3.X 源码文件默认使用utf-8编码，Python 3，我们最终有了 Unicode (utf-8) 字符串，以及一个字节类：byte 和 bytearrays</li>
 <li><code>print 函数</code>：print语句没有了，取而代之的是print()函数</li>
 <li><code>除法运算</code>：在python 3.x中/除法不再这么做了，对于整数之间的相除，结果也会是浮点数。</li>
@@ -504,22 +502,22 @@
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> greenlet <span class="keyword">import</span> greenlet</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">12</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line">    print(<span class="number">34</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">56</span>)</span><br><span class="line">    gr1.switch()</span><br><span class="line">    print(<span class="number">78</span>)</span><br><span class="line"></span><br><span class="line">gr1 = greenlet(test1)</span><br><span class="line">gr2 = greenlet(test2)</span><br><span class="line"></span><br><span class="line">gr1.switch()</span><br></pre></td></tr></table></figure>
 <p><code>gevent</code>是第三方库，可以轻松通过 <code>gevent</code> 实现并发同步或异步编程，在gevent中用到的主要模式是Greenlet, 它是以C扩展模块形式接入Python的轻量级协程。 Greenlet全部运行在主程序操作系统进程的内部，但它们被协作式地调度。</p>
 <h4 id="1-5-同步与异步"><a href="#1-5-同步与异步" class="headerlink" title="1.5 同步与异步"></a>1.5 同步与异步</h4>
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -533,24 +531,23 @@
 
 
 
-
   
     <article id="post-20170621-Jupyter" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/06/21/20170621-Jupyter/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/06/21/20170621-Jupyter/" class="article-date">
       <time datetime="2017-06-21T11:23:55.000Z" itemprop="datePublished">2017-06-21</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/06/21/20170621-Jupyter/">Jupyter 使用指南</a>
@@ -558,13 +555,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a>（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。<br>Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文学化程序文档，支持实时代码，数学方程，可视化和 markdown。 用途包括：数据清理和转换，数值模拟，统计建模，机器学习等等。</p>
+    
+    <p><a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a>（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。<br>Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文学化程序文档，支持实时代码，数学方程，可视化和 markdown。 用途包括：数据清理和转换，数值模拟，统计建模，机器学习等等。</p>
 <h3 id="一、如何安装-Jupyter-Notebooks？"><a href="#一、如何安装-Jupyter-Notebooks？" class="headerlink" title="一、如何安装 Jupyter Notebooks？"></a>一、如何安装 Jupyter Notebooks？</h3><p>你可能已经猜到了，你首先需要在你的机器上安装 Python。Python 2.7 或 Python 3.3（或更新版本）都可以。</p>
 <h4 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h4><p>对新用户而言，一般的共识是你应该使用 Anaconda 发行版来安装 Python 和 Jupyter Notebooks。</p>
 <p>Anaconda 会同时安装这两个工具，并且还包含相当多数据科学和机器学习社区常用的软件包。你可以在这里下载最新版的 Anaconda：<a href="https://www.anaconda.com/download" target="_blank" rel="noopener">https://www.anaconda.com/download</a></p>
@@ -585,30 +582,29 @@
 <li>Shift +V：在上方粘贴单元</li>
 </ul>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/在线编辑器/">在线编辑器</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
-
 
 
 
@@ -622,20 +618,20 @@
   
     <article id="post-20170622-conda" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/06/21/20170622-conda/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/06/21/20170622-conda/" class="article-date">
       <time datetime="2017-06-21T11:23:55.000Z" itemprop="datePublished">2017-06-21</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/06/21/20170622-conda/">conda 使用指南</a>
@@ -643,13 +639,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="1、安装-python-环境"><a href="#1、安装-python-环境" class="headerlink" title="1、安装 python 环境"></a>1、安装 python 环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda create --name python3.7 python=3.7</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==&gt; WARNING: A newer version of conda exists. &lt;==</span><br><span class="line">  current version: 4.5.11</span><br><span class="line">  latest version: 4.6.7</span><br><span class="line"></span><br><span class="line">Please update conda by running</span><br><span class="line"></span><br><span class="line">    $ conda update -n base -c defaults conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /Users/zhengbing/miniconda3/envs/python3.7</span><br><span class="line"></span><br><span class="line">  added / updated specs: </span><br><span class="line">    - python=3.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    | package                   | build                     |</span><br><span class="line">    | ------------------------- | ------------------------- |</span><br><span class="line">    | sqlite-3.26.0             | ha441bb4_0         2.3 MB |</span><br><span class="line">    | python-3.7.2              | haf84260_0        21.6 MB |</span><br><span class="line">    | openssl-1.1.1b            | h1de35cc_0         3.4 MB |</span><br><span class="line">    | certifi-2018.11.29        | py37_0         145 KB     |</span><br><span class="line">    | setuptools-40.8.0         | py37_0         643 KB     |</span><br><span class="line">    | wheel-0.33.1              | py37_0          39 KB     |</span><br><span class="line">    | pip-19.0.3                | py37_0         1.8 MB     |</span><br><span class="line">    | ca-certificates-2019.1.23 | 0         126 KB          |</span><br><span class="line">    | libedit-3.1.20181209      | hb402a30_0         159 KB |</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:        30.3 MB</span><br><span class="line"></span><br><span class="line">The following NEW packages will be INSTALLED:</span><br><span class="line"></span><br><span class="line">    ca-certificates: 2019.1.23-0            </span><br><span class="line">    certifi:         2018.11.29-py37_0      </span><br><span class="line">    libcxx:          4.0.1-hcfea43d_1       </span><br><span class="line">    libcxxabi:       4.0.1-hcfea43d_1       </span><br><span class="line">    libedit:         3.1.20181209-hb402a30_0</span><br><span class="line">    libffi:          3.2.1-h475c297_4       </span><br><span class="line">    ncurses:         6.1-h0a44026_1         </span><br><span class="line">    openssl:         1.1.1b-h1de35cc_0      </span><br><span class="line">    pip:             19.0.3-py37_0          </span><br><span class="line">    python:          3.7.2-haf84260_0       </span><br><span class="line">    readline:        7.0-h1de35cc_5         </span><br><span class="line">    setuptools:      40.8.0-py37_0          </span><br><span class="line">    sqlite:          3.26.0-ha441bb4_0      </span><br><span class="line">    tk:              8.6.8-ha441bb4_0       </span><br><span class="line">    wheel:           0.33.1-py37_0          </span><br><span class="line">    xz:              5.2.4-h1de35cc_4       </span><br><span class="line">    zlib:            1.2.11-h1de35cc_3      </span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">sqlite-3.26.0        | 2.3 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">python-3.7.2         | 21.6 MB   | <span class="comment">################################################################################################################### | 100% openssl-1.1.1b       | 3.4 MB    | ################################################################################################################### | 100% </span></span><br><span class="line">certifi-2018.11.29   | 145 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">setuptools-40.8.0    | 643 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">wheel-0.33.1         | 39 KB     | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">pip-19.0.3           | 1.8 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">ca-certificates-2019 | 126 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">libedit-3.1.20181209 | 159 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate python3.7</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
+    
+    <h3 id="1、安装-python-环境"><a href="#1、安装-python-环境" class="headerlink" title="1、安装 python 环境"></a>1、安装 python 环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda create --name python3.7 python=3.7</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==&gt; WARNING: A newer version of conda exists. &lt;==</span><br><span class="line">  current version: 4.5.11</span><br><span class="line">  latest version: 4.6.7</span><br><span class="line"></span><br><span class="line">Please update conda by running</span><br><span class="line"></span><br><span class="line">    $ conda update -n base -c defaults conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /Users/zhengbing/miniconda3/envs/python3.7</span><br><span class="line"></span><br><span class="line">  added / updated specs: </span><br><span class="line">    - python=3.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    | package                   | build                     |</span><br><span class="line">    | ------------------------- | ------------------------- |</span><br><span class="line">    | sqlite-3.26.0             | ha441bb4_0         2.3 MB |</span><br><span class="line">    | python-3.7.2              | haf84260_0        21.6 MB |</span><br><span class="line">    | openssl-1.1.1b            | h1de35cc_0         3.4 MB |</span><br><span class="line">    | certifi-2018.11.29        | py37_0         145 KB     |</span><br><span class="line">    | setuptools-40.8.0         | py37_0         643 KB     |</span><br><span class="line">    | wheel-0.33.1              | py37_0          39 KB     |</span><br><span class="line">    | pip-19.0.3                | py37_0         1.8 MB     |</span><br><span class="line">    | ca-certificates-2019.1.23 | 0         126 KB          |</span><br><span class="line">    | libedit-3.1.20181209      | hb402a30_0         159 KB |</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:        30.3 MB</span><br><span class="line"></span><br><span class="line">The following NEW packages will be INSTALLED:</span><br><span class="line"></span><br><span class="line">    ca-certificates: 2019.1.23-0            </span><br><span class="line">    certifi:         2018.11.29-py37_0      </span><br><span class="line">    libcxx:          4.0.1-hcfea43d_1       </span><br><span class="line">    libcxxabi:       4.0.1-hcfea43d_1       </span><br><span class="line">    libedit:         3.1.20181209-hb402a30_0</span><br><span class="line">    libffi:          3.2.1-h475c297_4       </span><br><span class="line">    ncurses:         6.1-h0a44026_1         </span><br><span class="line">    openssl:         1.1.1b-h1de35cc_0      </span><br><span class="line">    pip:             19.0.3-py37_0          </span><br><span class="line">    python:          3.7.2-haf84260_0       </span><br><span class="line">    readline:        7.0-h1de35cc_5         </span><br><span class="line">    setuptools:      40.8.0-py37_0          </span><br><span class="line">    sqlite:          3.26.0-ha441bb4_0      </span><br><span class="line">    tk:              8.6.8-ha441bb4_0       </span><br><span class="line">    wheel:           0.33.1-py37_0          </span><br><span class="line">    xz:              5.2.4-h1de35cc_4       </span><br><span class="line">    zlib:            1.2.11-h1de35cc_3      </span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">sqlite-3.26.0        | 2.3 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">python-3.7.2         | 21.6 MB   | <span class="comment">################################################################################################################### | 100% openssl-1.1.1b       | 3.4 MB    | ################################################################################################################### | 100% </span></span><br><span class="line">certifi-2018.11.29   | 145 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">setuptools-40.8.0    | 643 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">wheel-0.33.1         | 39 KB     | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">pip-19.0.3           | 1.8 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">ca-certificates-2019 | 126 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">libedit-3.1.20181209 | 159 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate python3.7</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
 <h3 id="2、切换环境"><a href="#2、切换环境" class="headerlink" title="2、切换环境"></a>2、切换环境</h3><ul>
 <li>conda activate python3.7</li>
 <li>conda deactivate</li>
@@ -658,30 +654,29 @@
 <h3 id="4、删除环境"><a href="#4、删除环境" class="headerlink" title="4、删除环境"></a>4、删除环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">(base) mac:~ zhengbing$ conda remove --name python3.7 --all</span><br><span class="line"></span><br><span class="line">Remove all packages <span class="keyword">in</span> environment /Users/zhengbing/miniconda3/envs/python3.7:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /Users/zhengbing/miniconda3/envs/python3.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be REMOVED:</span><br><span class="line"></span><br><span class="line">    ca-certificates: 2019.1.23-0            </span><br><span class="line">    certifi:         2018.11.29-py37_0      </span><br><span class="line">    libcxx:          4.0.1-hcfea43d_1       </span><br><span class="line">    libcxxabi:       4.0.1-hcfea43d_1       </span><br><span class="line">    libedit:         3.1.20181209-hb402a30_0</span><br><span class="line">    libffi:          3.2.1-h475c297_4       </span><br><span class="line">    ncurses:         6.1-h0a44026_1         </span><br><span class="line">    openssl:         1.1.1b-h1de35cc_0      </span><br><span class="line">    pip:             19.0.3-py37_0          </span><br><span class="line">    python:          3.7.2-haf84260_0       </span><br><span class="line">    readline:        7.0-h1de35cc_5         </span><br><span class="line">    setuptools:      40.8.0-py37_0          </span><br><span class="line">    sqlite:          3.26.0-ha441bb4_0      </span><br><span class="line">    tk:              8.6.8-ha441bb4_0       </span><br><span class="line">    wheel:           0.33.1-py37_0          </span><br><span class="line">    xz:              5.2.4-h1de35cc_4       </span><br><span class="line">    zlib:            1.2.11-h1de35cc_3      </span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line">(base) mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
 <h3 id="5、克隆环境"><a href="#5、克隆环境" class="headerlink" title="5、克隆环境"></a>5、克隆环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda info --env</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /Users/zhengbing/miniconda3</span><br><span class="line">python2.7                /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$ conda create --name py27 --<span class="built_in">clone</span> python2.7</span><br><span class="line">Source:      /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line">Destination: /Users/zhengbing/miniconda3/envs/py27</span><br><span class="line">Packages: 16</span><br><span class="line">Files: 0</span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate py27</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$ conda info --env</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /Users/zhengbing/miniconda3</span><br><span class="line">py27                     /Users/zhengbing/miniconda3/envs/py27</span><br><span class="line">python2.7                /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/conda/">conda</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
-
 
 
 
@@ -695,20 +690,20 @@
   
     <article id="post-20170607-深入理解java虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/06/07/20170607-深入理解java虚拟机/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/06/07/20170607-深入理解java虚拟机/" class="article-date">
       <time datetime="2017-06-07T02:19:35.000Z" itemprop="datePublished">2017-06-07</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a>
@@ -716,35 +711,35 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>虚拟机是一种抽象化的计算机，通过在实际的计算机上仿真模拟各种计算机功能来实现的。Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。Java虚拟机屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。</p>
+    
+    <p>虚拟机是一种抽象化的计算机，通过在实际的计算机上仿真模拟各种计算机功能来实现的。Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。Java虚拟机屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。</p>
 <p><a href="https://baike.baidu.com/item/java%E8%99%9A%E6%8B%9F%E6%9C%BA/6810577?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -758,24 +753,23 @@
 
 
 
-
   
     <article id="post-20170608-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/06/07/20170608-Linux常用命令/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/06/07/20170608-Linux常用命令/" class="article-date">
       <time datetime="2017-06-07T02:19:35.000Z" itemprop="datePublished">2017-06-07</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a>
@@ -783,13 +777,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="1、ls-命令查看linux文件夹包含的文件"><a href="#1、ls-命令查看linux文件夹包含的文件" class="headerlink" title="1、ls 命令查看linux文件夹包含的文件"></a>1、ls 命令查看linux文件夹包含的文件</h3><p>就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等</p>
+    
+    <h3 id="1、ls-命令查看linux文件夹包含的文件"><a href="#1、ls-命令查看linux文件夹包含的文件" class="headerlink" title="1、ls 命令查看linux文件夹包含的文件"></a>1、ls 命令查看linux文件夹包含的文件</h3><p>就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等</p>
 <p>常用参数搭配：</p>
 <ul>
 <li>ls -a 列出目录所有文件，包含以.开始的隐藏文件</li>
@@ -1027,26 +1021,25 @@
 <h3 id="31、free命令"><a href="#31、free命令" class="headerlink" title="31、free命令"></a>31、free命令</h3><p>显示系统内存使用情况，包括物理内存、交互区内存(swap)和内核缓冲区内存。</p>
 <p><a href="https://www.cnblogs.com/gaojun/p/3359355.html" target="_blank" rel="noopener">参考博客</a></p>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
-
 
 
 
@@ -1060,20 +1053,20 @@
   
     <article id="post-20170605-SSH 开发框架" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/06/05/20170605-SSH 开发框架/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/06/05/20170605-SSH 开发框架/" class="article-date">
       <time datetime="2017-06-05T02:19:35.000Z" itemprop="datePublished">2017-06-05</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a>
@@ -1081,34 +1074,34 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a href="https://www.cnblogs.com/tuhooo/p/6491906.html" target="_blank" rel="noopener">整合教程</a></p>
+    
+    <p><a href="https://www.cnblogs.com/tuhooo/p/6491906.html" target="_blank" rel="noopener">整合教程</a></p>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hibernate/">hibernate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struts/">struts</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -1122,24 +1115,23 @@
 
 
 
-
   
     <article id="post-20170527-hibernate 框架" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/05/27/20170527-hibernate 框架/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/05/27/20170527-hibernate 框架/" class="article-date">
       <time datetime="2017-05-27T02:19:35.000Z" itemprop="datePublished">2017-05-27</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a>
@@ -1147,13 +1139,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 Hibernate可以应用在任何使用JDBC的场合，既可以在Java的客户端程序使用，也可以在Servlet/JSP的Web应用中使用，最具革命意义的是，Hibernate可以在应用EJB的JaveEE架构中取代CMP，完成数据持久化的重任。</p>
+    
+    <p>Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 Hibernate可以应用在任何使用JDBC的场合，既可以在Java的客户端程序使用，也可以在Servlet/JSP的Web应用中使用，最具革命意义的是，Hibernate可以在应用EJB的JaveEE架构中取代CMP，完成数据持久化的重任。</p>
 <h3 id="一、语言特点"><a href="#一、语言特点" class="headerlink" title="一、语言特点"></a>一、语言特点</h3><ul>
 <li>将对数据库的操作转换为对Java对象的操作，从而简化开发。通过修改一个“持久化”对象的属性从而修改数据库表中对应的记录数据。</li>
 <li>提供线程和进程两个级别的缓存提升应用程序性能。</li>
@@ -1205,26 +1197,26 @@
 <li>4、支持透明持久化，因为hibernate操作的是纯粹的（pojo）java类，没有实现任何接口，没有侵入性。所以说它是一个轻量级框架。</li>
 </ul>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hibernate/">hibernate</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
@@ -1238,24 +1230,23 @@
 
 
 
-
   
     <article id="post-20170520-struts 框架" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/05/20/20170520-struts 框架/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/05/20/20170520-struts 框架/" class="article-date">
       <time datetime="2017-05-20T02:19:35.000Z" itemprop="datePublished">2017-05-20</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a>
@@ -1263,13 +1254,13 @@
   
 
 
-      </header>
-      
+  </header>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。Struts 2是Struts的下一代产品，是在 struts 1和WebWork的技术基础上进行了合并的全新的Struts 2框架。其全新的Struts 2的体系结构与Struts 1的体系结构差别巨大。Struts 2以WebWork为核心，采用拦截器的机制来处理用户的请求，这样的设计也使得业务逻辑控制器能够与ServletAPI完全脱离开，所以Struts 2可以理解为WebWork的更新产品。虽然从Struts 1到Struts 2有着太大的变化，但是相对于WebWork，Struts 2的变化很小。</p>
+    
+    <p>Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。Struts 2是Struts的下一代产品，是在 struts 1和WebWork的技术基础上进行了合并的全新的Struts 2框架。其全新的Struts 2的体系结构与Struts 1的体系结构差别巨大。Struts 2以WebWork为核心，采用拦截器的机制来处理用户的请求，这样的设计也使得业务逻辑控制器能够与ServletAPI完全脱离开，所以Struts 2可以理解为WebWork的更新产品。虽然从Struts 1到Struts 2有着太大的变化，但是相对于WebWork，Struts 2的变化很小。</p>
 <h3 id="一、原理与流程"><a href="#一、原理与流程" class="headerlink" title="一、原理与流程"></a>一、原理与流程</h3><p>Struts2 的工作原理图</p>
 <p><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=307364bcd4ca7bcb6976cf7ddf600006/6d81800a19d8bc3ef3485bb5818ba61ea8d34508.jpg" alt></p>
 <ul>
@@ -1285,30 +1276,29 @@
 <li><a href="https://www.cnblogs.com/konrad/p/6426790.html" target="_blank" rel="noopener">struts2 重要知识点</a></li>
 </ul>
 
-      
-    </div>
     
-    <div class="article-info article-info-index">
-      
-      
+  </div>
+  
+  <div class="article-info article-info-index">
+    
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
-      
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struts/">struts</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
     
+    <div class="clearfix"></div>
+  </div>
+  
   </div>
   
 </article>
-
 
 
 

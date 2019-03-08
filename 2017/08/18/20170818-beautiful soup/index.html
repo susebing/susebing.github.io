@@ -68,7 +68,7 @@
             
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+          <h1 class="header-author"><a href="#">MarkBin</a></h1>
         </hgroup>
         
         
@@ -265,20 +265,20 @@
 </nav>
       <div class="body-wrap"><article id="post-20170818-beautiful soup" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2017/08/18/20170818-beautiful soup/" class="article-date">
+  <div class="article-meta">
+    <a href="/2017/08/18/20170818-beautiful soup/" class="article-date">
       <time datetime="2017-08-18T04:19:35.000Z" itemprop="datePublished">2017-08-18</time>
 </a>
 
-    </div>
+  </div>
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
     
-    
-      <header class="article-header">
-        
   
     <h1 class="article-title" itemprop="name">
       Beautiful Soup 爬虫框架
@@ -286,28 +286,28 @@
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+  </header>
+  
+  <div class="article-info article-info-post">
+    
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/python/">python</a>
     </div>
 
 
-        
+    
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Requests/">Requests</a></li></ul>
     </div>
 
-        <div class="clearfix"></div>
-      </div>
-      
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="一、Requests-库"><a href="#一、Requests-库" class="headerlink" title="一、Requests 库"></a>一、<a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests 库</a></h3><p>requests是python的一个HTTP客户端库，跟urllib，urllib2类似。那为什么要用requests而不用urllib2呢？官方文档中是这样说明的：python的标准库urllib2提供了大部分需要的HTTP功能，但是API太逆天了，一个简单的功能就需要一大堆代码。</p>
+    
+    <h3 id="一、Requests-库"><a href="#一、Requests-库" class="headerlink" title="一、Requests 库"></a>一、<a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests 库</a></h3><p>requests是python的一个HTTP客户端库，跟urllib，urllib2类似。那为什么要用requests而不用urllib2呢？官方文档中是这样说明的：python的标准库urllib2提供了大部分需要的HTTP功能，但是API太逆天了，一个简单的功能就需要一大堆代码。</p>
 <h3 id="二、Beautiful-Soup-官网"><a href="#二、Beautiful-Soup-官网" class="headerlink" title="二、Beautiful Soup 官网"></a>二、<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">Beautiful Soup 官网</a></h3><p>简单来说，Beautiful Soup是python的一个库，最主要的功能是从网页抓取数据。官方解释如下：</p>
 <ul>
 <li>Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。</li>
@@ -318,12 +318,12 @@
 <h3 id="安装解析器"><a href="#安装解析器" class="headerlink" title="安装解析器"></a>安装解析器</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(py35) mac:~ zhengbing$ pip install lxml</span><br><span class="line">Requirement already satisfied: lxml <span class="keyword">in</span> ./miniconda3/envs/py35/lib/python3.5/site-packages (4.3.2)</span><br><span class="line">(py35) mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(open(<span class="string">"index.html"</span>))</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(<span class="string">"&lt;html&gt;data&lt;/html&gt;"</span>)</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
     
   </div>
   
-    
+  </div>
+  
+  
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2017/08/18/20170818-beautiful soup/">Beautiful Soup 爬虫框架</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
@@ -363,7 +363,7 @@
   
 </article>
 
-    <div id="toc" class="toc-article">
+<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、Requests-库"><span class="toc-number">1.</span> <span class="toc-text">一、Requests 库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Beautiful-Soup-官网"><span class="toc-number">2.</span> <span class="toc-text">二、Beautiful Soup 官网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Beautiful-Soup-4-4-0-文档"><span class="toc-number">2.1.</span> <span class="toc-text">Beautiful Soup 4.4.0 文档</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、安装-Beautiful-Soup"><span class="toc-number">3.</span> <span class="toc-text">三、安装 Beautiful Soup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装解析器"><span class="toc-number">4.</span> <span class="toc-text">安装解析器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">5.</span> <span class="toc-text">使用</span></a></li></ol>
 </div>
@@ -420,8 +420,8 @@
 
 
 
-    
-        <section class="changyan" id="comments">
+
+<section class="changyan" id="comments">
   <!--<div id="uyan_frame"></div>-->
   <div id="SOHUCS"></div>
   <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
@@ -432,7 +432,7 @@
     });
   </script>
 </section>
-    
+
 
 
 
@@ -476,10 +476,9 @@
 
 
 
-    <script>
+<script>
         
-    </script>
-
+</script>
 </div>
       <footer id="footer">
     <div class="outer">
