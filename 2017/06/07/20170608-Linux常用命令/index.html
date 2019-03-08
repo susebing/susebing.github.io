@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>Linux 常用命令 | StudyForU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、ls 命令查看linux文件夹包含的文件就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等 常用参数搭配：  ls -a 列出目录所有文件，包含以.开始的隐藏文件 ls -A 列出除.及..的其它文件 ls -r 反序排列 ls -t 以文件修改时间排序 ls -S 以文件大小排序 ls -h 以易读大小">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 常用命令">
+<meta property="og:url" content="http://studyforu.com/2017/06/07/20170608-Linux常用命令/index.html">
+<meta property="og:site_name" content="StudyForU">
+<meta property="og:description" content="1、ls 命令查看linux文件夹包含的文件就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等 常用参数搭配：  ls -a 列出目录所有文件，包含以.开始的隐藏文件 ls -A 列出除.及..的其它文件 ls -r 反序排列 ls -t 以文件修改时间排序 ls -S 以文件大小排序 ls -h 以易读大小">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-08T12:14:29.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 常用命令">
+<meta name="twitter:description" content="1、ls 命令查看linux文件夹包含的文件就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等 常用参数搭配：  ls -a 列出目录所有文件，包含以.开始的隐藏文件 ls -A 列出除.及..的其它文件 ls -r 反序排列 ls -t 以文件修改时间排序 ls -S 以文件大小排序 ls -h 以易读大小">
+  
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">HOME</a></li>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 16.67px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 10px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 16.67px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 13.33px;">go</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 13.33px;">struts</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-py/" style="font-size: 13.33px;">web.py</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/在线编辑器/" style="font-size: 10px;">在线编辑器</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/技术文档/" style="font-size: 16.67px;">技术文档</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">HOME</a></li>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-20170608-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/07/20170608-Linux常用命令/" class="article-date">
+      <time datetime="2017-06-07T02:19:35.000Z" itemprop="datePublished">2017-06-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 常用命令
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1、ls-命令查看linux文件夹包含的文件"><a href="#1、ls-命令查看linux文件夹包含的文件" class="headerlink" title="1、ls 命令查看linux文件夹包含的文件"></a>1、ls 命令查看linux文件夹包含的文件</h3><p>就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等</p>
+<p>常用参数搭配：</p>
+<ul>
+<li>ls -a 列出目录所有文件，包含以.开始的隐藏文件</li>
+<li>ls -A 列出除.及..的其它文件</li>
+<li>ls -r 反序排列</li>
+<li>ls -t 以文件修改时间排序</li>
+<li>ls -S 以文件大小排序</li>
+<li>ls -h 以易读大小显示</li>
+<li>ls -l 除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来</li>
+</ul>
+<h3 id="2、cd-命令切换目录"><a href="#2、cd-命令切换目录" class="headerlink" title="2、cd 命令切换目录"></a>2、cd 命令切换目录</h3><p>cd [目录名]。说明：切换当前目录至dirName</p>
+<ul>
+<li>cd /     进入根目录</li>
+<li>cd ~    进入”用户”目录</li>
+<li>cd -      进入上一次工作路径</li>
+<li>cd ..     进入上一次目录</li>
+<li>cd !$     把上个命令的参数作为cd参数使用。</li>
+</ul>
+<h3 id="3、pwd-命令查看当前工作目录路径"><a href="#3、pwd-命令查看当前工作目录路径" class="headerlink" title="3、pwd 命令查看当前工作目录路径"></a>3、pwd 命令查看当前工作目录路径</h3><ul>
+<li>查看当前路径 <code>pwd</code><ul>
+<li>查看软链接的实际路径 <code>pwd -P</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="4、mkdir-命令创建文件夹"><a href="#4、mkdir-命令创建文件夹" class="headerlink" title="4、mkdir 命令创建文件夹"></a>4、mkdir 命令创建文件夹</h3><ul>
+<li>当前工作目录下创建名为t的文件夹 <code>mkdir t</code></li>
+<li>在tmp目录下创建路径为test/t1/t的目录，若不存在，则创建 <code>mkdir -p /tmp/test/t1/t</code></li>
+</ul>
+<h3 id="5、rm-命令删除一个目录中的一个或多个文件或目录"><a href="#5、rm-命令删除一个目录中的一个或多个文件或目录" class="headerlink" title="5、rm 命令删除一个目录中的一个或多个文件或目录"></a>5、rm 命令删除一个目录中的一个或多个文件或目录</h3><p> 删除一个目录中的一个或多个文件或目录，如果没有使用- r选项，则rm不会删除目录。如果使用 rm 来删除文件，通常仍可以将该文件恢复原状</p>
+<ul>
+<li>（1）删除任何.log文件；删除前逐一询问确认 <code>rm -i *.log</code></li>
+<li>（2）删除test子目录及子目录中所有档案删除,并且不用一一确认 <code>rm -rf test</code></li>
+<li>（3）删除以-f开头的文件 <code>rm -- -f*</code></li>
+</ul>
+<h3 id="6、rmdir-命令"><a href="#6、rmdir-命令" class="headerlink" title="6、rmdir 命令"></a>6、rmdir 命令</h3><p>从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。<br>注意：不能删除非空目录</p>
+<ul>
+<li>当parent子目录被删除后使它也成为空目录的话，则顺便一并删除 <code>rmdir -p parent/child/child11</code></li>
+</ul>
+<h3 id="7、mv-命令"><a href="#7、mv-命令" class="headerlink" title="7、mv 命令"></a>7、mv 命令</h3><p>移动文件或修改文件名，根据第二参数类型（如目录，则移动文件；如为文件则重命令该文件）。当第二个参数为目录时，可刚多个文件以空格分隔作为第一参数，移动多个文件到参数2指定的目录中</p>
+<ul>
+<li>将文件test.log重命名为test1.txt <code>mv test.log test1.txt</code></li>
+<li>将文件log1.txt,log2.txt,log3.txt移动到根的test3目录中 <code>mv llog1.txt log2.txt log3.txt /test3</code></li>
+<li>将文件file1改名为file2，如果file2已经存在，则询问是否覆盖 <code>mv -i log1.txt log2.txt</code></li>
+<li>移动当前文件夹下的所有文件到上一级目录 <code>mv * ../</code></li>
+</ul>
+<h3 id="8、cp命令"><a href="#8、cp命令" class="headerlink" title="8、cp命令"></a>8、cp命令</h3><p>将源文件复制至目标文件，或将多个源文件复制至目标目录。注意：命令行复制，如果目标文件已经存在会提示是否覆盖，而在shell脚本中，如果不加-i参数，则不会提示，而是直接覆盖！</p>
+<ul>
+<li>-i 提示</li>
+<li>-r 复制目录及目录内所有项目</li>
+<li>-a 复制的文件与原文件时间一样</li>
+<li>复制a.txt到test目录下，保持原文件时间,如果原文件存在提示是否覆盖 <code>cp -ai a.txt test</code></li>
+<li>为a.txt建议一个链接（快捷方式） <code>cp -s a.txt link_a.txt</code></li>
+</ul>
+<h3 id="9、cat命令"><a href="#9、cat命令" class="headerlink" title="9、cat命令"></a>9、cat命令</h3><p>cat主要有三大功能：</p>
+<ul>
+<li>1.一次显示整个文件: <code>cat filename</code></li>
+<li>2.从键盘创建一个文件: <code>cat &gt; filename</code> 只能创建新文件,不能编辑已有文件.</li>
+<li><p>3.将几个文件合并为一个文件: <code>cat file1 file2 &gt; file</code></p>
+<p>-b对非空输出行号<br>-n输出所有行号</p>
+</li>
+</ul>
+<h3 id="10、more命令"><a href="#10、more命令" class="headerlink" title="10、more命令"></a>10、more命令</h3><p>功能类似于cat, more会以一页一页的显示方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示</p>
+<p>Enter    向下n行，需要定义。默认为1行</p>
+<ul>
+<li>Ctrl+F   向下滚动一屏</li>
+<li>空格键  向下滚动一屏</li>
+<li>Ctrl+B  返回上一屏</li>
+<li>=       输出当前行的行号</li>
+<li>：f     输出文件名和当前行的行号</li>
+<li>V      调用vi编辑器</li>
+<li>!命令   调用Shell，并执行命令</li>
+<li>q       退出more</li>
+</ul>
+<p>如：</p>
+<ul>
+<li>显示文件中从第3行起的内容 <code>more +3 text.txt</code></li>
+<li>在所列出文件目录详细信息，借助管道使每次显示5行 <code>ls -l | more -5</code> 按空格显示下5行</li>
+</ul>
+<h3 id="11、less命令"><a href="#11、less命令" class="headerlink" title="11、less命令"></a>11、less命令</h3><p>less 与 more 类似，但使用 less 可以随意浏览文件，而 more 仅能向前移动，却不能向后移动，而且 less 在查看之前不会加载整个文件。</p>
+<h3 id="12、head命令"><a href="#12、head命令" class="headerlink" title="12、head命令"></a>12、head命令</h3><p>head 用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。</p>
+<ul>
+<li>显示1.log文件中前20行 <code>head 1.log -n 20</code></li>
+<li>显示1.log文件前20字节 <code>head -c 20 log2014.log</code></li>
+<li>显示t.log最后10行 <code>head -n -10 t.log</code></li>
+</ul>
+<h3 id="13、tail命令"><a href="#13、tail命令" class="headerlink" title="13、tail命令"></a>13、tail命令</h3><p>用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。</p>
+<ul>
+<li>-f 循环读取（常用于查看递增的日志文件）</li>
+<li>-n&lt;行数&gt; 显示行数（从后向前）</li>
+</ul>
+<p>循环读取逐渐增加的文件内容</p>
+<p>ping 127.0.0.1 &gt; ping.log &amp;（后台运行：可使用jobs -l查看，也可使用fg将其移到前台运行）<br>tail -f ping.log（查看日志）</p>
+<h3 id="14、查找某个文件"><a href="#14、查找某个文件" class="headerlink" title="14、查找某个文件"></a>14、查找某个文件</h3><p>在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索：</p>
+<h4 id="which-查看可执行文件的位置。"><a href="#which-查看可执行文件的位置。" class="headerlink" title="which     查看可执行文件的位置。"></a>which     查看可执行文件的位置。</h4><p>which是在PATH就是指定的路径中，搜索某个系统命令的位置，并返回第一个搜索结果。使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
+<p> -n 　指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名。</p>
+<ul>
+<li>查看ls命令是否存在，执行哪个 <code>which ls</code></li>
+<li>查看which <code>which which</code></li>
+<li>查看 cd <code>which cd</code>（显示不存在，因为cd是内建命令，而which查找显示是PATH中的命令）</li>
+<li>查看当前PATH配置：echo $PATH；或使用env查看所有环境变量及对应值</li>
+</ul>
+<h4 id="whereis-查看文件的位置。"><a href="#whereis-查看文件的位置。" class="headerlink" title="whereis 查看文件的位置。"></a>whereis 查看文件的位置。</h4><p>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。whereis及locate都是基于系统内建的数据库进行搜索，因此效率很高，而find则是遍历硬盘查找文件。</p>
+<p>-b   定位可执行文件。<br>-m   定位帮助文件。<br>-s   定位源代码文件。<br>-u   搜索默认路径下除可执行文件、源代码文件、帮助文件以外的其它文件。</p>
+<ul>
+<li>查找locate程序相关文件 <code>whereis locate</code></li>
+<li>查找locate的源码文件 <code>whereis -s locate</code></li>
+<li>查找lcoate的帮助文件 <code>whereis -m locate</code></li>
+</ul>
+<h4 id="locate-配合数据库查看文件位置。"><a href="#locate-配合数据库查看文件位置。" class="headerlink" title="locate  配合数据库查看文件位置。"></a>locate  配合数据库查看文件位置。</h4><p> locate通过搜寻系统内建文档数据库达到快速找到档案，数据库由updatedb程序来更新，updatedb是由cron daemon周期性调用的。默认情况下locate命令在搜寻数据库时比由整个由硬盘资料来搜寻资料来得快，但较差劲的是locate所找到的档案若是最近才建立或 刚更名的，可能会找不到，在内定值中，updatedb每天会跑一次，可以由修改crontab来更新设定值。(etc/crontab)。</p>
+<p>locate与find命令相似，可以使用如*、?等进行正则匹配查找</p>
+<p>-l num（要显示的行数）<br>-f   将特定的档案系统排除在外，如将proc排除在外<br>-r   使用正则运算式做为寻找条件</p>
+<ul>
+<li>查找和pwd相关的所有文件(文件名中包含pwd）<code>locate pwd</code></li>
+<li>搜索etc目录下所有以sh开头的文件 <code>locate /etc/sh</code></li>
+<li>查找/var目录下，以reason结尾的文件 <code>locate -r &#39;^/var.*reason$&#39;</code>（其中.表示一个字符，<em>表示任务多个；.</em>表示任意多个字符）</li>
+</ul>
+<h4 id="find-实际搜寻硬盘查询文件名称。"><a href="#find-实际搜寻硬盘查询文件名称。" class="headerlink" title="find        实际搜寻硬盘查询文件名称。"></a>find        实际搜寻硬盘查询文件名称。</h4><p>用于在文件树中查找文件，并作出相应的处理。</p>
+<p>find pathname -options [-print -exec -ok …]</p>
+<ul>
+<li>pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录。</li>
+<li>-print： find命令将匹配的文件输出到标准输出。</li>
+<li>-exec： find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ {  } \;，注意{   }和\；之间的空格。</li>
+<li>-ok： 和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。</li>
+</ul>
+<p>-name 按照文件名查找文件</p>
+<p>-perm 按文件权限查找文件</p>
+<p>-user 按文件属主查找文件</p>
+<p>-group  按照文件所属的组来查找文件。</p>
+<p>-type  查找某一类型的文件，诸如：</p>
+<p>   b - 块设备文件</p>
+<p>   d - 目录</p>
+<p>   c - 字符设备文件</p>
+<p>   l - 符号链接文件</p>
+<p>   p - 管道文件</p>
+<p>   f - 普通文件</p>
+<p>-size n :[c] 查找文件长度为n块文件，带有c时表文件字节大小</p>
+<p>-amin n   查找系统中最后N分钟访问的文件</p>
+<p>-atime n  查找系统中最后n*24小时访问的文件</p>
+<p>-cmin n   查找系统中最后N分钟被改变文件状态的文件</p>
+<p>-ctime n  查找系统中最后n*24小时被改变文件状态的文件</p>
+<p>-mmin n   查找系统中最后N分钟被改变文件数据的文件</p>
+<p>-mtime n  查找系统中最后n*24小时被改变文件数据的文件</p>
+<p>(用减号-来限定更改时间在距今n日以内的文件，而用加号+来限定更改时间在距今n日以前的文件。 )</p>
+<p>-maxdepth n 最大查找目录深度</p>
+<p>-prune选项来指出需要忽略的目录。在使用-prune选项时要当心，因为如果你同时使用了-depth选项，那么-prune选项就会被find命令忽略</p>
+<p>-newer 如果希望查找更改时间比某个文件新但比另一个文件旧的所有文件，可以使用-newer选项</p>
+<p> （1）查找48小时内修改过的文件</p>
+<p> find -atime -2</p>
+<p> （2）在当前目录查找 以.log结尾的文件。 “. “代表当前目录</p>
+<p> find ./ -name ‘*.log’</p>
+<p> （3）查找/opt目录下 权限为 777的文件</p>
+<p> find /opt -perm 777</p>
+<p> （4）查找大于1K的文件</p>
+<p> find -size +1000c</p>
+<p> find -size 1000c 查找等于1000字符的文件</p>
+<p> -exec         参数后面跟的是command命令，它的终止是以;为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以前面加反斜杠。{}   花括号代表前面find查找出来的文件名。</p>
+<p>实例：</p>
+<p>（5）在当前目录中查找更改时间在10日以前的文件并删除它们(无提醒）</p>
+<p>find . -type f -mtime +10 -exec rm -f {} \;</p>
+<p>（6）当前目录中查找所有文件名以.log结尾、更改时间在5日以上的文件，并删除它们，只不过在删除之前先给出提示。 按y键删除文件，按n键不删除</p>
+<p>find . -name ‘*.log’ mtime +5 -ok -exec rm {} \;</p>
+<p>（7）当前目录下查找文件名以passwd开头，内容包含”pkg”字符的文件</p>
+<p>find . -f -name ‘passwd*’ -exec grep “pkg” {} \;</p>
+<p>（8）用exec选项执行cp命令 </p>
+<p>find . -name ‘*.log’ -exec cp {} test3 \;</p>
+<p>-xargs find命令把匹配到的文件传递给xargs命令，而xargs命令每次只获取一部分文件而不是全部，不像-exec选项那样。这样它可以先处理最先获取的一部分文件，然后是下一批，并如此继续下去。</p>
+<p>实例：</p>
+<p>（9）查找当前目录下每个普通文件，然后使用xargs来判断文件类型</p>
+<p>find . -type f -print | xargs file</p>
+<p>（10）查找当前目录下所有以js结尾的并且其中包含’editor’字符的普通文件</p>
+<p>find . -type f -name “*.js” -exec grep -lF ‘ueditor’ {} \;</p>
+<p>find -type f -name ‘*.js’ | xargs grep -lF ‘editor’</p>
+<p>（11）利用xargs执行mv命令</p>
+<p>find . -name “*.log” | xargs -i mv {} test4</p>
+<p>（12）用grep命令在当前目录下的所有普通文件中搜索hostnames这个词,并标出所在行</p>
+<p>find . -name *(转义） -type f -print | xargs grep -n ‘hostnames’</p>
+<p>（13）查找当前目录中以一个小写字母开头，最后是4到9加上.log结束的文件</p>
+<p>find . -name ‘[a-z]*[4-9].log’ -print</p>
+<p>（14）在test目录查找不在test4子目录查找</p>
+<p>find test -path ‘test/test4’ -prune -o -print</p>
+<p>（15）实例1：查找更改时间比文件log2012.log新但比文件log2017.log旧的文件</p>
+<p>find -newer log2012.log ! -newer log2017.log</p>
+<p>使用depth选项：</p>
+<p>depth选项可以使find命令向磁带上备份文件系统时，希望首先备份所有的文件，其次再备份子目录中的文件。 </p>
+<p>实例：find命令从文件系统的根目录开始，查找一个名为CON.FILE的文件。 它将首先匹配所有的文件然后再进入子目录中查找</p>
+<p>find / -name “CON.FILE” -depth -print</p>
+<h3 id="18、chmod命令"><a href="#18、chmod命令" class="headerlink" title="18、chmod命令"></a>18、chmod命令</h3><p>用于改变linux系统文件或目录的访问权限。用它控制文件或目录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。</p>
+<ul>
+<li>r ：读权限，用数字4表示</li>
+<li>w ：写权限，用数字2表示</li>
+<li>x ：执行权限，用数字1表示</li>
+<li><ul>
+<li>：删除权限，用数字0表示</li>
+</ul>
+</li>
+<li><p>s ：特殊权限</p>
+</li>
+<li><p>u ：目录或者文件的当前的用户</p>
+</li>
+<li>g ：目录或者文件的当前的群组</li>
+<li>o ：除了目录或者文件的当前用户或群组之外的用户或者群组</li>
+<li>a ：所有的用户及群组</li>
+</ul>
+<h3 id="19、tar-命令"><a href="#19、tar-命令" class="headerlink" title="19、tar 命令"></a>19、tar 命令</h3><p> 用来压缩和解压文件。tar本身不具有压缩功能，只具有打包功能，有关压缩及解压是调用其它的功能来完成。</p>
+<ul>
+<li>-c 建立新的压缩文件</li>
+<li>-f 指定压缩文件</li>
+<li>-r 添加文件到已经压缩文件包中</li>
+<li>-u 添加改了和现有的文件到压缩包中</li>
+<li>-x 从压缩包中抽取文件</li>
+<li>-t 显示压缩文件中的内容</li>
+<li>-z 支持gzip压缩</li>
+<li>-j 支持bzip2压缩</li>
+<li>-Z 支持compress解压文件</li>
+<li>-v 显示操作过程</li>
+</ul>
+<h3 id="20、chown-命令"><a href="#20、chown-命令" class="headerlink" title="20、chown 命令"></a>20、chown 命令</h3><p>chown将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符</p>
+<ul>
+<li>-c 显示更改的部分的信息</li>
+<li>-R 处理指定目录及子目录</li>
+</ul>
+<h3 id="21、df-命令"><a href="#21、df-命令" class="headerlink" title="21、df 命令"></a>21、df 命令</h3><p>显示磁盘空间使用情况。获取硬盘被占用了多少空间，目前还剩下多少空间等信息，如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示。默认情况下，磁盘空间将以 1KB 为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示。</p>
+<h3 id="22、du-命令"><a href="#22、du-命令" class="headerlink" title="22、du 命令"></a>22、du 命令</h3><p>du命令也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看。</p>
+<h3 id="23、ln-命令"><a href="#23、ln-命令" class="headerlink" title="23、ln 命令"></a>23、ln 命令</h3><p>功能是为文件在另外一个位置建立一个同步的链接，当在不同目录需要该问题时，就不需要为每一个目录创建同样的文件，通过ln创建的链接（link）减少磁盘占用量。</p>
+<h3 id="24、date-命令"><a href="#24、date-命令" class="headerlink" title="24、date 命令"></a>24、date 命令</h3><p>显示或设定系统的日期与时间</p>
+<h3 id="25、cal-命令"><a href="#25、cal-命令" class="headerlink" title="25、cal 命令"></a>25、cal 命令</h3><p>可以用户显示公历（阳历）日历如只有一个参数，则表示年份(1-9999)，如有两个参数，则表示月份和年份</p>
+<h3 id="26、grep命令"><a href="#26、grep命令" class="headerlink" title="26、grep命令"></a>26、grep命令</h3><p>强大的文本搜索命令，grep(Global Regular Expression Print)全局正则表达式搜索。grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。</p>
+<h3 id="27、wc命令"><a href="#27、wc命令" class="headerlink" title="27、wc命令"></a>27、wc命令</h3><p>wc(word count)功能为统计指定的文件中字节数、字数、行数，并将统计结果输出</p>
+<h3 id="28、ps命令"><a href="#28、ps命令" class="headerlink" title="28、ps命令"></a>28、ps命令</h3><p>ps(process status)，用来查看当前运行的进程状态，一次性查看，如果需要动态连续结果使用top</p>
+<h3 id="29、top命令"><a href="#29、top命令" class="headerlink" title="29、top命令"></a>29、top命令</h3><p>显示当前系统正在执行的进程的相关信息，包括进程ID、内存占用率、CPU占用率等</p>
+<h3 id="30、kill命令"><a href="#30、kill命令" class="headerlink" title="30、kill命令"></a>30、kill命令</h3><p>发送指定的信号到相应进程。不指定型号将发送SIGTERM（15）终止指定进程。如果任无法终止该程序可用“-KILL” 参数，其发送的信号为SIGKILL(9) ，将强制结束进程，使用ps命令或者jobs 命令可以查看进程号。root用户将影响用户的进程，非root用户只能影响自己的进程。</p>
+<ul>
+<li>先使用ps查找进程pro1，然后用kill杀掉 <code>kill -9 $(ps -ef | grep pro1)</code></li>
+</ul>
+<h3 id="31、free命令"><a href="#31、free命令" class="headerlink" title="31、free命令"></a>31、free命令</h3><p>显示系统内存使用情况，包括物理内存、交互区内存(swap)和内核缓冲区内存。</p>
+<p><a href="https://www.cnblogs.com/gaojun/p/3359355.html" target="_blank" rel="noopener">参考博客</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
+        <p><span>发布时间:</span>2017年06月07日 - 10时19分</p>
+        <p><span>最后更新:</span>2019年03月08日 - 20时14分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/07/20170608-Linux常用命令/" title="Linux 常用命令">http://studyforu.com/2017/06/07/20170608-Linux常用命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://studyforu.com/2017/06/07/20170608-Linux常用命令/　　作者: MarkBin" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/06/07/20170607-深入理解java虚拟机/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          深入理解 java 虚拟机
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/05/20170605-SSH 开发框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSH 开发整合</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、ls-命令查看linux文件夹包含的文件"><span class="toc-number">1.</span> <span class="toc-text">1、ls 命令查看linux文件夹包含的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、cd-命令切换目录"><span class="toc-number">2.</span> <span class="toc-text">2、cd 命令切换目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、pwd-命令查看当前工作目录路径"><span class="toc-number">3.</span> <span class="toc-text">3、pwd 命令查看当前工作目录路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、mkdir-命令创建文件夹"><span class="toc-number">4.</span> <span class="toc-text">4、mkdir 命令创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、rm-命令删除一个目录中的一个或多个文件或目录"><span class="toc-number">5.</span> <span class="toc-text">5、rm 命令删除一个目录中的一个或多个文件或目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、rmdir-命令"><span class="toc-number">6.</span> <span class="toc-text">6、rmdir 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、mv-命令"><span class="toc-number">7.</span> <span class="toc-text">7、mv 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、cp命令"><span class="toc-number">8.</span> <span class="toc-text">8、cp命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、cat命令"><span class="toc-number">9.</span> <span class="toc-text">9、cat命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、more命令"><span class="toc-number">10.</span> <span class="toc-text">10、more命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、less命令"><span class="toc-number">11.</span> <span class="toc-text">11、less命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、head命令"><span class="toc-number">12.</span> <span class="toc-text">12、head命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、tail命令"><span class="toc-number">13.</span> <span class="toc-text">13、tail命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、查找某个文件"><span class="toc-number">14.</span> <span class="toc-text">14、查找某个文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#which-查看可执行文件的位置。"><span class="toc-number">14.1.</span> <span class="toc-text">which     查看可执行文件的位置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whereis-查看文件的位置。"><span class="toc-number">14.2.</span> <span class="toc-text">whereis 查看文件的位置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#locate-配合数据库查看文件位置。"><span class="toc-number">14.3.</span> <span class="toc-text">locate  配合数据库查看文件位置。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find-实际搜寻硬盘查询文件名称。"><span class="toc-number">14.4.</span> <span class="toc-text">find        实际搜寻硬盘查询文件名称。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18、chmod命令"><span class="toc-number">15.</span> <span class="toc-text">18、chmod命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19、tar-命令"><span class="toc-number">16.</span> <span class="toc-text">19、tar 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20、chown-命令"><span class="toc-number">17.</span> <span class="toc-text">20、chown 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21、df-命令"><span class="toc-number">18.</span> <span class="toc-text">21、df 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22、du-命令"><span class="toc-number">19.</span> <span class="toc-text">22、du 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23、ln-命令"><span class="toc-number">20.</span> <span class="toc-text">23、ln 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24、date-命令"><span class="toc-number">21.</span> <span class="toc-text">24、date 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25、cal-命令"><span class="toc-number">22.</span> <span class="toc-text">25、cal 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26、grep命令"><span class="toc-number">23.</span> <span class="toc-text">26、grep命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27、wc命令"><span class="toc-number">24.</span> <span class="toc-text">27、wc命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28、ps命令"><span class="toc-number">25.</span> <span class="toc-text">28、ps命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29、top命令"><span class="toc-number">26.</span> <span class="toc-text">29、top命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#30、kill命令"><span class="toc-number">27.</span> <span class="toc-text">30、kill命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#31、free命令"><span class="toc-number">28.</span> <span class="toc-text">31、free命令</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/06/07/20170607-深入理解java虚拟机/" title="上一篇: 深入理解 java 虚拟机">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/06/05/20170605-SSH 开发框架/" title="下一篇: SSH 开发整合">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-etcd/">etcd</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-gRPC/">gRPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Hadoop/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Protobuf/">Protobuf</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Neo4j/">Neo4j</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Spark/">Spark</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/20190307-go web开发/">go web 开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/20190306-go 语言基础/">go 语言基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/20190217-python的2019/">Python 的 2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/20180903-matplotlib/">Matplotlib 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/20180902-pandas/">Pandas 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/01/20180901-numpy/">Numpy 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180607-WSGI、uWSGI、uwsgi、Nginx/">WSGI，uWSGI，uwsgi，Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180507-Tornado 框架实战的/">Tornado 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/20180308-Flask 框架实战/">Flask 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180107-consul/">consul 集群间网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180106-jenkens/">jenkens 持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/20180105-Docker 存储管理/">Docker 存储管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 容器间通信/">Docker 容器间通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 网络管理/">Docker 网络管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/20180102-Docker/">Docker 入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/20180101-服务端实用技术/">服务端实用技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/20170903-django 框架实战/">Django 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/20170902-python 主流 web 框架/">Python 主流 web 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/22/20170822-反爬虫策略/">反爬虫策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/20170821-pyspider/">PySpider 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/20170818-beautiful soup/">Beautiful Soup 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-python 爬虫技术与主流爬虫框架/">Python 爬虫技术与主流爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-scrapy/">Scrapy 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/20170810-http协议详解/">HTTP 协议详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-tcp&udp/">tcp & udp 协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/20170701-python知识大纲/">Python 知识大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170621-Jupyter/">Jupyter 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170622-conda/">conda 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/20170420-基于springboot的项目开发/">基于 springboot 的项目开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/20170416-SSM 开发整合/">SSM 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/20170410-mybatis/">java orm 框架 Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/02/20170402-spring/">java 开发框架 Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/20170303-jsp&servlet/">java web 开发之 jsp & servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170230-maven/">java 项目管理工具 maven 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170302-tomcat服务器/">Apache Tomcat 服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/20170215-redis/">高性能的 key-value 数据库 Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/20170210-mongodb/">NoSQL 数据库大佬 MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/20170130-mysql/">关系型数据库课代表 MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/20170103-java 基础语法/">java 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/20160920-nodejs/">Nodejs 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/05/20160905-jquery/">超好用的 JavaScript 库 JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/20160829-git & svn/">代码版本控制 GIT & SVN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/20160825-Less & Sass/">Less && Sass 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/20160823-BootStrap详解/">BootStrap 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/20160805-JavaScript详解/">JavaScript 语法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/20160803-css层叠式样式表详解/">css 层叠式样式表详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/02/20160802-html标签语言详解/">html 标签语言详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/01/20160801-MDN web 开发指南/">MDN web 开发指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/20160606-ios开发技术大汇总/">ios 开发技术大汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/20160601-macdown语法与使用指南/">Macdown 标记语言</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

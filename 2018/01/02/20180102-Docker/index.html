@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>Docker 入门学习 | StudyForU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、Docker 官网 官方镜像 docker registry accounts plans Dockerfile Docker Hub docs documentation accounts organizations repositories groups teams  二、Play Docker Classroom 在线练习Play with Docker教室为您提供实验室和教程，帮助您使">
+<meta name="keywords" content="docker,镜像,容器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 入门学习">
+<meta property="og:url" content="http://studyforu.com/2018/01/02/20180102-Docker/index.html">
+<meta property="og:site_name" content="StudyForU">
+<meta property="og:description" content="一、Docker 官网 官方镜像 docker registry accounts plans Dockerfile Docker Hub docs documentation accounts organizations repositories groups teams  二、Play Docker Classroom 在线练习Play with Docker教室为您提供实验室和教程，帮助您使">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png">
+<meta property="og:updated_time" content="2019-03-08T13:24:20.210Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker 入门学习">
+<meta name="twitter:description" content="一、Docker 官网 官方镜像 docker registry accounts plans Dockerfile Docker Hub docs documentation accounts organizations repositories groups teams  二、Play Docker Classroom 在线练习Play with Docker教室为您提供实验室和教程，帮助您使">
+<meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">HOME</a></li>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 16.67px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 10px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 16.67px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 13.33px;">go</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 13.33px;">struts</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-py/" style="font-size: 13.33px;">web.py</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/在线编辑器/" style="font-size: 10px;">在线编辑器</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/技术文档/" style="font-size: 16.67px;">技术文档</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">HOME</a></li>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-20180102-Docker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/02/20180102-Docker/" class="article-date">
+      <time datetime="2018-01-02T05:10:51.000Z" itemprop="datePublished">2018-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker 入门学习
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/容器/">容器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/镜像/">镜像</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="一、Docker-官网"><a href="#一、Docker-官网" class="headerlink" title="一、Docker 官网"></a>一、<a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">Docker 官网</a></h3><ul>
+<li><a href="https://hub.docker.com/search?q=docker&amp;type=image" target="_blank" rel="noopener">官方镜像</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=docker" target="_blank" rel="noopener">docker</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=registry" target="_blank" rel="noopener">registry</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=accounts" target="_blank" rel="noopener">accounts</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=plans" target="_blank" rel="noopener">plans</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=Dockerfile" target="_blank" rel="noopener">Dockerfile</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=Docker%20Hub" target="_blank" rel="noopener">Docker Hub</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=docs" target="_blank" rel="noopener">docs</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=documentation" target="_blank" rel="noopener">documentation</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=accounts" target="_blank" rel="noopener">accounts</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=organizations" target="_blank" rel="noopener">organizations</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=repositories" target="_blank" rel="noopener">repositories</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=groups" target="_blank" rel="noopener">groups</a></li>
+<li><a href="https://docs.docker.com/glossary/?term=teams" target="_blank" rel="noopener">teams</a></li>
+</ul>
+<h3 id="二、Play-Docker-Classroom-在线练习"><a href="#二、Play-Docker-Classroom-在线练习" class="headerlink" title="二、Play Docker Classroom 在线练习"></a>二、<a href="https://training.play-with-docker.com/" target="_blank" rel="noopener">Play Docker Classroom 在线练习</a></h3><p>Play with Docker教室为您提供实验室和教程，帮助您使用Docker获得实践经验。在本课堂中，您将找到各种实验和教程，这些实验和教程将帮助Docker用户，包括SysAdmins，IT专业人员和开发人员。浏览器中提供了各种实用教程，有关在您自己的环境中设置和使用Docker的说明，以及有关开发和部署您自己的应用程序的最佳实践的资源。</p>
+<ul>
+<li><p><a href="https://training.play-with-docker.com/ops-stage1/" target="_blank" rel="noopener">IT专业人员和系统管理员的入门</a></p>
+<ul>
+<li>第1阶段：基础知识</li>
+<li>第2阶段：深入挖掘</li>
+<li>第3阶段：转向生产</li>
+</ul>
+</li>
+<li><p><a href="https://training.play-with-docker.com/beginner-linux/" target="_blank" rel="noopener">入门开发人员的演练</a></p>
+<ul>
+<li>第1阶段：基础知识</li>
+<li>第2阶段：深入挖掘</li>
+<li>第3阶段：转向分期</li>
+</ul>
+</li>
+</ul>
+<h3 id="三、51cto-Docker-视频教程"><a href="#三、51cto-Docker-视频教程" class="headerlink" title="三、51cto Docker 视频教程"></a>三、<a href="https://edu.51cto.com/center/course/user/get-study-course" target="_blank" rel="noopener">51cto Docker 视频教程</a></h3><ul>
+<li>docker 为什么是集装箱？</li>
+</ul>
+<p>传统运输行业-》货物运输不好管理-》使用集装箱</p>
+<p>docker -》解决软件行业产品环境复杂问题 -》软件工业上的集装箱技术</p>
+<p>docker 是客户端+服务器的架构</p>
+<p>docker 镜像运行后（docker run）会生成一个 docker 容器</p>
+<p>docker 磁盘占用空间小（docker镜像采用了分层技术，构建镜像需要包含一个父镜像，但是不包含父镜像的大小，只有自己的大小）</p>
+<p>docker 内存消耗小（）</p>
+<p>docker registry： 镜像中央存储器，使用 pull 拉取镜像或者 push上传镜像</p>
+<h4 id="3-1-Dockerfile-amp-镜像-amp-容器"><a href="#3-1-Dockerfile-amp-镜像-amp-容器" class="headerlink" title="3.1 Dockerfile &amp; 镜像 &amp; 容器"></a>3.1 Dockerfile &amp; 镜像 &amp; 容器</h4><ul>
+<li><a href="https://github.com/zhangpeihao/LearningDocker/blob/master/manuscript/04-WriteDockerfile.md" target="_blank" rel="noopener">Dockerfile</a></li>
+</ul>
+<p>把 Dockerfile 放到git上，写好 dockerfile 是学习 docker 的重点</p>
+<ul>
+<li>编辑Fockerfile</li>
+</ul>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 维护者（作者）</span></span><br><span class="line"><span class="keyword">MAINTAINER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置环境</span></span><br><span class="line"><span class="keyword">ENV</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文件</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 运行命令，去安装服务</span></span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"></span></span><br><span class="line"><span class="bash"></span></span><br><span class="line"><span class="bash"><span class="comment"># 暴露端口，一般情况都会暴露，方便后期维护</span></span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">22</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在下一个才会生效？</span></span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="keyword">ADD</span><span class="bash"> ...</span></span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="keyword">RUN</span><span class="bash"> ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行一个Docker容器就像运行一个程序一样</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 和 ENTRYPOINT 功能差不多</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> ...</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>docker build 使用 Dockerfile 生成镜像(此过程比较耗时，可以选阿里云的 yum 源)</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t cspher/centos:7.1 .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>docker images  指令查看本地有哪些 docker 镜像</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">- docker run 命令运行镜像生成容器</span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line"><span class="comment"># 后端使用</span></span><br><span class="line">docker run -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口映射,使用 8888 映射到暴露的 22 端口, -p 重启后端口不会变</span></span><br><span class="line">docker run -d -p 8888:22</span><br><span class="line"></span><br><span class="line"><span class="comment"># -- name 指定容器由哪个镜像生成（base是容器名字）</span></span><br><span class="line">docker run -d -p 8888:22 --name base csphere/centos7.1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以使用 -e 传入环境变量</span></span><br><span class="line">docker run -d -p 80:80 --name wordpress -e WORDPRESS_DB_HOST= 192.168.0.102 -e WORDPRESS_DB_USER=admin -e WORDPRESS_DB_PASSWORD=33css csphere/wordpress:4.2</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>docker ps 查看所有运行中的容器</p>
+</li>
+<li><p>docker ps -a 查看所有容器</p>
+</li>
+<li><p>docker exec 命令，进入容器 bin/bash (容器必须是 UP 运行状态)</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 centos:7.1系统 容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it cspher/centos:7.1 /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入 nigix web 服务器 容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it website /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入 数据库服务器 容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it dbserver /bin/bash</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入容器终端</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mac:dockertest zhengbing$ docker <span class="built_in">exec</span> -it kind_pare /bin/bash</span><br><span class="line">[root@66889205b9c8 /]<span class="comment">#</span></span><br><span class="line">[root@66889205b9c8 /]<span class="comment">#</span></span><br><span class="line">[root@66889205b9c8 /]<span class="comment"># ls</span></span><br><span class="line">anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</span><br><span class="line">[root@66889205b9c8 /]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>构建系统镜像</li>
+<li>基于系统镜像，构建 Nginx 镜像</li>
+<li>基于系统镜像，构建 MySQL 镜像</li>
+<li><p>构建 wordpress 镜像</p>
+</li>
+<li><p>docker rm 删除容器(只能删除非运行中的容器)</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 停止容器</span></span><br><span class="line">docker stop dbserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除容器</span></span><br><span class="line">docker rm dbserver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制删除</span></span><br><span class="line">docker rm -f dbserver</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>docker rmi 命令删除镜像</p>
+</li>
+<li><p>删除多个容器</p>
+</li>
+</ul>
+<p>docker rm -f $(docker ps -a -q)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mac:lib zhengbing$ docker rm -f $(docker ps -a -q)</span><br><span class="line">d80466607ae0</span><br><span class="line">3e22263eb8a5</span><br><span class="line">52bb3ccc704f</span><br><span class="line">80de34e5f084</span><br><span class="line">66889205b9c8</span><br><span class="line">5f42f2e59f16</span><br><span class="line">0a52ae3e8a1b</span><br><span class="line">3d9585d5b97f</span><br><span class="line">1aabb4b39a80</span><br><span class="line">25f7b655fb80</span><br><span class="line">mac:lib zhengbing$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>容器挂载使用 -v 参数</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3306:3306 -v var/lib/docker/vfs/dir/mydata:var/lib/mysql csphere/mysql5.5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 挂载的数据库，删除了容器之后，也不会丢失</span></span><br><span class="line"><span class="comment"># 后期创建新的 newdb 容器，可以还原之前挂载的数据库文件数据</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>.dockerignore 文件，忽略</p>
+</li>
+<li><p>查看 ip 地址</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ ifconfig en0</span><br><span class="line">en0: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500</span><br><span class="line">	ether 60:03:08:a1:1e:30</span><br><span class="line">	inet6 fe80::c2b:f1f7:7625:856f%en0 prefixlen 64 secured scopeid 0x7</span><br><span class="line">	inet 192.168.0.102 netmask 0xffffff00 broadcast 192.168.0.255</span><br><span class="line">	nd6 options=201&lt;PERFORMNUD,DAD&gt;</span><br><span class="line">	media: autoselect</span><br><span class="line">	status: active</span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用docker 可以达到快速部署，快速测试</li>
+</ul>
+<h4 id="3-2-Registry-amp-持续集成"><a href="#3-2-Registry-amp-持续集成" class="headerlink" title="3.2 Registry &amp; 持续集成"></a>3.2 Registry &amp; 持续集成</h4><p>Registry 是存放 Docker 镜像的仓库，一般来说会部署一个企业内部的Registry 仓库，</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5000:5000 --name registry registry:0.9.1</span><br></pre></td></tr></table></figure>
+<p>我们都听过或者用过 docker，然而使用方式却是仅仅用手动的方式，这样去操作 docker 还是很原始。 好吧，可能在小白的眼中噼里啪啦的对着 term 一顿操作会很拉风，但是高手很不屑！在高手眼里…too young, too low. 因为高手都是自动化的，今天就稍微介绍下自动化工具，也就是大杀器 docker-compose</p>
+<ul>
+<li><a href="https://www.cnblogs.com/neptunemoon/p/6512121.html" target="_blank" rel="noopener">docker-compose</a></li>
+<li><p><a href="https://blog.csdn.net/jacksonary/article/details/78961612" target="_blank" rel="noopener">Docker中复杂多容器的应用（Docker-compose）</a><br>docker-compose 需要注意的：</p>
+</li>
+<li><p>不要把 docker 当做数据容器来使用，数据一定要用 volumes 放在容器外面</p>
+</li>
+<li>不要把 docker-compose 文件暴露给别人， 因为上面有你的服务器信息</li>
+<li>多用 docker-compose 的命令去操作， 不要用 docker 手动命令&amp;docker-compose 去同时操作</li>
+<li>写一个脚本类的东西，自动备份docker 映射出来的数据。</li>
+<li><p>不要把所有服务都放在一个 docker 容器里面</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/CloudMan6/p/7096731.html" target="_blank" rel="noopener">容器间通信的三种方式</a></p>
+</li>
+</ul>
+<p>容器之间可通过 IP，Docker DNS Server 或 joined 容器三种方式通信。</p>
+<h4 id="3-3-第三节："><a href="#3-3-第三节：" class="headerlink" title="3.3 第三节："></a>3.3 第三节：</h4><h4 id="3-4-第四节："><a href="#3-4-第四节：" class="headerlink" title="3.4 第四节："></a>3.4 第四节：</h4><h4 id="3-5-第五节："><a href="#3-5-第五节：" class="headerlink" title="3.5 第五节："></a>3.5 第五节：</h4><h3 id="四、Docker-的应用场景"><a href="#四、Docker-的应用场景" class="headerlink" title="四、Docker 的应用场景"></a>四、Docker 的应用场景</h3><ol>
+<li><p>Web 应用的自动化打包和发布。</p>
+</li>
+<li><p>自动化测试和持续集成、发布。</p>
+</li>
+<li><p>在服务型环境中部署和调整数据库或其他的后台应用。</p>
+</li>
+<li><p>从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建自己的PaaS环境。</p>
+</li>
+</ol>
+<h3 id="五、Docker-的优点？"><a href="#五、Docker-的优点？" class="headerlink" title="五、Docker 的优点？"></a>五、Docker 的优点？</h3><ol>
+<li><p>简化程序。Docker 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，便可以实现虚拟化。Docker改变了虚拟化的方式，使开发者可以直接将自己的成果放入Docker中进行管理。方便快捷已经是 Docker的最大优势，过去需要用数天乃至数周的任务，在Docker容器的处理下，只需要数秒就能完成。</p>
+</li>
+<li><p>节省开支。云计算时代到来，使开发者不必为了追求效果而配置高额的硬件，Docker 改变了高性能必然高价格的思维定势。Docker 与云的结合，让云空间得到更充分的利用。不仅解决了硬件管理的问题，也改变了虚拟化的方式。</p>
+</li>
+<li><p>Docker 镜像中包含了运行环境和配置，所以 Docker 可以简化部署多种应用实例工作。比如 Web 应用、后台应用、数据库应用、大数据应用比如 Hadoop 集群、消息队列等等都可以打包成一个镜像部署。</p>
+</li>
+</ol>
+<h3 id="六、Docker-架构？"><a href="#六、Docker-架构？" class="headerlink" title="六、Docker 架构？"></a>六、Docker 架构？</h3><ul>
+<li>Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器。</li>
+</ul>
+<h3 id="七、Docker-主机"><a href="#七、Docker-主机" class="headerlink" title="七、Docker 主机"></a>七、Docker 主机</h3><ul>
+<li>一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。</li>
+</ul>
+<h3 id="八、Docker-Machine"><a href="#八、Docker-Machine" class="headerlink" title="八、Docker Machine"></a>八、Docker Machine</h3><ul>
+<li>Docker Machine 是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装 Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。</li>
+</ul>
+<h3 id="九、Docker-仓库"><a href="#九、Docker-仓库" class="headerlink" title="九、Docker 仓库"></a>九、Docker 仓库</h3><ol>
+<li><p>Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。</p>
+</li>
+<li><p><a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> 提供了庞大的镜像集合供使用。</p>
+</li>
+</ol>
+<h3 id="十、容器与镜像？"><a href="#十、容器与镜像？" class="headerlink" title="十、容器与镜像？"></a>十、容器与镜像？</h3><ol>
+<li><p>Docker 容器通过 Docker 镜像来创建。</p>
+</li>
+<li><p>Docker 镜像是用于创建 Docker 容器的模板。</p>
+</li>
+<li><p>容器是独立运行的一个或一组应用。</p>
+</li>
+<li><p>容器与镜像的关系类似于面向对象编程中的对象与类。</p>
+</li>
+</ol>
+<p><img src="http://www.runoob.com/wp-content/uploads/2016/04/576507-docker1.png" alt="img"></p>
+<h3 id="十一、Docker-常用命令"><a href="#十一、Docker-常用命令" class="headerlink" title="十一、Docker 常用命令"></a>十一、<a href="http://www.runoob.com/docker/docker-command-manual.html" target="_blank" rel="noopener">Docker 常用命令</a></h3><ul>
+<li>容器生命周期管理</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">run</span><br><span class="line">start/stop/restart</span><br><span class="line"><span class="built_in">kill</span></span><br><span class="line">rm</span><br><span class="line">pause/unpause</span><br><span class="line">create</span><br><span class="line"><span class="built_in">exec</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>容器操作</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ps</span><br><span class="line">inspect</span><br><span class="line">top</span><br><span class="line">attach</span><br><span class="line">events</span><br><span class="line">logs</span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"><span class="built_in">export</span></span><br><span class="line">port</span><br></pre></td></tr></table></figure>
+<ul>
+<li>容器rootfs命令</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">commit</span><br><span class="line">cp</span><br><span class="line">diff</span><br></pre></td></tr></table></figure>
+<ul>
+<li>镜像仓库</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">login</span><br><span class="line">pull</span><br><span class="line">push</span><br><span class="line">search</span><br></pre></td></tr></table></figure>
+<ul>
+<li>本地镜像管理</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">images</span><br><span class="line">rmi</span><br><span class="line">tag</span><br><span class="line">build</span><br><span class="line"><span class="built_in">history</span></span><br><span class="line">save</span><br><span class="line">import</span><br></pre></td></tr></table></figure>
+<ul>
+<li>info|version</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info</span><br><span class="line">version</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/02/20180102-Docker/">Docker 入门学习</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
+        <p><span>发布时间:</span>2018年01月02日 - 13时10分</p>
+        <p><span>最后更新:</span>2019年03月08日 - 21时24分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/02/20180102-Docker/" title="Docker 入门学习">http://studyforu.com/2018/01/02/20180102-Docker/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://studyforu.com/2018/01/02/20180102-Docker/　　作者: MarkBin" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/01/04/20180104-Docker 网络管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Docker 网络管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/01/20180101-服务端实用技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">服务端实用技术</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、Docker-官网"><span class="toc-number">1.</span> <span class="toc-text">一、Docker 官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、Play-Docker-Classroom-在线练习"><span class="toc-number">2.</span> <span class="toc-text">二、Play Docker Classroom 在线练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、51cto-Docker-视频教程"><span class="toc-number">3.</span> <span class="toc-text">三、51cto Docker 视频教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-Dockerfile-amp-镜像-amp-容器"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Dockerfile &amp; 镜像 &amp; 容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Registry-amp-持续集成"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 Registry &amp; 持续集成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-第三节："><span class="toc-number">3.3.</span> <span class="toc-text">3.3 第三节：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-第四节："><span class="toc-number">3.4.</span> <span class="toc-text">3.4 第四节：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-第五节："><span class="toc-number">3.5.</span> <span class="toc-text">3.5 第五节：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、Docker-的应用场景"><span class="toc-number">4.</span> <span class="toc-text">四、Docker 的应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、Docker-的优点？"><span class="toc-number">5.</span> <span class="toc-text">五、Docker 的优点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、Docker-架构？"><span class="toc-number">6.</span> <span class="toc-text">六、Docker 架构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、Docker-主机"><span class="toc-number">7.</span> <span class="toc-text">七、Docker 主机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、Docker-Machine"><span class="toc-number">8.</span> <span class="toc-text">八、Docker Machine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、Docker-仓库"><span class="toc-number">9.</span> <span class="toc-text">九、Docker 仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、容器与镜像？"><span class="toc-number">10.</span> <span class="toc-text">十、容器与镜像？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一、Docker-常用命令"><span class="toc-number">11.</span> <span class="toc-text">十一、Docker 常用命令</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/01/04/20180104-Docker 网络管理/" title="上一篇: Docker 网络管理">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/01/01/20180101-服务端实用技术/" title="下一篇: 服务端实用技术">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-etcd/">etcd</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-gRPC/">gRPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Hadoop/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Protobuf/">Protobuf</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Neo4j/">Neo4j</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Spark/">Spark</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/20190307-go web开发/">go web 开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/20190306-go 语言基础/">go 语言基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/20190217-python的2019/">Python 的 2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/20180903-matplotlib/">Matplotlib 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/20180902-pandas/">Pandas 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/01/20180901-numpy/">Numpy 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180607-WSGI、uWSGI、uwsgi、Nginx/">WSGI，uWSGI，uwsgi，Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180507-Tornado 框架实战的/">Tornado 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/20180308-Flask 框架实战/">Flask 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180107-consul/">consul 集群间网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180106-jenkens/">jenkens 持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/20180105-Docker 存储管理/">Docker 存储管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 容器间通信/">Docker 容器间通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 网络管理/">Docker 网络管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/20180102-Docker/">Docker 入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/20180101-服务端实用技术/">服务端实用技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/20170903-django 框架实战/">Django 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/20170902-python 主流 web 框架/">Python 主流 web 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/22/20170822-反爬虫策略/">反爬虫策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/20170821-pyspider/">PySpider 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/20170818-beautiful soup/">Beautiful Soup 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-python 爬虫技术与主流爬虫框架/">Python 爬虫技术与主流爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-scrapy/">Scrapy 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/20170810-http协议详解/">HTTP 协议详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-tcp&udp/">tcp & udp 协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/20170701-python知识大纲/">Python 知识大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170621-Jupyter/">Jupyter 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170622-conda/">conda 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/20170420-基于springboot的项目开发/">基于 springboot 的项目开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/20170416-SSM 开发整合/">SSM 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/20170410-mybatis/">java orm 框架 Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/02/20170402-spring/">java 开发框架 Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/20170303-jsp&servlet/">java web 开发之 jsp & servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170230-maven/">java 项目管理工具 maven 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170302-tomcat服务器/">Apache Tomcat 服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/20170215-redis/">高性能的 key-value 数据库 Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/20170210-mongodb/">NoSQL 数据库大佬 MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/20170130-mysql/">关系型数据库课代表 MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/20170103-java 基础语法/">java 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/20160920-nodejs/">Nodejs 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/05/20160905-jquery/">超好用的 JavaScript 库 JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/20160829-git & svn/">代码版本控制 GIT & SVN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/20160825-Less & Sass/">Less && Sass 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/20160823-BootStrap详解/">BootStrap 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/20160805-JavaScript详解/">JavaScript 语法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/20160803-css层叠式样式表详解/">css 层叠式样式表详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/02/20160802-html标签语言详解/">html 标签语言详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/01/20160801-MDN web 开发指南/">MDN web 开发指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/20160606-ios开发技术大汇总/">ios 开发技术大汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/20160601-macdown语法与使用指南/">Macdown 标记语言</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

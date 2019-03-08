@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>Django 框架实战 | StudyForU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Django是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。Django的目标是让使用更少的代码更快地构建更好的Web应用程序变得更容易。 一、图解 Django 结构  二、如何使用 Django 进行web开发1、django 项目结构图 2、安装 d">
+<meta name="keywords" content="Django,Flask,Tornado,web.py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django 框架实战">
+<meta property="og:url" content="http://studyforu.com/2017/09/03/20170903-django 框架实战/index.html">
+<meta property="og:site_name" content="StudyForU">
+<meta property="og:description" content="Django是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。Django的目标是让使用更少的代码更快地构建更好的Web应用程序变得更容易。 一、图解 Django 结构  二、如何使用 Django 进行web开发1、django 项目结构图 2、安装 d">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551116125497&di=133fc851306f1e6fb97ed106e6f73553&imgtype=0&src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201803%2F20180315174113351046.png">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2796237118,1625058463&fm=26&gp=0.jpg">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551116125492&di=14b9380e04fde57df16eea2ec9f1bbef&imgtype=0&src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F2b275a2284ac51f818be6c9e523dd9ab.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551121238925&di=550cf4625e80bd7e90971e340ca84a04&imgtype=0&src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201712%2F20171223111241090640.png">
+<meta property="og:updated_time" content="2019-03-08T13:24:13.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django 框架实战">
+<meta name="twitter:description" content="Django是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。Django的目标是让使用更少的代码更快地构建更好的Web应用程序变得更容易。 一、图解 Django 结构  二、如何使用 Django 进行web开发1、django 项目结构图 2、安装 d">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551116125497&di=133fc851306f1e6fb97ed106e6f73553&imgtype=0&src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201803%2F20180315174113351046.png">
+  
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">HOME</a></li>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 16.67px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 10px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 16.67px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 13.33px;">go</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 13.33px;">struts</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-py/" style="font-size: 13.33px;">web.py</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/在线编辑器/" style="font-size: 10px;">在线编辑器</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/技术文档/" style="font-size: 16.67px;">技术文档</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">HOME</a></li>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-20170903-django 框架实战" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/03/20170903-django 框架实战/" class="article-date">
+      <time datetime="2017-09-03T04:19:35.000Z" itemprop="datePublished">2017-09-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Django 框架实战
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/">Flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tornado/">Tornado</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-py/">web.py</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="http://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>是一个高级Python Web框架，鼓励快速开发和干净，实用的设计。由经验丰富的开发人员构建，它解决了Web开发的大部分麻烦，因此您可以专注于编写应用程序而无需重新发明轮子。它是免费和开源的。Django的目标是让使用更少的代码更快地构建更好的Web应用程序变得更容易。</p>
+<h3 id="一、图解-Django-结构"><a href="#一、图解-Django-结构" class="headerlink" title="一、图解 Django 结构"></a>一、图解 Django 结构</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1551116125497&amp;di=133fc851306f1e6fb97ed106e6f73553&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201803%2F20180315174113351046.png" alt="image"></p>
+<p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2796237118,1625058463&amp;fm=26&amp;gp=0.jpg" alt="image"></p>
+<h3 id="二、如何使用-Django-进行web开发"><a href="#二、如何使用-Django-进行web开发" class="headerlink" title="二、如何使用 Django 进行web开发"></a>二、<a href="https://code.ziqiangxuetang.com/django/django-tutorial.html" target="_blank" rel="noopener">如何使用 Django 进行web开发</a></h3><h4 id="1、django-项目结构图"><a href="#1、django-项目结构图" class="headerlink" title="1、django 项目结构图"></a>1、django 项目结构图</h4><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1551116125492&amp;di=14b9380e04fde57df16eea2ec9f1bbef&amp;imgtype=0&amp;src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F2b275a2284ac51f818be6c9e523dd9ab.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100" alt="image"></p>
+<h4 id="2、安装-django"><a href="#2、安装-django" class="headerlink" title="2、安装 django"></a>2、<a href="https://docs.djangoproject.com/en/2.1/intro/install/" target="_blank" rel="noopener">安装 django</a></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pip install Django</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取 Django 版本</span></span><br><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> django</span><br><span class="line">&gt;&gt;&gt;print(django.get_version())</span><br></pre></td></tr></table></figure>
+<h4 id="3、创建-django-项目"><a href="#3、创建-django-项目" class="headerlink" title="3、创建 django 项目"></a>3、创建 django 项目</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject myproject</span><br></pre></td></tr></table></figure>
+<h4 id="4、创建-django-应用"><a href="#4、创建-django-应用" class="headerlink" title="4、创建 django 应用"></a>4、创建 django 应用</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startapp myapp /Users/jezdez/Code/myapp</span><br></pre></td></tr></table></figure>
+<h4 id="5、工程配置-settings-py"><a href="#5、工程配置-settings-py" class="headerlink" title="5、工程配置 settings.py"></a>5、工程配置 <a href="https://docs.djangoproject.com/en/2.1/search/?q=settings" target="_blank" rel="noopener">settings.py</a></h4><ul>
+<li>Core Settings</li>
+<li>Auth</li>
+<li>Messages</li>
+<li>Sessions</li>
+<li>Sites</li>
+<li>Static Files</li>
+<li>Core Settings Topical Index</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语言设置</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-hans'</span></span><br><span class="line"><span class="comment"># 时区设置</span></span><br><span class="line">TIME_ZONE = <span class="string">'Asia/Shanghai'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 管理工程中的应用</span></span><br><span class="line">INSTALLED_APPS = (</span><br><span class="line"><span class="string">'django.contrib.auto'</span>,</span><br><span class="line"><span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line"><span class="string">'django.contrib.sessions'</span>,</span><br><span class="line"><span class="string">'django.contrib.sites'</span>,</span><br><span class="line"><span class="string">'django.contrib.message'</span>,</span><br><span class="line"><span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line"><span class="string">'blog'</span>,</span><br><span class="line"><span class="comment"># 打开后台管理 app</span></span><br><span class="line"><span class="string">'django.contrib.admin'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h4 id="6、路由-urls-py"><a href="#6、路由-urls-py" class="headerlink" title="6、路由 urls.py"></a>6、路由 <a href="https://docs.djangoproject.com/en/2.1/search/?q=url" target="_blank" rel="noopener">urls.py</a></h4><ul>
+<li><a href="https://docs.djangoproject.com/en/2.1/topics/http/urls/" target="_blank" rel="noopener">urlpatterns</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'articles/2003/'</span>, views.special_case_2003),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/'</span>, views.year_archive),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/&lt;int:month&gt;/'</span>, views.month_archive),</span><br><span class="line">    path(<span class="string">'articles/&lt;int:year&gt;/&lt;int:month&gt;/&lt;slug:slug&gt;/'</span>, views.article_detail),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="7、视图-views-py"><a href="#7、视图-views-py" class="headerlink" title="7、视图 views.py"></a>7、视图 <a href="https://docs.djangoproject.com/en/2.1/search/?q=views" target="_blank" rel="noopener">views.py</a></h4><h5 id="直接返回-html-字符串"><a href="#直接返回-html-字符串" class="headerlink" title="直接返回 html 字符串"></a>直接返回 html 字符串</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'&lt;h1&gt;Hello, World!&lt;/h1&gt;'</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># id 是在 urlpattern 中设置的参数名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req, id)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'Hello,'</span> + id)</span><br></pre></td></tr></table></figure>
+<h5 id="使用模板文件"><a href="#使用模板文件" class="headerlink" title="使用模板文件"></a>使用模板文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader, Context, Template</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式一</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="comment"># 1、加载模板文件</span></span><br><span class="line">    t = loader.get_template(<span class="string">'template_name.html'</span>)，</span><br><span class="line">    <span class="comment"># 2、创建数据对象</span></span><br><span class="line">    c = Context(&#123;<span class="string">'user_name'</span>:<span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">    <span class="comment"># 3、数据对象传给模板文件 </span></span><br><span class="line">    html = t.render(c)</span><br><span class="line">    <span class="comment"># 4、返回响应</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(html)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式二</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index2</span><span class="params">(req)</span>:</span></span><br><span class="line">    t = Template(<span class="string">'&lt;h1&gt;&#123;&#123;user_name&#125;&#125;&lt;h1&gt;'</span>)</span><br><span class="line">    c = Context(&#123;<span class="string">'username'</span>:<span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(t.render(c))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式三(最简单)</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index3</span><span class="params">(req)</span>:</span></span><br><span class="line">    render_to_response(<span class="string">'index.html'</span>,&#123;<span class="string">'username'</span>:<span class="string">'zhangsan'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作数据库数据</span></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Employee</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index4</span><span class="params">(req)</span>:</span></span><br><span class="line">    emps = Employee.objects.all()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'index.html'</span>,&#123;<span class="string">'emps'</span> : emps&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="查询数据库数据"><a href="#查询数据库数据" class="headerlink" title="查询数据库数据"></a>查询数据库数据</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Author, Book</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_author</span><span class="params">(req)</span>:</span></span><br><span class="line">    authors = Author.object.all()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'show_author.html'</span>, &#123;<span class="string">'authors'</span> : authors&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="form-表单处理"><a href="#form-表单处理" class="headerlink" title="form 表单处理"></a><a href="https://docs.djangoproject.com/en/2.1/search/?q=form" target="_blank" rel="noopener">form 表单处理</a></h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.shorcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义 form 输入项</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    name = forms.CharFiled()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(req)</span>:</span></span><br><span class="line"><span class="comment"># 判断方法</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span>:</span><br><span class="line"><span class="comment"># 绑定数据</span></span><br><span class="line">        form = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            print(form.cleaned_data)</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'OK'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = UserForm()</span><br><span class="line">        <span class="keyword">return</span> render_to_response(<span class="string">'register.html'</span>, &#123;<span class="string">'form'</span> : form&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="form-表单提交-CSRF-错误"><a href="#form-表单提交-CSRF-错误" class="headerlink" title="form 表单提交 CSRF 错误"></a>form 表单提交 <a href="https://docs.djangoproject.com/en/2.1/search/?q=csrf" target="_blank" rel="noopener">CSRF</a> 错误</h5><ul>
+<li>修改 settings </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE_CLASSES = (</span><br><span class="line"><span class="comment"># 注释掉 csrf 检查中间件</span></span><br><span class="line"><span class="comment"># django.middleware.csrf.CsrfViewModdleware,</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h5 id="form-表单文件上传"><a href="#form-表单文件上传" class="headerlink" title="form 表单文件上传"></a>form 表单文件上传</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 form</span></span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    <span class="comment"># 定义两个 form 项</span></span><br><span class="line">    userName = forms.CharFiled()</span><br><span class="line">    headImage = forms.FileFiled()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义请求url处理方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">regist</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span>:</span><br><span class="line">        uf,files = UserForm(req.POST, req.FILES)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            print(uf.cleaned_data[<span class="string">'userName'</span>])</span><br><span class="line">            print(uf.cleaned_data[<span class="string">'headImage'</span>].name)</span><br><span class="line">            print(uf.cleaned_data[<span class="string">'headImage'</span>].size)</span><br><span class="line">            print(req.FILES)</span><br><span class="line">            <span class="comment"># 保存文件</span></span><br><span class="line">            fp = file(<span class="string">'/upload'</span> + uf.cleaned_data[<span class="string">'headImage'</span>].name, <span class="string">'wb'</span>)        </span><br><span class="line">            s = uf.cleaned_data[<span class="string">'headImage'</span>].read()</span><br><span class="line">            fp.write(s)</span><br><span class="line">            fp.close()</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">"OK"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'regist.html'</span>, &#123;<span class="string">'uf'</span> : uf&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="后台系统文件上传"><a href="#后台系统文件上传" class="headerlink" title="后台系统文件上传"></a>后台系统文件上传</h5><ul>
+<li>定义模型</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    userName = models.CharFiled(max_length = <span class="number">30</span>)</span><br><span class="line">    headImage = models.FileFiled(upload_to = <span class="string">'/upload/'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.userName</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改 settings.py , 打开 admin</li>
+<li>MEDIA_ROOT 可以修改文件上传的根目录位置</li>
+<li>修改 urls.py，打开 admin</li>
+<li>创建 admin.py ，注册 model class</li>
+</ul>
+<h5 id="文件上传-Form-DB"><a href="#文件上传-Form-DB" class="headerlink" title="文件上传 Form + DB"></a>文件上传 Form + DB</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义请求url处理方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">regist</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span>:</span><br><span class="line">        uf,files = UserForm(req.POST, req.FILES)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            userName = uf.cleaned_data[<span class="string">'userName'</span>]</span><br><span class="line">            headImage = uf.cleaned_data[<span class="string">'headImage'</span>]</span><br><span class="line">            user = User()</span><br><span class="line">            user.userName = userName</span><br><span class="line">            user.headImage = headImage</span><br><span class="line">            user.save()</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">"OK"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'regist.html'</span>, &#123;<span class="string">'uf'</span> : uf&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="8、模板-templates"><a href="#8、模板-templates" class="headerlink" title="8、模板 templates"></a>8、模板 <a href="https://docs.djangoproject.com/en/2.1/search/?q=template" target="_blank" rel="noopener">templates</a></h4><ul>
+<li><p>模板变量解析</p>
+<ul>
+<li>简单变量解析</li>
+<li>列表解析</li>
+<li>字典解析</li>
+<li>实例对象属性与方法解析</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- 模板标签</span><br><span class="line"></span><br><span class="line">- `&#123;% <span class="keyword">if</span> %&#125; - &#123;% <span class="keyword">else</span> %&#125; - &#123;% endif %&#125;` 标签 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- `&#123;% <span class="keyword">for</span> %&#125; - &#123;% endfor %&#125;` 标签</span><br><span class="line">    - item <span class="keyword">in</span> objs  获取列表元素</span><br><span class="line">    - k,v <span class="keyword">in</span> obj.items 遍历 key value 值</span><br><span class="line">    - forloop.counter 序号</span><br><span class="line">    - <span class="keyword">for</span> empty</span><br><span class="line"></span><br><span class="line">&lt;!--&lt;body&gt;</span><br><span class="line">&#123;% <span class="keyword">for</span> emp <span class="keyword">in</span> emps %&#125;</span><br><span class="line">&lt;div&gt;&#123;&#123;forloop.counter&#125;&#125; &#123;&#123;emp&#125;&#125;&lt;div&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;/body&gt;--&gt;</span><br><span class="line"></span><br><span class="line">- form 表单数据与文件上传</span><br><span class="line"></span><br><span class="line">&lt;form method=<span class="string">"post"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">&#123;&#123;uf.<span class="keyword">as</span> p&#125;&#125;</span><br><span class="line">&lt;input type=<span class="string">'submit'</span> value=<span class="string">'提交'</span>&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="9、模型-models-py"><a href="#9、模型-models-py" class="headerlink" title="9、模型 models.py"></a>9、模型 <a href="https://docs.djangoproject.com/en/2.1/topics/db/models/" target="_blank" rel="noopener">models.py</a></h4><ul>
+<li>安装 mysql 库</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install MySQL-python</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 settings.py 中配置 mysql 的相关信息</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql 数据库设置</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span> : &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span> : <span class="string">'django.db.backends.mysql'</span></span><br><span class="line">        <span class="string">'NAME'</span> : <span class="string">'dbname '</span></span><br><span class="line">        <span class="string">'USER'</span> : <span class="string">'root'</span></span><br><span class="line">        <span class="string">'PASSWORD'</span> : <span class="string">'33css'</span></span><br><span class="line">        <span class="string">'HOST'</span> : <span class="string">'127.0.0.1'</span></span><br><span class="line">        <span class="string">'PORT'</span> : <span class="string">'3306'</span> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编写模型 class，映射数据表</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单模型定义</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length = <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看对象的时候会显示 name 值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建 User 表</span></span><br><span class="line"></span><br><span class="line">sex_choices = (</span><br><span class="line">(<span class="string">'f'</span>, <span class="string">'famale'</span>),</span><br><span class="line">(<span class="string">'m'</span>, <span class="string">'male'</span>),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharFiled(max_length = <span class="number">30</span>)</span><br><span class="line">    sex = models.CharFiled(max_length=<span class="number">1</span>, choices=sex_choices)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一对多关系模型，models.ForeignKey</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Enty</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">   name = models.CharFiled(max_length = <span class="number">30</span>) </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharFile(max_length = <span class="number">30</span>)</span><br><span class="line">    entry = models.ForeignKey(Entry)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多对多关系模型（书与作者的关系），models.ManyToManyFiled</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Author</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharFiled(max_length = <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharFiled(max_length = <span class="number">30</span>)</span><br><span class="line">    author = models.ManyToManyFiled(Author)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数据库数据表同步</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行</span></span><br><span class="line">python manage.py syncdb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库中就会生成响应的表</span></span><br><span class="line"><span class="comment"># 一个自增长的主键会被</span></span><br><span class="line">Django自动添加</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href>终端数据库交互模式进行数据增、删、改、查操作</a></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入数据库交互模式</span></span><br><span class="line">ipython manage.py shell</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Employee</span><br><span class="line"></span><br><span class="line"><span class="comment"># 插入一条记录方式一</span></span><br><span class="line">emp = Employee()</span><br><span class="line">emp.name = <span class="string">'zhangsan'</span></span><br><span class="line">emp.save()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 插入一条记录方式二</span></span><br><span class="line">emp = Employee(name=<span class="string">'lisi'</span><span class="string">')</span></span><br><span class="line"><span class="string">emp.save()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 插入一条记录方式三</span></span><br><span class="line"><span class="string">Employee.object.create(name='</span>wangw<span class="string">u')</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 查询所有记录</span></span><br><span class="line"><span class="string">emps = Employee.objects.all()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 取值</span></span><br><span class="line"><span class="string">emps[0].id</span></span><br><span class="line"><span class="string">emps[0].name</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>查询</p>
+<ul>
+<li>xxx.objects.all()</li>
+<li>xxx.objects.filter()</li>
+<li>xxx.objects.get()</li>
+</ul>
+</li>
+</ul>
+<h4 id="10、后台管理"><a href="#10、后台管理" class="headerlink" title="10、后台管理"></a>10、后台管理</h4><ul>
+<li>修改 settings.py 配置</li>
+<li>创建 admin.py ，在里面配置需要管理的模型</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被注册的类可以使用 Django 自带后台系统进行操作</span></span><br><span class="line">admin.site.register(User)</span><br></pre></td></tr></table></figure>
+<h4 id="11、Auth-用户与权限管理"><a href="#11、Auth-用户与权限管理" class="headerlink" title="11、Auth 用户与权限管理"></a>11、<a href="https://docs.djangoproject.com/en/2.1/search/?q=auth" target="_blank" rel="noopener">Auth</a> 用户与权限管理</h4><ul>
+<li>创建用户</li>
+<li>配置用户权限</li>
+</ul>
+<h4 id="12、运行-Django-应用"><a href="#12、运行-Django-应用" class="headerlink" title="12、运行 Django 应用"></a>12、运行 Django 应用</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">./manage.py runserver</span><br></pre></td></tr></table></figure>
+<h4 id="13、django-会话管理"><a href="#13、django-会话管理" class="headerlink" title="13、django 会话管理"></a>13、django 会话管理</h4><h5 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h5><p>案例：注册 -&gt; 登录 -&gt; 跳转个人中心 -&gt; 退出</p>
+<ul>
+<li>使用 User.object.create(username=username,password=password) 插入数据</li>
+<li>使用 User.object.filter(username__exact=username, password__exact=password)  查询是否存在用户，判断是否成功登录</li>
+<li>使用 HttpResponseRedirect 重定向登录成功与失败的跳转</li>
+<li>使用 cookie 存储信息，传递到 index 页面</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注册成功后跳转到login</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">regist</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span></span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            password = uf.cleaned_data[<span class="string">'password'</span>]</span><br><span class="line">            User.object.create(username=username,password=password)</span><br><span class="line">            <span class="keyword">return</span> response = HttpResponseRedirect(<span class="string">'/login/'</span>)</span><br><span class="line">    <span class="keyword">else</span>：</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, &#123;<span class="string">'uf'</span> : uf&#125;)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录成功使用 cookie 存放用户信息，并跳转到 index</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span></span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            password = uf.cleaned_data[<span class="string">'password'</span>]</span><br><span class="line">            users = User.object.filter(username__exact = username, password__exact = password) </span><br><span class="line">            response = HttpResponseRedirect(<span class="string">'/index/'</span>)</span><br><span class="line">            response.set_cookie(<span class="string">'username'</span>,username,<span class="number">3600</span>)</span><br><span class="line">            <span class="keyword">return</span> response</span><br><span class="line">    <span class="keyword">else</span>：</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, &#123;<span class="string">'uf'</span> : uf&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取存在 cookie 中的值，显示</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    username = req.COOKIES.get(<span class="string">'username'</span>,<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'index.html'</span>, &#123;<span class="string">'username'</span> : username&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  删除 cookie 中的用户信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">(req)</span>:</span></span><br><span class="line">    response = HttpResponse()</span><br><span class="line">    response.delete_cookie(<span class="string">'username'</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+<p>cookie 信息存放在客户端，不太安全，所以一般重要信息存放到 session 相对更安全。</p>
+<h5 id="session"><a href="#session" class="headerlink" title="session"></a>session</h5><ul>
+<li>系统默认已经打开：<ul>
+<li>打开 sessions.moddleware 中间件</li>
+<li>打开 session app 应用</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method = <span class="string">'POST'</span></span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            req.session[<span class="string">'username'</span>] = username</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/index/'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, &#123;<span class="string">'uf'</span> : uf&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    username = req.session.get(<span class="string">'username'</span>,<span class="string">'zhangsan'</span>)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'welcome &#123;&#125;'</span>,username)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">del</span> req.session[<span class="string">'username'</span>]</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'logout OK'</span>)</span><br></pre></td></tr></table></figure>
+<p>session 中存入数据库，是加密保存的</p>
+<h3 id="三、gunicorn-Django-项目部署"><a href="#三、gunicorn-Django-项目部署" class="headerlink" title="三、gunicorn  Django 项目部署"></a>三、<a href="https://gunicorn.org/" target="_blank" rel="noopener">gunicorn</a>  Django 项目部署</h3><p>gunicorn是一个python Wsgi http server，只支持在Unix系统上运行，来源于Ruby的unicorn项目。Gunicorn使用prefork master-worker模型（在gunicorn中，master被称为arbiter），能够与各种wsgi web框架协作。gunicorn的文档是比较完善的，这里也有部分中文翻译，不过还是建议直接读英文文档。笔者并没有在项目中真正使用过gunicorn，阅读其源码只要是为了了解其master worker模型，如有纰漏，还请多多指教。gunicorn的安装非常简单，pip install guncorn 即可。后续如果用到异步的worker模型，还需要安装对应的模块（如gevent）在装好gunicorn之后, 我们来看看gunicorn的hello world。</p>
+<h3 id="四、Supervisor-进程管理"><a href="#四、Supervisor-进程管理" class="headerlink" title="四、Supervisor 进程管理"></a>四、<a href="http://supervisord.org/" target="_blank" rel="noopener">Supervisor</a> 进程管理</h3><p>项目中遇到有些脚本需要通过后台进程运行，保证不被异常中断，之前都是通过nohup、&amp;、screen来实现，带着能否做一个start/stop/restart/reload的服务启动的想法找到里Supervisor。关于supervisor的介绍在网上大致搜索总结如下：</p>
+<p>Supervisor 是用Python开发的一套通用的进程管理程序，能将一个普通的命令行进程变为后台daemon，并监控进程状态，异常退出时能自动重启。它是通过fork/exec的方式把这些被管理的进程当作supervisor的子进程来启动，这样只要在supervisor的配置文件中，把要管理的进程的可执行文件的路径写进去即可。也实现当子进程挂掉的时候，父进程可以准确获取子进程挂掉的信息的，可以选择是否自己启动和报警。supervisor还提供了一个功能，可以为supervisord或者每个子进程，设置一个非root的user，这个user就可以管理它对应的进程。</p>
+<h3 id="五、requirement-txt"><a href="#五、requirement-txt" class="headerlink" title="五、requirement.txt"></a>五、requirement.txt</h3><p>Python 生成requirement 使用requirements.txt</p>
+<p>python项目中必须包含一个 requirements.txt 文件，用于记录所有依赖包及其精确的版本号。以便新环境部署。requirements.txt可以通过pip命令自动生成和安装</p>
+<h4 id="生成requirements-txt文件"><a href="#生成requirements-txt文件" class="headerlink" title="生成requirements.txt文件"></a>生成requirements.txt文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<h4 id="安装requirements-txt依赖"><a href="#安装requirements-txt依赖" class="headerlink" title="安装requirements.txt依赖"></a>安装requirements.txt依赖</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<h3 id="六、开源项目学习"><a href="#六、开源项目学习" class="headerlink" title="六、开源项目学习"></a>六、开源项目学习</h3><h4 id="DjangoBlog"><a href="#DjangoBlog" class="headerlink" title="DjangoBlog"></a><a href="https://github.com/liangliangyy/DjangoBlog" target="_blank" rel="noopener">DjangoBlog</a></h4><ul>
+<li><p>主要功能</p>
+<ul>
+<li>基于python3.6和Django2.1的博客。</li>
+<li>文章，页面，分类目录，标签的添加，删除，编辑等。文章及页面支持Markdown，支持代码高亮。</li>
+<li>支持文章全文搜索。</li>
+<li>完整的评论功能，包括发表回复评论，以及评论的邮件提醒，支持Markdown。</li>
+<li>侧边栏功能，最新文章，最多阅读，标签云等。</li>
+<li>支持Oauth登陆，现已有Google,GitHub,facebook,微博,QQ登录。</li>
+<li>支持Memcache缓存，支持缓存自动刷新。</li>
+<li>简单的SEO功能，新建文章等会自动通知Google和百度。</li>
+<li>集成了简单的图床功能。</li>
+<li>集成django-compressor，自动压缩css，js。</li>
+<li>网站异常邮件提醒，若有未捕捉到的异常会自动发送提醒邮件。</li>
+<li>集成了微信公众号功能，现在可以使用微信公众号来管理你的vps了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="七、微电影网模块设计"><a href="#七、微电影网模块设计" class="headerlink" title="七、微电影网模块设计"></a>七、微电影网模块设计</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1551121238925&amp;di=550cf4625e80bd7e90971e340ca84a04&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201712%2F20171223111241090640.png" alt="image"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/03/20170903-django 框架实战/">Django 框架实战</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
+        <p><span>发布时间:</span>2017年09月03日 - 12时19分</p>
+        <p><span>最后更新:</span>2019年03月08日 - 21时24分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/03/20170903-django 框架实战/" title="Django 框架实战">http://studyforu.com/2017/09/03/20170903-django 框架实战/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://studyforu.com/2017/09/03/20170903-django 框架实战/　　作者: MarkBin" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/01/01/20180101-服务端实用技术/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          服务端实用技术
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/02/20170902-python 主流 web 框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 主流 web 框架</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、图解-Django-结构"><span class="toc-number">1.</span> <span class="toc-text">一、图解 Django 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、如何使用-Django-进行web开发"><span class="toc-number">2.</span> <span class="toc-text">二、如何使用 Django 进行web开发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、django-项目结构图"><span class="toc-number">2.1.</span> <span class="toc-text">1、django 项目结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、安装-django"><span class="toc-number">2.2.</span> <span class="toc-text">2、安装 django</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、创建-django-项目"><span class="toc-number">2.3.</span> <span class="toc-text">3、创建 django 项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、创建-django-应用"><span class="toc-number">2.4.</span> <span class="toc-text">4、创建 django 应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、工程配置-settings-py"><span class="toc-number">2.5.</span> <span class="toc-text">5、工程配置 settings.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、路由-urls-py"><span class="toc-number">2.6.</span> <span class="toc-text">6、路由 urls.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、视图-views-py"><span class="toc-number">2.7.</span> <span class="toc-text">7、视图 views.py</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#直接返回-html-字符串"><span class="toc-number">2.7.1.</span> <span class="toc-text">直接返回 html 字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#获取参数"><span class="toc-number">2.7.2.</span> <span class="toc-text">获取参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用模板文件"><span class="toc-number">2.7.3.</span> <span class="toc-text">使用模板文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查询数据库数据"><span class="toc-number">2.7.4.</span> <span class="toc-text">查询数据库数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#form-表单处理"><span class="toc-number">2.7.5.</span> <span class="toc-text">form 表单处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#form-表单提交-CSRF-错误"><span class="toc-number">2.7.6.</span> <span class="toc-text">form 表单提交 CSRF 错误</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#form-表单文件上传"><span class="toc-number">2.7.7.</span> <span class="toc-text">form 表单文件上传</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#后台系统文件上传"><span class="toc-number">2.7.8.</span> <span class="toc-text">后台系统文件上传</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文件上传-Form-DB"><span class="toc-number">2.7.9.</span> <span class="toc-text">文件上传 Form + DB</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、模板-templates"><span class="toc-number">2.8.</span> <span class="toc-text">8、模板 templates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、模型-models-py"><span class="toc-number">2.9.</span> <span class="toc-text">9、模型 models.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10、后台管理"><span class="toc-number">2.10.</span> <span class="toc-text">10、后台管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11、Auth-用户与权限管理"><span class="toc-number">2.11.</span> <span class="toc-text">11、Auth 用户与权限管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12、运行-Django-应用"><span class="toc-number">2.12.</span> <span class="toc-text">12、运行 Django 应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13、django-会话管理"><span class="toc-number">2.13.</span> <span class="toc-text">13、django 会话管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cookie"><span class="toc-number">2.13.1.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#session"><span class="toc-number">2.13.2.</span> <span class="toc-text">session</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、gunicorn-Django-项目部署"><span class="toc-number">3.</span> <span class="toc-text">三、gunicorn  Django 项目部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、Supervisor-进程管理"><span class="toc-number">4.</span> <span class="toc-text">四、Supervisor 进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、requirement-txt"><span class="toc-number">5.</span> <span class="toc-text">五、requirement.txt</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生成requirements-txt文件"><span class="toc-number">5.1.</span> <span class="toc-text">生成requirements.txt文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装requirements-txt依赖"><span class="toc-number">5.2.</span> <span class="toc-text">安装requirements.txt依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、开源项目学习"><span class="toc-number">6.</span> <span class="toc-text">六、开源项目学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DjangoBlog"><span class="toc-number">6.1.</span> <span class="toc-text">DjangoBlog</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、微电影网模块设计"><span class="toc-number">7.</span> <span class="toc-text">七、微电影网模块设计</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/01/01/20180101-服务端实用技术/" title="上一篇: 服务端实用技术">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/09/02/20170902-python 主流 web 框架/" title="下一篇: Python 主流 web 框架">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-etcd/">etcd</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-gRPC/">gRPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Hadoop/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Protobuf/">Protobuf</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Neo4j/">Neo4j</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Spark/">Spark</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/20190307-go web开发/">go web 开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/20190306-go 语言基础/">go 语言基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/20190217-python的2019/">Python 的 2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/20180903-matplotlib/">Matplotlib 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/20180902-pandas/">Pandas 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/01/20180901-numpy/">Numpy 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180607-WSGI、uWSGI、uwsgi、Nginx/">WSGI，uWSGI，uwsgi，Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180507-Tornado 框架实战的/">Tornado 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/20180308-Flask 框架实战/">Flask 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180107-consul/">consul 集群间网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180106-jenkens/">jenkens 持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/20180105-Docker 存储管理/">Docker 存储管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 容器间通信/">Docker 容器间通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 网络管理/">Docker 网络管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/20180102-Docker/">Docker 入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/20180101-服务端实用技术/">服务端实用技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/20170903-django 框架实战/">Django 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/20170902-python 主流 web 框架/">Python 主流 web 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/22/20170822-反爬虫策略/">反爬虫策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/20170821-pyspider/">PySpider 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/20170818-beautiful soup/">Beautiful Soup 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-python 爬虫技术与主流爬虫框架/">Python 爬虫技术与主流爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-scrapy/">Scrapy 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/20170810-http协议详解/">HTTP 协议详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-tcp&udp/">tcp & udp 协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/20170701-python知识大纲/">Python 知识大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170621-Jupyter/">Jupyter 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170622-conda/">conda 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/20170420-基于springboot的项目开发/">基于 springboot 的项目开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/20170416-SSM 开发整合/">SSM 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/20170410-mybatis/">java orm 框架 Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/02/20170402-spring/">java 开发框架 Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/03/20170303-jsp&servlet/">java web 开发之 jsp & servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170230-maven/">java 项目管理工具 maven 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170302-tomcat服务器/">Apache Tomcat 服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/20170215-redis/">高性能的 key-value 数据库 Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/20170210-mongodb/">NoSQL 数据库大佬 MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/20170130-mysql/">关系型数据库课代表 MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/20170103-java 基础语法/">java 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/20160920-nodejs/">Nodejs 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/05/20160905-jquery/">超好用的 JavaScript 库 JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/20160829-git & svn/">代码版本控制 GIT & SVN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/20160825-Less & Sass/">Less && Sass 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/20160823-BootStrap详解/">BootStrap 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/20160805-JavaScript详解/">JavaScript 语法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/20160803-css层叠式样式表详解/">css 层叠式样式表详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/02/20160802-html标签语言详解/">html 标签语言详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/01/20160801-MDN web 开发指南/">MDN web 开发指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/20160606-ios开发技术大汇总/">ios 开发技术大汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/20160601-macdown语法与使用指南/">Macdown 标记语言</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

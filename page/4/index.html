@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>StudyForU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="StudyForU">
+<meta property="og:url" content="http://studyforu.com/page/4/index.html">
+<meta property="og:site_name" content="StudyForU">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="StudyForU">
+  
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">HOME</a></li>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 16.67px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 10px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 16.67px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 13.33px;">go</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 13.33px;">struts</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-py/" style="font-size: 13.33px;">web.py</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/在线编辑器/" style="font-size: 10px;">在线编辑器</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/技术文档/" style="font-size: 16.67px;">技术文档</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">HOME</a></li>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-20170809-python-socket" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/09/20170809-python-socket/" class="article-date">
+      <time datetime="2017-08-09T04:19:35.000Z" itemprop="datePublished">2017-08-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/09/20170809-python-socket/">python - socket 套接字编程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="SOCKET-编程"><a href="#SOCKET-编程" class="headerlink" title="SOCKET 编程"></a>SOCKET 编程</h3><p>server.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.bind((host, port))</span><br><span class="line">s.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        c,addr = s.accept()</span><br><span class="line">        c.send((<span class="string">"你已经连接到服务器"</span> + addr[<span class="number">0</span>]).encode())</span><br><span class="line">c.close()</span><br></pre></td></tr></table></figure>
+<p>client.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">  </span><br><span class="line">host = socket.gethostname()</span><br><span class="line">port = <span class="number">9999</span></span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line">s.connect((host, port))</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (s.recv(<span class="number">1024</span>).decode())</span><br><span class="line"></span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/socket/">socket</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/套接字/">套接字</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170809-tcp&amp;udp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/09/20170809-tcp&udp/" class="article-date">
+      <time datetime="2017-08-09T03:13:51.000Z" itemprop="datePublished">2017-08-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/09/20170809-tcp&udp/">tcp &amp; udp 协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>互连网早期的时候，主机间的互连使用的是NCP协议。这种协议本身有很多缺陷，如:不能互连不同的主机，不能互连不同的操作系统，没有纠错功能。为了改善这种缺点，大牛弄出了TCP/IP协议。现在几乎所有的操作系统都实现了TCP/IP协议栈。</p>
+<h3 id="一、TCP"><a href="#一、TCP" class="headerlink" title="一、TCP"></a>一、TCP</h3><p>TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议，也就是说，在收发数据前，必须和对方建立可靠的连接。</p>
+<p>一个TCP连接必须要经过三次“对话”才能建立起来，其中的过程非常复杂，只简单的描述下这三次对话的简单过程：</p>
+<ul>
+<li>主机A向主机B发出连接请求数据包：“我想给你发数据，可以吗？”，这是第一次对话；</li>
+<li>主机B向主机A发送同意连接和要求同步（同步就是两台主机一个在发送，一个在接收，协调工作）的数据包：“可以，你什么时候发？”，这是第二次对话；</li>
+<li>主机A再发出一个数据包确认主机B的要求同步：“我现在就发，你接着吧！”，这是第三次对话。</li>
+</ul>
+<p>三次“对话”的目的是使数据包的发送和接收同步，经过三次“对话”之后，主机A才向主机B正式发送数据。</p>
+<p><a href="https://zhangjiangxing-gmail-com.iteye.com/blog/646880" target="_blank" rel="noopener">参考</a></p>
+<h4 id="TCP三次握手过程"><a href="#TCP三次握手过程" class="headerlink" title="TCP三次握手过程"></a>TCP三次握手过程</h4><p>1 主机A通过向主机B 发送一个含有同步序列号的标志位的数据段给主机B ,向主机B 请求建立连接,通过这个数据段,主机A告诉主机B 两件事:我想要和你通信;你可以用哪个序列号作为起始数据段来回应我。</p>
+<p>2 主机B 收到主机A的请求后,用一个带有确认应答(ACK)和同步序列号(SYN)标志位的数据段响应主机A,也告诉主机A两件事:我已经收到你的请求了,你可以传输数据了;你要用哪个序列号作为起始数据段来回应我。</p>
+<p>3 主机A收到这个数据段后,再发送一个确认应答,确认已收到主机B 的数据段:”我已收到回复,我现在要开始传输实际数据了。</p>
+<p>这样3次握手就完成了,主机A和主机B 就可以传输数据了。</p>
+<h4 id="3次握手的特点"><a href="#3次握手的特点" class="headerlink" title="3次握手的特点"></a>3次握手的特点</h4><ul>
+<li>没有应用层的数据</li>
+<li>SYN这个标志位只有在TCP建产连接时才会被置1</li>
+<li>握手完成后SYN标志位被置0</li>
+</ul>
+<p>TCP建立连接要进行3次握手,而断开连接要进行4次</p>
+<ul>
+<li>1 当主机A完成数据传输后,将控制位FIN置1,提出停止TCP连接的请求</li>
+<li>2  主机B收到FIN后对其作出响应,确认这一方向上的TCP连接将关闭,将ACK置1</li>
+<li>3 由B 端再提出反方向的关闭请求,将FIN置1</li>
+<li>4 主机A对主机B的请求进行确认,将ACK置1,双方向的关闭结束.</li>
+</ul>
+<p>由TCP的三次握手和四次断开可以看出,TCP使用面向连接的通信方式,大大提高了数据通信的可靠性,使发送数据端和接收端在数据正式传输前就有了交互,为数据正式传输打下了可靠的基础</p>
+<h4 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h4><p>ACK  TCP报头的控制位之一,对数据进行确认.确认由目的端发出,用它来告诉发送端这个序列号之前的数据段<br>都收到了.比如,确认号为X,则表示前X-1个数据段都收到了,只有当ACK=1时,确认号才有效,当ACK=0时,确认号无效,这时会要求重传数据,保证数据的完整性.<br>SYN  同步序列号,TCP建立连接时将这个位置1<br>FIN  发送端完成发送任务位,当TCP完成数据传输需要断开时,提出断开连接的一方将这位置1</p>
+<h4 id="TCP的包头结构"><a href="#TCP的包头结构" class="headerlink" title="TCP的包头结构"></a>TCP的包头结构</h4><ul>
+<li>源端口 16位</li>
+<li>目标端口 16位</li>
+<li>序列号 32位</li>
+<li>回应序号 32位</li>
+<li>TCP头长度 4位</li>
+<li>reserved 6位</li>
+<li>控制代码 6位</li>
+<li>窗口大小 16位</li>
+<li>偏移量 16位</li>
+<li>校验和 16位</li>
+<li>选项  32位(可选)</li>
+<li>这样我们得出了TCP包头的最小长度，为20字节。</li>
+</ul>
+<h3 id="二、UDP"><a href="#二、UDP" class="headerlink" title="二、UDP"></a>二、UDP</h3><p>UDP（User Data Protocol，用户数据报协议）</p>
+<p>（1） UDP是一个非连接的协议，传输数据之前源端和终端不建立连接，当它想传送时就简单地去抓取来自应用程序的数据，并尽可能快地把它扔到网络上。在发送端，UDP传送数据的速度仅仅是受应用程序生成数据的速度、计算机的能力和传输带宽的限制；在接收端，UDP把每个消息段放在队列中，应用程序每次从队列中读一个消息段。</p>
+<p>（2） 由于传输数据不建立连接，因此也就不需要维护连接状态，包括收发状态等，因此一台服务机可同时向多个客户机传输相同的消息。</p>
+<p>（3） UDP信息包的标题很短，只有8个字节，相对于TCP的20个字节信息包的额外开销很小。</p>
+<p>（4） 吞吐量不受拥挤控制算法的调节，只受应用软件生成数据的速率、传输带宽、源端和终端主机性能的限制。</p>
+<p>（5）UDP使用尽最大努力交付，即不保证可靠交付，因此主机不需要维持复杂的链接状态表（这里面有许多参数）。</p>
+<p>（6）UDP是面向报文的。发送方的UDP对应用程序交下来的报文，在添加首部后就向下交付给IP层。既不拆分，也不合并，而是保留这些报文的边界，因此，应用程序需要选择合适的报文大小。</p>
+<p>我们经常使用“ping”命令来测试两台主机之间TCP/IP通信是否正常，其实“ping”命令的原理就是向对方主机发送UDP数据包，然后对方主机确认收到数据包，如果数据包是否到达的消息及时反馈回来，那么网络就是通的。</p>
+<h4 id="UDP的包头结构"><a href="#UDP的包头结构" class="headerlink" title="UDP的包头结构"></a>UDP的包头结构</h4><ul>
+<li>源端口 16位</li>
+<li>目的端口 16位</li>
+<li>长度 16位</li>
+<li>校验和 16位</li>
+</ul>
+<h3 id="三、小结TCP与UDP的区别："><a href="#三、小结TCP与UDP的区别：" class="headerlink" title="三、小结TCP与UDP的区别："></a>三、小结TCP与UDP的区别：</h3><ul>
+<li>1.基于连接与无连接； </li>
+<li>2.对系统资源的要求（TCP较多，UDP少）； </li>
+<li>3.UDP程序结构较简单； </li>
+<li>4.流模式与数据报模式 ；</li>
+<li>5.TCP保证数据正确性，UDP可能丢包，TCP保证数据顺序，UDP不保证。 </li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tcp/">tcp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/udp/">udp</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170701-python知识大纲" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/01/20170701-python知识大纲/" class="article-date">
+      <time datetime="2017-07-01T11:23:55.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/20170701-python知识大纲/">Python 知识大纲</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h3><h4 id="1-1-Python-2-x-与-3-x-区别？"><a href="#1-1-Python-2-x-与-3-x-区别？" class="headerlink" title="1.1 Python 2.x 与 3.x 区别？"></a>1.1 <a href="http://www.runoob.com/python/python-2x-3x.html" target="_blank" rel="noopener">Python 2.x 与 3.x 区别？</a></h4><ul>
+<li><code>Unicode 字符串</code>：Python3.X 源码文件默认使用utf-8编码，Python 3，我们最终有了 Unicode (utf-8) 字符串，以及一个字节类：byte 和 bytearrays</li>
+<li><code>print 函数</code>：print语句没有了，取而代之的是print()函数</li>
+<li><code>除法运算</code>：在python 3.x中/除法不再这么做了，对于整数之间的相除，结果也会是浮点数。</li>
+</ul>
+<h4 id="1-2-多进程"><a href="#1-2-多进程" class="headerlink" title="1.2 多进程"></a>1.2 多进程</h4><h4 id="1-3-多线程"><a href="#1-3-多线程" class="headerlink" title="1.3 多线程"></a>1.3 多线程</h4><ul>
+<li>实现方式？</li>
+<li>锁？</li>
+</ul>
+<p><a href="https://blog.csdn.net/weixin_40017590/article/details/80601065" target="_blank" rel="noopener">多线程 CPU密集型 &amp;&amp; I/O密集型</a><br><a href="https://blog.csdn.net/weixin_40151613/article/details/81835974" target="_blank" rel="noopener">线程池使用：CPU密集型 和 IO密集型</a></p>
+<h4 id="1-4-协程"><a href="#1-4-协程" class="headerlink" title="1.4 协程"></a>1.4 <a href="https://blog.csdn.net/u014028063/article/details/81408395" target="_blank" rel="noopener">协程</a></h4><p>Python由于众所周知的 <a href="https://www.cnblogs.com/SuKiWX/p/8804974.html" target="_blank" rel="noopener">GIL （global interpreter lock）</a> 的原因，导致其线程无法发挥多核的并行计算能力（当然，后来有了multiprocessing，可以实现多进程并行）。既然在GIL之下，同一时刻只能有一个线程在运行，那么对于CPU密集的程序来说，线程之间的切换开销就成了拖累，而以I/O为瓶颈的程序正是协程所擅长的。</p>
+<p><code>yield</code> 能实现协程，不过实现过程不易于理解，<code>greenlet</code> 是在这方面做了改进。接下来介绍python封装好的协程Greenlet</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> greenlet <span class="keyword">import</span> greenlet</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">12</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line">    print(<span class="number">34</span>)</span><br><span class="line">    gr2.switch()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="number">56</span>)</span><br><span class="line">    gr1.switch()</span><br><span class="line">    print(<span class="number">78</span>)</span><br><span class="line"></span><br><span class="line">gr1 = greenlet(test1)</span><br><span class="line">gr2 = greenlet(test2)</span><br><span class="line"></span><br><span class="line">gr1.switch()</span><br></pre></td></tr></table></figure>
+<p><code>gevent</code>是第三方库，可以轻松通过 <code>gevent</code> 实现并发同步或异步编程，在gevent中用到的主要模式是Greenlet, 它是以C扩展模块形式接入Python的轻量级协程。 Greenlet全部运行在主程序操作系统进程的内部，但它们被协作式地调度。</p>
+<h4 id="1-5-同步与异步"><a href="#1-5-同步与异步" class="headerlink" title="1.5 同步与异步"></a>1.5 同步与异步</h4>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170621-Jupyter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/21/20170621-Jupyter/" class="article-date">
+      <time datetime="2017-06-21T11:23:55.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/20170621-Jupyter/">Jupyter 使用指南</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a>（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。<br>Jupyter Notebook 的本质是一个 Web 应用程序，便于创建和共享文学化程序文档，支持实时代码，数学方程，可视化和 markdown。 用途包括：数据清理和转换，数值模拟，统计建模，机器学习等等。</p>
+<h3 id="一、如何安装-Jupyter-Notebooks？"><a href="#一、如何安装-Jupyter-Notebooks？" class="headerlink" title="一、如何安装 Jupyter Notebooks？"></a>一、如何安装 Jupyter Notebooks？</h3><p>你可能已经猜到了，你首先需要在你的机器上安装 Python。Python 2.7 或 Python 3.3（或更新版本）都可以。</p>
+<h4 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h4><p>对新用户而言，一般的共识是你应该使用 Anaconda 发行版来安装 Python 和 Jupyter Notebooks。</p>
+<p>Anaconda 会同时安装这两个工具，并且还包含相当多数据科学和机器学习社区常用的软件包。你可以在这里下载最新版的 Anaconda：<a href="https://www.anaconda.com/download" target="_blank" rel="noopener">https://www.anaconda.com/download</a></p>
+<h4 id="pip-方法"><a href="#pip-方法" class="headerlink" title="pip 方法"></a>pip 方法</h4><p>如果你因为某些原因不愿意使用 Anaconda，那么你需要确保你的机器运行着最新版的 pip。该怎么做呢？如果你已经安装了 Python，那么就已经有 pip 了。你可以使用以下代码升级到最新版的 pip：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Linux and OSXpip install -U pip setuptools#Windowspython -m pip install -U pip setuptools</span></span><br></pre></td></tr></table></figure>
+<p>pip 安装好之后，继续安装 Jupyter：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#For Python2pip install jupyter#For Python3pip3 install jupyter</span></span><br></pre></td></tr></table></figure>
+<p>你可以在这里查看官方的 Jupyter 安装文档：<a href="https://jupyter.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">https://jupyter.readthedocs.io/en/latest/install.html</a></p>
+<h3 id="二、常用快捷键"><a href="#二、常用快捷键" class="headerlink" title="二、常用快捷键"></a>二、常用快捷键</h3><ul>
+<li>Shift+Enter : 运行本单元，选中下个单元</li>
+<li>Ctrl+Enter : 运行本单元</li>
+<li>Alt+Enter : 运行本单元，在其下插入新单元</li>
+<li>Y：单元转入代码状态</li>
+<li>M：单元转入markdown状态</li>
+<li>A ：在上方插入新单元</li>
+<li>B：在下方插入新单元</li>
+<li>X：剪切选中的单元</li>
+<li>Shift +V：在上方粘贴单元</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jupyter/">Jupyter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/在线编辑器/">在线编辑器</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170622-conda" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/21/20170622-conda/" class="article-date">
+      <time datetime="2017-06-21T11:23:55.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/20170622-conda/">conda 使用指南</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1、安装-python-环境"><a href="#1、安装-python-环境" class="headerlink" title="1、安装 python 环境"></a>1、安装 python 环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda create --name python3.7 python=3.7</span><br><span class="line">Solving environment: <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==&gt; WARNING: A newer version of conda exists. &lt;==</span><br><span class="line">  current version: 4.5.11</span><br><span class="line">  latest version: 4.6.7</span><br><span class="line"></span><br><span class="line">Please update conda by running</span><br><span class="line"></span><br><span class="line">    $ conda update -n base -c defaults conda</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /Users/zhengbing/miniconda3/envs/python3.7</span><br><span class="line"></span><br><span class="line">  added / updated specs: </span><br><span class="line">    - python=3.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be downloaded:</span><br><span class="line"></span><br><span class="line">    | package                   | build                     |</span><br><span class="line">    | ------------------------- | ------------------------- |</span><br><span class="line">    | sqlite-3.26.0             | ha441bb4_0         2.3 MB |</span><br><span class="line">    | python-3.7.2              | haf84260_0        21.6 MB |</span><br><span class="line">    | openssl-1.1.1b            | h1de35cc_0         3.4 MB |</span><br><span class="line">    | certifi-2018.11.29        | py37_0         145 KB     |</span><br><span class="line">    | setuptools-40.8.0         | py37_0         643 KB     |</span><br><span class="line">    | wheel-0.33.1              | py37_0          39 KB     |</span><br><span class="line">    | pip-19.0.3                | py37_0         1.8 MB     |</span><br><span class="line">    | ca-certificates-2019.1.23 | 0         126 KB          |</span><br><span class="line">    | libedit-3.1.20181209      | hb402a30_0         159 KB |</span><br><span class="line">    ------------------------------------------------------------</span><br><span class="line">                                           Total:        30.3 MB</span><br><span class="line"></span><br><span class="line">The following NEW packages will be INSTALLED:</span><br><span class="line"></span><br><span class="line">    ca-certificates: 2019.1.23-0            </span><br><span class="line">    certifi:         2018.11.29-py37_0      </span><br><span class="line">    libcxx:          4.0.1-hcfea43d_1       </span><br><span class="line">    libcxxabi:       4.0.1-hcfea43d_1       </span><br><span class="line">    libedit:         3.1.20181209-hb402a30_0</span><br><span class="line">    libffi:          3.2.1-h475c297_4       </span><br><span class="line">    ncurses:         6.1-h0a44026_1         </span><br><span class="line">    openssl:         1.1.1b-h1de35cc_0      </span><br><span class="line">    pip:             19.0.3-py37_0          </span><br><span class="line">    python:          3.7.2-haf84260_0       </span><br><span class="line">    readline:        7.0-h1de35cc_5         </span><br><span class="line">    setuptools:      40.8.0-py37_0          </span><br><span class="line">    sqlite:          3.26.0-ha441bb4_0      </span><br><span class="line">    tk:              8.6.8-ha441bb4_0       </span><br><span class="line">    wheel:           0.33.1-py37_0          </span><br><span class="line">    xz:              5.2.4-h1de35cc_4       </span><br><span class="line">    zlib:            1.2.11-h1de35cc_3      </span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Downloading and Extracting Packages</span><br><span class="line">sqlite-3.26.0        | 2.3 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">python-3.7.2         | 21.6 MB   | <span class="comment">################################################################################################################### | 100% openssl-1.1.1b       | 3.4 MB    | ################################################################################################################### | 100% </span></span><br><span class="line">certifi-2018.11.29   | 145 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">setuptools-40.8.0    | 643 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">wheel-0.33.1         | 39 KB     | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">pip-19.0.3           | 1.8 MB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">ca-certificates-2019 | 126 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">libedit-3.1.20181209 | 159 KB    | <span class="comment">################################################################################################################### | 100% </span></span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate python3.7</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
+<h3 id="2、切换环境"><a href="#2、切换环境" class="headerlink" title="2、切换环境"></a>2、切换环境</h3><ul>
+<li>conda activate python3.7</li>
+<li>conda deactivate</li>
+</ul>
+<h3 id="3、查看已安装的python环境"><a href="#3、查看已安装的python环境" class="headerlink" title="3、查看已安装的python环境"></a>3、查看已安装的python环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda info --env</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /Users/zhengbing/miniconda3</span><br><span class="line">python2.7                /Users/zhengbing/miniconda3/envs/python2.7</span><br></pre></td></tr></table></figure>
+<h3 id="4、删除环境"><a href="#4、删除环境" class="headerlink" title="4、删除环境"></a>4、删除环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">(base) mac:~ zhengbing$ conda remove --name python3.7 --all</span><br><span class="line"></span><br><span class="line">Remove all packages <span class="keyword">in</span> environment /Users/zhengbing/miniconda3/envs/python3.7:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Package Plan ##</span></span><br><span class="line"></span><br><span class="line">  environment location: /Users/zhengbing/miniconda3/envs/python3.7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">The following packages will be REMOVED:</span><br><span class="line"></span><br><span class="line">    ca-certificates: 2019.1.23-0            </span><br><span class="line">    certifi:         2018.11.29-py37_0      </span><br><span class="line">    libcxx:          4.0.1-hcfea43d_1       </span><br><span class="line">    libcxxabi:       4.0.1-hcfea43d_1       </span><br><span class="line">    libedit:         3.1.20181209-hb402a30_0</span><br><span class="line">    libffi:          3.2.1-h475c297_4       </span><br><span class="line">    ncurses:         6.1-h0a44026_1         </span><br><span class="line">    openssl:         1.1.1b-h1de35cc_0      </span><br><span class="line">    pip:             19.0.3-py37_0          </span><br><span class="line">    python:          3.7.2-haf84260_0       </span><br><span class="line">    readline:        7.0-h1de35cc_5         </span><br><span class="line">    setuptools:      40.8.0-py37_0          </span><br><span class="line">    sqlite:          3.26.0-ha441bb4_0      </span><br><span class="line">    tk:              8.6.8-ha441bb4_0       </span><br><span class="line">    wheel:           0.33.1-py37_0          </span><br><span class="line">    xz:              5.2.4-h1de35cc_4       </span><br><span class="line">    zlib:            1.2.11-h1de35cc_3      </span><br><span class="line"></span><br><span class="line">Proceed ([y]/n)? y</span><br><span class="line"></span><br><span class="line">(base) mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
+<h3 id="5、克隆环境"><a href="#5、克隆环境" class="headerlink" title="5、克隆环境"></a>5、克隆环境</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ conda info --env</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /Users/zhengbing/miniconda3</span><br><span class="line">python2.7                /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$ conda create --name py27 --<span class="built_in">clone</span> python2.7</span><br><span class="line">Source:      /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line">Destination: /Users/zhengbing/miniconda3/envs/py27</span><br><span class="line">Packages: 16</span><br><span class="line">Files: 0</span><br><span class="line">Preparing transaction: <span class="keyword">done</span></span><br><span class="line">Verifying transaction: <span class="keyword">done</span></span><br><span class="line">Executing transaction: <span class="keyword">done</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To activate this environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda activate py27</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To deactivate an active environment, use</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     $ conda deactivate</span></span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$ conda info --env</span><br><span class="line"><span class="comment"># conda environments:</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">base                  *  /Users/zhengbing/miniconda3</span><br><span class="line">py27                     /Users/zhengbing/miniconda3/envs/py27</span><br><span class="line">python2.7                /Users/zhengbing/miniconda3/envs/python2.7</span><br><span class="line"></span><br><span class="line">mac:~ zhengbing$</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/conda/">conda</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170607-深入理解java虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/07/20170607-深入理解java虚拟机/" class="article-date">
+      <time datetime="2017-06-07T02:19:35.000Z" itemprop="datePublished">2017-06-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>虚拟机是一种抽象化的计算机，通过在实际的计算机上仿真模拟各种计算机功能来实现的。Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。Java虚拟机屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。</p>
+<p><a href="https://baike.baidu.com/item/java%E8%99%9A%E6%8B%9F%E6%9C%BA/6810577?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170608-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/07/20170608-Linux常用命令/" class="article-date">
+      <time datetime="2017-06-07T02:19:35.000Z" itemprop="datePublished">2017-06-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1、ls-命令查看linux文件夹包含的文件"><a href="#1、ls-命令查看linux文件夹包含的文件" class="headerlink" title="1、ls 命令查看linux文件夹包含的文件"></a>1、ls 命令查看linux文件夹包含的文件</h3><p>就是list的缩写，通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限(包括目录、文件夹、文件权限)查看目录信息等等</p>
+<p>常用参数搭配：</p>
+<ul>
+<li>ls -a 列出目录所有文件，包含以.开始的隐藏文件</li>
+<li>ls -A 列出除.及..的其它文件</li>
+<li>ls -r 反序排列</li>
+<li>ls -t 以文件修改时间排序</li>
+<li>ls -S 以文件大小排序</li>
+<li>ls -h 以易读大小显示</li>
+<li>ls -l 除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来</li>
+</ul>
+<h3 id="2、cd-命令切换目录"><a href="#2、cd-命令切换目录" class="headerlink" title="2、cd 命令切换目录"></a>2、cd 命令切换目录</h3><p>cd [目录名]。说明：切换当前目录至dirName</p>
+<ul>
+<li>cd /     进入根目录</li>
+<li>cd ~    进入”用户”目录</li>
+<li>cd -      进入上一次工作路径</li>
+<li>cd ..     进入上一次目录</li>
+<li>cd !$     把上个命令的参数作为cd参数使用。</li>
+</ul>
+<h3 id="3、pwd-命令查看当前工作目录路径"><a href="#3、pwd-命令查看当前工作目录路径" class="headerlink" title="3、pwd 命令查看当前工作目录路径"></a>3、pwd 命令查看当前工作目录路径</h3><ul>
+<li>查看当前路径 <code>pwd</code><ul>
+<li>查看软链接的实际路径 <code>pwd -P</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="4、mkdir-命令创建文件夹"><a href="#4、mkdir-命令创建文件夹" class="headerlink" title="4、mkdir 命令创建文件夹"></a>4、mkdir 命令创建文件夹</h3><ul>
+<li>当前工作目录下创建名为t的文件夹 <code>mkdir t</code></li>
+<li>在tmp目录下创建路径为test/t1/t的目录，若不存在，则创建 <code>mkdir -p /tmp/test/t1/t</code></li>
+</ul>
+<h3 id="5、rm-命令删除一个目录中的一个或多个文件或目录"><a href="#5、rm-命令删除一个目录中的一个或多个文件或目录" class="headerlink" title="5、rm 命令删除一个目录中的一个或多个文件或目录"></a>5、rm 命令删除一个目录中的一个或多个文件或目录</h3><p> 删除一个目录中的一个或多个文件或目录，如果没有使用- r选项，则rm不会删除目录。如果使用 rm 来删除文件，通常仍可以将该文件恢复原状</p>
+<ul>
+<li>（1）删除任何.log文件；删除前逐一询问确认 <code>rm -i *.log</code></li>
+<li>（2）删除test子目录及子目录中所有档案删除,并且不用一一确认 <code>rm -rf test</code></li>
+<li>（3）删除以-f开头的文件 <code>rm -- -f*</code></li>
+</ul>
+<h3 id="6、rmdir-命令"><a href="#6、rmdir-命令" class="headerlink" title="6、rmdir 命令"></a>6、rmdir 命令</h3><p>从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对其父目录的写权限。<br>注意：不能删除非空目录</p>
+<ul>
+<li>当parent子目录被删除后使它也成为空目录的话，则顺便一并删除 <code>rmdir -p parent/child/child11</code></li>
+</ul>
+<h3 id="7、mv-命令"><a href="#7、mv-命令" class="headerlink" title="7、mv 命令"></a>7、mv 命令</h3><p>移动文件或修改文件名，根据第二参数类型（如目录，则移动文件；如为文件则重命令该文件）。当第二个参数为目录时，可刚多个文件以空格分隔作为第一参数，移动多个文件到参数2指定的目录中</p>
+<ul>
+<li>将文件test.log重命名为test1.txt <code>mv test.log test1.txt</code></li>
+<li>将文件log1.txt,log2.txt,log3.txt移动到根的test3目录中 <code>mv llog1.txt log2.txt log3.txt /test3</code></li>
+<li>将文件file1改名为file2，如果file2已经存在，则询问是否覆盖 <code>mv -i log1.txt log2.txt</code></li>
+<li>移动当前文件夹下的所有文件到上一级目录 <code>mv * ../</code></li>
+</ul>
+<h3 id="8、cp命令"><a href="#8、cp命令" class="headerlink" title="8、cp命令"></a>8、cp命令</h3><p>将源文件复制至目标文件，或将多个源文件复制至目标目录。注意：命令行复制，如果目标文件已经存在会提示是否覆盖，而在shell脚本中，如果不加-i参数，则不会提示，而是直接覆盖！</p>
+<ul>
+<li>-i 提示</li>
+<li>-r 复制目录及目录内所有项目</li>
+<li>-a 复制的文件与原文件时间一样</li>
+<li>复制a.txt到test目录下，保持原文件时间,如果原文件存在提示是否覆盖 <code>cp -ai a.txt test</code></li>
+<li>为a.txt建议一个链接（快捷方式） <code>cp -s a.txt link_a.txt</code></li>
+</ul>
+<h3 id="9、cat命令"><a href="#9、cat命令" class="headerlink" title="9、cat命令"></a>9、cat命令</h3><p>cat主要有三大功能：</p>
+<ul>
+<li>1.一次显示整个文件: <code>cat filename</code></li>
+<li>2.从键盘创建一个文件: <code>cat &gt; filename</code> 只能创建新文件,不能编辑已有文件.</li>
+<li><p>3.将几个文件合并为一个文件: <code>cat file1 file2 &gt; file</code></p>
+<p>-b对非空输出行号<br>-n输出所有行号</p>
+</li>
+</ul>
+<h3 id="10、more命令"><a href="#10、more命令" class="headerlink" title="10、more命令"></a>10、more命令</h3><p>功能类似于cat, more会以一页一页的显示方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示</p>
+<p>Enter    向下n行，需要定义。默认为1行</p>
+<ul>
+<li>Ctrl+F   向下滚动一屏</li>
+<li>空格键  向下滚动一屏</li>
+<li>Ctrl+B  返回上一屏</li>
+<li>=       输出当前行的行号</li>
+<li>：f     输出文件名和当前行的行号</li>
+<li>V      调用vi编辑器</li>
+<li>!命令   调用Shell，并执行命令</li>
+<li>q       退出more</li>
+</ul>
+<p>如：</p>
+<ul>
+<li>显示文件中从第3行起的内容 <code>more +3 text.txt</code></li>
+<li>在所列出文件目录详细信息，借助管道使每次显示5行 <code>ls -l | more -5</code> 按空格显示下5行</li>
+</ul>
+<h3 id="11、less命令"><a href="#11、less命令" class="headerlink" title="11、less命令"></a>11、less命令</h3><p>less 与 more 类似，但使用 less 可以随意浏览文件，而 more 仅能向前移动，却不能向后移动，而且 less 在查看之前不会加载整个文件。</p>
+<h3 id="12、head命令"><a href="#12、head命令" class="headerlink" title="12、head命令"></a>12、head命令</h3><p>head 用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。</p>
+<ul>
+<li>显示1.log文件中前20行 <code>head 1.log -n 20</code></li>
+<li>显示1.log文件前20字节 <code>head -c 20 log2014.log</code></li>
+<li>显示t.log最后10行 <code>head -n -10 t.log</code></li>
+</ul>
+<h3 id="13、tail命令"><a href="#13、tail命令" class="headerlink" title="13、tail命令"></a>13、tail命令</h3><p>用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。</p>
+<ul>
+<li>-f 循环读取（常用于查看递增的日志文件）</li>
+<li>-n&lt;行数&gt; 显示行数（从后向前）</li>
+</ul>
+<p>循环读取逐渐增加的文件内容</p>
+<p>ping 127.0.0.1 &gt; ping.log &amp;（后台运行：可使用jobs -l查看，也可使用fg将其移到前台运行）<br>tail -f ping.log（查看日志）</p>
+<h3 id="14、查找某个文件"><a href="#14、查找某个文件" class="headerlink" title="14、查找某个文件"></a>14、查找某个文件</h3><p>在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索：</p>
+<h4 id="which-查看可执行文件的位置。"><a href="#which-查看可执行文件的位置。" class="headerlink" title="which     查看可执行文件的位置。"></a>which     查看可执行文件的位置。</h4><p>which是在PATH就是指定的路径中，搜索某个系统命令的位置，并返回第一个搜索结果。使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
+<p> -n 　指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名。</p>
+<ul>
+<li>查看ls命令是否存在，执行哪个 <code>which ls</code></li>
+<li>查看which <code>which which</code></li>
+<li>查看 cd <code>which cd</code>（显示不存在，因为cd是内建命令，而which查找显示是PATH中的命令）</li>
+<li>查看当前PATH配置：echo $PATH；或使用env查看所有环境变量及对应值</li>
+</ul>
+<h4 id="whereis-查看文件的位置。"><a href="#whereis-查看文件的位置。" class="headerlink" title="whereis 查看文件的位置。"></a>whereis 查看文件的位置。</h4><p>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。whereis及locate都是基于系统内建的数据库进行搜索，因此效率很高，而find则是遍历硬盘查找文件。</p>
+<p>-b   定位可执行文件。<br>-m   定位帮助文件。<br>-s   定位源代码文件。<br>-u   搜索默认路径下除可执行文件、源代码文件、帮助文件以外的其它文件。</p>
+<ul>
+<li>查找locate程序相关文件 <code>whereis locate</code></li>
+<li>查找locate的源码文件 <code>whereis -s locate</code></li>
+<li>查找lcoate的帮助文件 <code>whereis -m locate</code></li>
+</ul>
+<h4 id="locate-配合数据库查看文件位置。"><a href="#locate-配合数据库查看文件位置。" class="headerlink" title="locate  配合数据库查看文件位置。"></a>locate  配合数据库查看文件位置。</h4><p> locate通过搜寻系统内建文档数据库达到快速找到档案，数据库由updatedb程序来更新，updatedb是由cron daemon周期性调用的。默认情况下locate命令在搜寻数据库时比由整个由硬盘资料来搜寻资料来得快，但较差劲的是locate所找到的档案若是最近才建立或 刚更名的，可能会找不到，在内定值中，updatedb每天会跑一次，可以由修改crontab来更新设定值。(etc/crontab)。</p>
+<p>locate与find命令相似，可以使用如*、?等进行正则匹配查找</p>
+<p>-l num（要显示的行数）<br>-f   将特定的档案系统排除在外，如将proc排除在外<br>-r   使用正则运算式做为寻找条件</p>
+<ul>
+<li>查找和pwd相关的所有文件(文件名中包含pwd）<code>locate pwd</code></li>
+<li>搜索etc目录下所有以sh开头的文件 <code>locate /etc/sh</code></li>
+<li>查找/var目录下，以reason结尾的文件 <code>locate -r &#39;^/var.*reason$&#39;</code>（其中.表示一个字符，<em>表示任务多个；.</em>表示任意多个字符）</li>
+</ul>
+<h4 id="find-实际搜寻硬盘查询文件名称。"><a href="#find-实际搜寻硬盘查询文件名称。" class="headerlink" title="find        实际搜寻硬盘查询文件名称。"></a>find        实际搜寻硬盘查询文件名称。</h4><p>用于在文件树中查找文件，并作出相应的处理。</p>
+<p>find pathname -options [-print -exec -ok …]</p>
+<ul>
+<li>pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录。</li>
+<li>-print： find命令将匹配的文件输出到标准输出。</li>
+<li>-exec： find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ {  } \;，注意{   }和\；之间的空格。</li>
+<li>-ok： 和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。</li>
+</ul>
+<p>-name 按照文件名查找文件</p>
+<p>-perm 按文件权限查找文件</p>
+<p>-user 按文件属主查找文件</p>
+<p>-group  按照文件所属的组来查找文件。</p>
+<p>-type  查找某一类型的文件，诸如：</p>
+<p>   b - 块设备文件</p>
+<p>   d - 目录</p>
+<p>   c - 字符设备文件</p>
+<p>   l - 符号链接文件</p>
+<p>   p - 管道文件</p>
+<p>   f - 普通文件</p>
+<p>-size n :[c] 查找文件长度为n块文件，带有c时表文件字节大小</p>
+<p>-amin n   查找系统中最后N分钟访问的文件</p>
+<p>-atime n  查找系统中最后n*24小时访问的文件</p>
+<p>-cmin n   查找系统中最后N分钟被改变文件状态的文件</p>
+<p>-ctime n  查找系统中最后n*24小时被改变文件状态的文件</p>
+<p>-mmin n   查找系统中最后N分钟被改变文件数据的文件</p>
+<p>-mtime n  查找系统中最后n*24小时被改变文件数据的文件</p>
+<p>(用减号-来限定更改时间在距今n日以内的文件，而用加号+来限定更改时间在距今n日以前的文件。 )</p>
+<p>-maxdepth n 最大查找目录深度</p>
+<p>-prune选项来指出需要忽略的目录。在使用-prune选项时要当心，因为如果你同时使用了-depth选项，那么-prune选项就会被find命令忽略</p>
+<p>-newer 如果希望查找更改时间比某个文件新但比另一个文件旧的所有文件，可以使用-newer选项</p>
+<p> （1）查找48小时内修改过的文件</p>
+<p> find -atime -2</p>
+<p> （2）在当前目录查找 以.log结尾的文件。 “. “代表当前目录</p>
+<p> find ./ -name ‘*.log’</p>
+<p> （3）查找/opt目录下 权限为 777的文件</p>
+<p> find /opt -perm 777</p>
+<p> （4）查找大于1K的文件</p>
+<p> find -size +1000c</p>
+<p> find -size 1000c 查找等于1000字符的文件</p>
+<p> -exec         参数后面跟的是command命令，它的终止是以;为结束标志的，所以这句命令后面的分号是不可缺少的，考虑到各个系统中分号会有不同的意义，所以前面加反斜杠。{}   花括号代表前面find查找出来的文件名。</p>
+<p>实例：</p>
+<p>（5）在当前目录中查找更改时间在10日以前的文件并删除它们(无提醒）</p>
+<p>find . -type f -mtime +10 -exec rm -f {} \;</p>
+<p>（6）当前目录中查找所有文件名以.log结尾、更改时间在5日以上的文件，并删除它们，只不过在删除之前先给出提示。 按y键删除文件，按n键不删除</p>
+<p>find . -name ‘*.log’ mtime +5 -ok -exec rm {} \;</p>
+<p>（7）当前目录下查找文件名以passwd开头，内容包含”pkg”字符的文件</p>
+<p>find . -f -name ‘passwd*’ -exec grep “pkg” {} \;</p>
+<p>（8）用exec选项执行cp命令 </p>
+<p>find . -name ‘*.log’ -exec cp {} test3 \;</p>
+<p>-xargs find命令把匹配到的文件传递给xargs命令，而xargs命令每次只获取一部分文件而不是全部，不像-exec选项那样。这样它可以先处理最先获取的一部分文件，然后是下一批，并如此继续下去。</p>
+<p>实例：</p>
+<p>（9）查找当前目录下每个普通文件，然后使用xargs来判断文件类型</p>
+<p>find . -type f -print | xargs file</p>
+<p>（10）查找当前目录下所有以js结尾的并且其中包含’editor’字符的普通文件</p>
+<p>find . -type f -name “*.js” -exec grep -lF ‘ueditor’ {} \;</p>
+<p>find -type f -name ‘*.js’ | xargs grep -lF ‘editor’</p>
+<p>（11）利用xargs执行mv命令</p>
+<p>find . -name “*.log” | xargs -i mv {} test4</p>
+<p>（12）用grep命令在当前目录下的所有普通文件中搜索hostnames这个词,并标出所在行</p>
+<p>find . -name *(转义） -type f -print | xargs grep -n ‘hostnames’</p>
+<p>（13）查找当前目录中以一个小写字母开头，最后是4到9加上.log结束的文件</p>
+<p>find . -name ‘[a-z]*[4-9].log’ -print</p>
+<p>（14）在test目录查找不在test4子目录查找</p>
+<p>find test -path ‘test/test4’ -prune -o -print</p>
+<p>（15）实例1：查找更改时间比文件log2012.log新但比文件log2017.log旧的文件</p>
+<p>find -newer log2012.log ! -newer log2017.log</p>
+<p>使用depth选项：</p>
+<p>depth选项可以使find命令向磁带上备份文件系统时，希望首先备份所有的文件，其次再备份子目录中的文件。 </p>
+<p>实例：find命令从文件系统的根目录开始，查找一个名为CON.FILE的文件。 它将首先匹配所有的文件然后再进入子目录中查找</p>
+<p>find / -name “CON.FILE” -depth -print</p>
+<h3 id="18、chmod命令"><a href="#18、chmod命令" class="headerlink" title="18、chmod命令"></a>18、chmod命令</h3><p>用于改变linux系统文件或目录的访问权限。用它控制文件或目录的访问权限。该命令有两种用法。一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。</p>
+<ul>
+<li>r ：读权限，用数字4表示</li>
+<li>w ：写权限，用数字2表示</li>
+<li>x ：执行权限，用数字1表示</li>
+<li><ul>
+<li>：删除权限，用数字0表示</li>
+</ul>
+</li>
+<li><p>s ：特殊权限</p>
+</li>
+<li><p>u ：目录或者文件的当前的用户</p>
+</li>
+<li>g ：目录或者文件的当前的群组</li>
+<li>o ：除了目录或者文件的当前用户或群组之外的用户或者群组</li>
+<li>a ：所有的用户及群组</li>
+</ul>
+<h3 id="19、tar-命令"><a href="#19、tar-命令" class="headerlink" title="19、tar 命令"></a>19、tar 命令</h3><p> 用来压缩和解压文件。tar本身不具有压缩功能，只具有打包功能，有关压缩及解压是调用其它的功能来完成。</p>
+<ul>
+<li>-c 建立新的压缩文件</li>
+<li>-f 指定压缩文件</li>
+<li>-r 添加文件到已经压缩文件包中</li>
+<li>-u 添加改了和现有的文件到压缩包中</li>
+<li>-x 从压缩包中抽取文件</li>
+<li>-t 显示压缩文件中的内容</li>
+<li>-z 支持gzip压缩</li>
+<li>-j 支持bzip2压缩</li>
+<li>-Z 支持compress解压文件</li>
+<li>-v 显示操作过程</li>
+</ul>
+<h3 id="20、chown-命令"><a href="#20、chown-命令" class="headerlink" title="20、chown 命令"></a>20、chown 命令</h3><p>chown将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符</p>
+<ul>
+<li>-c 显示更改的部分的信息</li>
+<li>-R 处理指定目录及子目录</li>
+</ul>
+<h3 id="21、df-命令"><a href="#21、df-命令" class="headerlink" title="21、df 命令"></a>21、df 命令</h3><p>显示磁盘空间使用情况。获取硬盘被占用了多少空间，目前还剩下多少空间等信息，如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示。默认情况下，磁盘空间将以 1KB 为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示。</p>
+<h3 id="22、du-命令"><a href="#22、du-命令" class="headerlink" title="22、du 命令"></a>22、du 命令</h3><p>du命令也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看。</p>
+<h3 id="23、ln-命令"><a href="#23、ln-命令" class="headerlink" title="23、ln 命令"></a>23、ln 命令</h3><p>功能是为文件在另外一个位置建立一个同步的链接，当在不同目录需要该问题时，就不需要为每一个目录创建同样的文件，通过ln创建的链接（link）减少磁盘占用量。</p>
+<h3 id="24、date-命令"><a href="#24、date-命令" class="headerlink" title="24、date 命令"></a>24、date 命令</h3><p>显示或设定系统的日期与时间</p>
+<h3 id="25、cal-命令"><a href="#25、cal-命令" class="headerlink" title="25、cal 命令"></a>25、cal 命令</h3><p>可以用户显示公历（阳历）日历如只有一个参数，则表示年份(1-9999)，如有两个参数，则表示月份和年份</p>
+<h3 id="26、grep命令"><a href="#26、grep命令" class="headerlink" title="26、grep命令"></a>26、grep命令</h3><p>强大的文本搜索命令，grep(Global Regular Expression Print)全局正则表达式搜索。grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。</p>
+<h3 id="27、wc命令"><a href="#27、wc命令" class="headerlink" title="27、wc命令"></a>27、wc命令</h3><p>wc(word count)功能为统计指定的文件中字节数、字数、行数，并将统计结果输出</p>
+<h3 id="28、ps命令"><a href="#28、ps命令" class="headerlink" title="28、ps命令"></a>28、ps命令</h3><p>ps(process status)，用来查看当前运行的进程状态，一次性查看，如果需要动态连续结果使用top</p>
+<h3 id="29、top命令"><a href="#29、top命令" class="headerlink" title="29、top命令"></a>29、top命令</h3><p>显示当前系统正在执行的进程的相关信息，包括进程ID、内存占用率、CPU占用率等</p>
+<h3 id="30、kill命令"><a href="#30、kill命令" class="headerlink" title="30、kill命令"></a>30、kill命令</h3><p>发送指定的信号到相应进程。不指定型号将发送SIGTERM（15）终止指定进程。如果任无法终止该程序可用“-KILL” 参数，其发送的信号为SIGKILL(9) ，将强制结束进程，使用ps命令或者jobs 命令可以查看进程号。root用户将影响用户的进程，非root用户只能影响自己的进程。</p>
+<ul>
+<li>先使用ps查找进程pro1，然后用kill杀掉 <code>kill -9 $(ps -ef | grep pro1)</code></li>
+</ul>
+<h3 id="31、free命令"><a href="#31、free命令" class="headerlink" title="31、free命令"></a>31、free命令</h3><p>显示系统内存使用情况，包括物理内存、交互区内存(swap)和内核缓冲区内存。</p>
+<p><a href="https://www.cnblogs.com/gaojun/p/3359355.html" target="_blank" rel="noopener">参考博客</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170605-SSH 开发框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/05/20170605-SSH 开发框架/" class="article-date">
+      <time datetime="2017-06-05T02:19:35.000Z" itemprop="datePublished">2017-06-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://www.cnblogs.com/tuhooo/p/6491906.html" target="_blank" rel="noopener">整合教程</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hibernate/">hibernate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struts/">struts</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170527-hibernate 框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/27/20170527-hibernate 框架/" class="article-date">
+      <time datetime="2017-05-27T02:19:35.000Z" itemprop="datePublished">2017-05-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行，使得Java程序员可以随心所欲的使用对象编程思维来操纵数据库。 Hibernate可以应用在任何使用JDBC的场合，既可以在Java的客户端程序使用，也可以在Servlet/JSP的Web应用中使用，最具革命意义的是，Hibernate可以在应用EJB的JaveEE架构中取代CMP，完成数据持久化的重任。</p>
+<h3 id="一、语言特点"><a href="#一、语言特点" class="headerlink" title="一、语言特点"></a>一、语言特点</h3><ul>
+<li>将对数据库的操作转换为对Java对象的操作，从而简化开发。通过修改一个“持久化”对象的属性从而修改数据库表中对应的记录数据。</li>
+<li>提供线程和进程两个级别的缓存提升应用程序性能。</li>
+<li>有丰富的映射方式将Java对象之间的关系转换为数据库表之间的关系。</li>
+<li>屏蔽不同数据库实现之间的差异。在Hibernate中只需要通过“方言”的形式指定当前使用的数据库，就可以根据底层数据库的实际情况生成适合的SQL语句。</li>
+<li>非侵入式：Hibernate不要求持久化类实现任何接口或继承任何类，POJO即可。</li>
+</ul>
+<h3 id="二、工作原理"><a href="#二、工作原理" class="headerlink" title="二、工作原理"></a>二、工作原理</h3><ul>
+<li>1、通过Configuration().configure();读取并解析hibernate.cfg.xml配置文件。</li>
+<li>2、由hibernate.cfg.xml中的&lt;mappingresource=”com/xx/User.hbm.xml”/&gt;读取解析映射信息。</li>
+<li>3、通过config.buildSessionFactory();//得到sessionFactory。</li>
+<li>4、sessionFactory.openSession();//得到session。</li>
+<li>5、session.beginTransaction();//开启事务。</li>
+<li>6、persistent operate;</li>
+<li>7、session.getTransaction().commit();//提交事务</li>
+<li>8、关闭session;</li>
+<li>9、关闭sessionFactory;</li>
+</ul>
+<h3 id="三、核心API"><a href="#三、核心API" class="headerlink" title="三、核心API"></a>三、核心API</h3><p>Hibernate的API一共有6个，分别为:Session、SessionFactory、Transaction、Query、Criteria和Configuration。通过这些接口，可以对持久化对象进行存取、事务控制。</p>
+<h4 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h4><p>Session接口负责执行被持久化对象的CRUD操作(CRUD的任务是完成与数据库的交流，包含了很多常见的SQL语句)。但需要注意的是Session对象是非线程安全的。同时，Hibernate的session不同于JSP应用中的HttpSession。这里当使用session这个术语时，其实指的是Hibernate中的session，而以后会将HttpSession对象称为用户session。</p>
+<h4 id="SessionFactory"><a href="#SessionFactory" class="headerlink" title="SessionFactory"></a>SessionFactory</h4><p>SessionFactory接口负责初始化Hibernate。它充当数据存储源的代理，并负责创建Session对象。这里用到了工厂模式。需要注意的是SessionFactory并不是轻量级的，因为一般情况下，一个项目通常只需要一个SessionFactory就够，当需要操作多个数据库时，可以为每个数据库指定一个SessionFactory。</p>
+<h4 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h4><p>Transaction 接口是一个可选的API，可以选择不使用这个接口，取而代之的是Hibernate 的设计者自己写的底层事务处理代码。 Transaction 接口是对实际事务实现的一个抽象，这些实现包括JDBC的事务、JTA 中的UserTransaction、甚至可以是CORBA 事务。之所以这样设计是能让开发者能够使用一个统一事务的操作界面，使得自己的项目可以在不同的环境和容器之间方便地移植。</p>
+<h4 id="Query"><a href="#Query" class="headerlink" title="Query"></a>Query</h4><p>Query接口让你方便地对数据库及持久对象进行查询，它可以有两种表达方式：HQL语言或本地数据库的SQL语句。Query经常被用来绑定查询参数、限制查询记录数量，并最终执行查询操作。</p>
+<h4 id="Criteria"><a href="#Criteria" class="headerlink" title="Criteria"></a>Criteria</h4><p>Criteria接口与Query接口非常类似，允许创建并执行面向对象的标准化查询。值得注意的是Criteria接口也是轻量级的，它不能在Session之外使用。</p>
+<h4 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h4><p>Configuration 类的作用是对Hibernate 进行配置，以及对它进行启动。在Hibernate 的启动过程中，Configuration 类的实例首先定位映射文档的位置，读取这些配置，然后创建一个SessionFactory对象。虽然Configuration 类在整个Hibernate 项目中只扮演着一个很小的角色，但它是启动hibernate 时所遇到的第一个对象。</p>
+<h3 id="四、缓存管理"><a href="#四、缓存管理" class="headerlink" title="四、缓存管理"></a>四、缓存管理</h3><p>Hibernate 中提供了两级Cache（高速缓冲存储器），第一级别的缓存是Session级别的缓存，它是属于事务范围的缓存。这一级别的缓存由hibernate管理的，一般情况下无需进行干预；第二级别的缓存是SessionFactory级别的缓存，它是属于进程范围或集群范围的缓存。这一级别的缓存可以进行配置和更改，并且可以动态加载和卸载。 Hibernate还为查询结果提供了一个查询缓存，它依赖于第二级缓存。</p>
+<ul>
+<li>一级缓存：session级的缓存也叫事务级的缓存，只缓存实体，生命周期和session一致。不能对其进行管理。不用显式的调用。</li>
+<li>二级缓存：sessionFactory缓存，也叫进程级的缓存，使用第3方插件实现的，也只缓存实体，生命周期和sessionFactory一致，可以进行管理。首先配置第3方插件，我们用的是EHCache，在hibernate.cfg.xml文件中加入&lt;propertyname=”hibernate.cache.user_second_level_cache”&gt;true在映射中也要显式的调用，&lt;cacheusage=”read-only”/&gt;二级缓存之查询缓存：对普通属性进行缓存。如果关联的表发生了修改，那么查询缓存的生命周期也结束了。在程序中必须手动启用查询缓存：query.setCacheable(true);</li>
+</ul>
+<h3 id="五、延迟加载"><a href="#五、延迟加载" class="headerlink" title="五、延迟加载"></a>五、延迟加载</h3><h3 id="六、事务控制"><a href="#六、事务控制" class="headerlink" title="六、事务控制"></a>六、事务控制</h3><h3 id="七、批量操作"><a href="#七、批量操作" class="headerlink" title="七、批量操作"></a>七、批量操作</h3><h3 id="八、优化Hibernate"><a href="#八、优化Hibernate" class="headerlink" title="八、优化Hibernate"></a>八、优化Hibernate</h3><ul>
+<li>1、使用一对多的双向关联，尽量从多的一端维护。</li>
+<li>2、不要使用一对一，尽量使用多对一。</li>
+<li>3、配置对象缓存，不要使用集合缓存。</li>
+<li>4、表字段要少，表关联不要怕多，有二级缓存撑腰。</li>
+</ul>
+<h3 id="九、hibernate-类与类之间关系"><a href="#九、hibernate-类与类之间关系" class="headerlink" title="九、hibernate 类与类之间关系"></a>九、hibernate 类与类之间关系</h3><ul>
+<li>关联关系</li>
+<li>聚集关系</li>
+<li>继承关系<ul>
+<li>Hibernate继承关系映射策略分为三种：一张表对应一整棵类继承树、一个类对应一张表、每一个具体类对应一张表。</li>
+</ul>
+</li>
+</ul>
+<h3 id="十、hibernate优点："><a href="#十、hibernate优点：" class="headerlink" title="十、hibernate优点："></a>十、hibernate优点：</h3><ul>
+<li>1、封装了jdbc，简化了很多重复性代码。</li>
+<li>2、简化了DAO层编码工作，使开发更对象化了。</li>
+<li>3、移植性好，支持各种数据库，如果换个数据库只要在配置文件中变换配置就可以了，不用改变hibernate代码。</li>
+<li>4、支持透明持久化，因为hibernate操作的是纯粹的（pojo）java类，没有实现任何接口，没有侵入性。所以说它是一个轻量级框架。</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hibernate/">hibernate</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20170520-struts 框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/20/20170520-struts 框架/" class="article-date">
+      <time datetime="2017-05-20T02:19:35.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Struts2是一个基于MVC设计模式的Web应用框架，它本质上相当于一个servlet，在MVC设计模式中，Struts2作为控制器(Controller)来建立模型与视图的数据交互。Struts 2是Struts的下一代产品，是在 struts 1和WebWork的技术基础上进行了合并的全新的Struts 2框架。其全新的Struts 2的体系结构与Struts 1的体系结构差别巨大。Struts 2以WebWork为核心，采用拦截器的机制来处理用户的请求，这样的设计也使得业务逻辑控制器能够与ServletAPI完全脱离开，所以Struts 2可以理解为WebWork的更新产品。虽然从Struts 1到Struts 2有着太大的变化，但是相对于WebWork，Struts 2的变化很小。</p>
+<h3 id="一、原理与流程"><a href="#一、原理与流程" class="headerlink" title="一、原理与流程"></a>一、原理与流程</h3><p>Struts2 的工作原理图</p>
+<p><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=307364bcd4ca7bcb6976cf7ddf600006/6d81800a19d8bc3ef3485bb5818ba61ea8d34508.jpg" alt></p>
+<ul>
+<li>当Web容器收到请求（HttpServletRequest）它将请求传递给一个标准的的过滤链包括（ActionContextCleanUp）过滤器。</li>
+<li>经过Other filters(SiteMesh ,etc)，需要调用FilterDispatcher核心控制器，然后它调用ActionMapper确定请求哪个Action，ActionMapper返回一个收集Action详细信息的ActionMaping对象。</li>
+<li>FilterDispatcher将控制权委派给ActionProxy,ActionProxy调用配置管理器(ConfigurationManager) 从配置文件中读取配置信息(struts.xml)，然后创建ActionInvocation对象。</li>
+<li>ActionInvocation在调用Action之前会依次的调用所用配置拦截器（Interceptor N）一旦执行结果返回结果字符串ActionInvocation负责查找结果字符串对应的(Result）然后执行这个Result Result会调用一些模版（JSP）来呈现页面。</li>
+<li>拦截器(Interceptor N)会再被执行（顺序和Action执行之前相反）最后响应(HttpServletResponse)被返回在web.xml中配置的那些过滤器和核心控制器（FilterDispatcher）。</li>
+</ul>
+<h3 id="二、如何使用-struts2-框架？"><a href="#二、如何使用-struts2-框架？" class="headerlink" title="二、如何使用 struts2 框架？"></a>二、如何使用 struts2 框架？</h3><ul>
+<li><a href="https://struts.apache.org/getting-started/" target="_blank" rel="noopener">官方文档</a></li>
+<li><a href="https://www.cnblogs.com/yangyquin/p/5434364.html" target="_blank" rel="noopener">struts2 入门教程</a></li>
+<li><a href="https://www.cnblogs.com/konrad/p/6426790.html" target="_blank" rel="noopener">struts2 重要知识点</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/struts/">struts</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

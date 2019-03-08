@@ -2,8 +2,10 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
   
-
+  
+  
   
   <title>StudyForU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,168 +17,1211 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="StudyForU">
   
-    <link rel="alternate" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
   <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
 <body>
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">StudyForU</a>
-      </h1>
-      
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/archives/">HOME</a></li>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 16.67px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 10px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 16.67px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go/" style="font-size: 13.33px;">go</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 13.33px;">struts</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-py/" style="font-size: 13.33px;">web.py</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/在线编辑器/" style="font-size: 10px;">在线编辑器</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/技术文档/" style="font-size: 16.67px;">技术文档</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://studyforu.com"></form>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
       </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">HOME</a></li>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+</nav>
+      <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/08/hello-world/" class="article-date">
-  <time datetime="2019-03-08T15:03:55.530Z" itemprop="datePublished">2019-03-08</time>
+    <article id="post-20190307-etcd" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-etcd/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
 </a>
-    
-  </div>
+
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/03/08/20190307-etcd/">etcd</a>
     </h1>
   
 
+
       </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          
+        <p>　　etcd是一个开源的、分布式的键值对数据存储系统，提供共享配置、服务的注册和发现。etcd与zookeeper相比算是轻量级系统，两者的一致性协议也一样，etcd的raft比zookeeper的paxos简单。关于windows版本的etcd服务端和nodejs浏览器下载和安装见。</p>
+<p>　　我们用etcd，就需要etcd客户端，这里用的是java客户端etcd4j。etcd客户端通过http发送get、put、post、delete等操作到服务端执行对目录信息的增删查改。etcd应用于微服务架构中的角色是服务注册中心，通过对接口调用信息的添加和查询，提供服务的注册和发现能力。</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://studyforu.com/2019/03/08/hello-world/" data-id="cjt075k0p000022pjl61h5tnr" class="article-share-link">Share</a>
+    
+    <div class="article-info article-info-index">
       
       
-    </footer>
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/etcd/">etcd</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
   
 </article>
 
 
-  
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+
+
+
+
+
+
 
   
-    
+    <article id="post-20190307-gRPC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-gRPC/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
-  </div>
-
-
   
+  <div class="article-inner">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
         
-          <li>
-            <a href="/2019/03/08/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/20190307-gRPC/">gRPC</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>gRPC 一开始由 google 开发，是一款语言中立、平台中立、开源的远程过程调用(RPC)系统。</p>
+<p>在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。</p>
+<p><img src="https://img-blog.csdn.net/20171019113619182?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveHVkdW9ydWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt></p>
+<h3 id="gRPC通信方式"><a href="#gRPC通信方式" class="headerlink" title="gRPC通信方式"></a>gRPC通信方式</h3><ul>
+<li><code>Simple RPC</code>：简单rpc，这就是一般的rpc调用，一个请求对象对应一个返回对象</li>
+<li><code>Server-side streaming RPC</code>：服务端流式rpc，一个请求对象，服务端可以传回多个结果对象</li>
+<li><code>Client-side streaming RPC</code>：客户端流式rpc，客户端传入多个请求对象，服务端返回一个响应结果  </li>
+<li><code>Bidirectional streaming RPC</code>：双向流式rpc，结合客户端流式rpc和服务端流式rpc，可以传入多个对象，返回多个响应对象</li>
+</ul>
+<h3 id="HTTP2-0-特性"><a href="#HTTP2-0-特性" class="headerlink" title="HTTP2.0 特性"></a>HTTP2.0 特性</h3><ul>
+<li>多路复用 (Multiplexing)</li>
+<li>二进制帧</li>
+<li>首部压缩（Header Compression）</li>
+<li>服务端推送（Server Push）</li>
+<li>主动重置链接</li>
+</ul>
+<p><a href="https://blog.csdn.net/weiwangchao_/article/details/82023191" target="_blank" rel="noopener">gRPC</a></p>
+
+      
     </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gRPC/">gRPC</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
 
   
-</aside>
+    <article id="post-20190307-Hadoop" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-Hadoop/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
         
-      </div>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/20190307-Hadoop/">Hadoop</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Hadoop是一个由Apache基金会所开发的分布式系统基础架构。</p>
+<p>用户可以在不了解分布式底层细节的情况下，开发分布式程序。充分利用集群的威力进行高速运算和存储。</p>
+<p>Hadoop实现了一个分布式文件系统（Hadoop Distributed File System），简称HDFS。HDFS有高容错性的特点，并且设计用来部署在低廉的（low-cost）硬件上；而且它提供高吞吐量（high throughput）来访问应用程序的数据，适合那些有着超大数据集（large data set）的应用程序。HDFS放宽了（relax）POSIX的要求，可以以流的形式访问（streaming access）文件系统中的数据。</p>
+<p>Hadoop的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，而MapReduce则为海量的数据提供了计算。</p>
+<ul>
+<li><a href="http://hadoop.apache.org/docs/r1.0.4/cn/quickstart.html" target="_blank" rel="noopener">Hadoop快速入门</a></li>
+<li><a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin" target="_blank" rel="noopener">Hadoop</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop/">Hadoop</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190307-Protobuf" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-Protobuf/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/20190307-Protobuf/">Protobuf</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Protobuf是一种平台无关、语言无关、可扩展且轻便高效的序列化数据结构的协议，可以用于网络通信和数据存储。</p>
+<p><a href="https://www.jianshu.com/p/2265f56805fa" target="_blank" rel="noopener">Protobuf是什么</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Protobuf/">Protobuf</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190307-Neo4j" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-Neo4j/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/20190307-Neo4j/">Neo4j</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Neo4j是一个高性能的,NOSQL图形数据库，它将结构化数据存储在网络上而不是表中。它是一个嵌入式的、基于磁盘的、具备完全的事务特性的Java持久化引擎，但是它将结构化数据存储在网络(从数学角度叫做图)上而不是表中。Neo4j也可以被看作是一个高性能的图引擎，该引擎具有成熟数据库的所有特性。程序员工作在一个面向对象的、灵活的网络结构下而不是严格、静态的表中——但是他们可以享受到具备完全的事务特性、企业级的数据库的所有好处。</p>
+<p>Neo4j因其嵌入式、高性能、轻量级等优势，越来越受到关注.</p>
+<p>你可以把Neo看作是一个高性能的图引擎，该引擎具有成熟和健壮的数据库的所有特性。程序员工作在一个面向对象的、灵活的网络结构下而不是严格、静态的表中——但是他们可以享受到具备完全的事务特性、企业级的数据库的所有好处。</p>
+<p>Neo是一个网络——面向网络的数据库——也就是说，它是一个嵌入式的、基于磁盘的、具备完全的事务特性的Java持久化引擎，但是它将结构化数据存储在网络上而不是表中。网络（从数学角度叫做图）是一个灵活的数据结构，可以应用更加敏捷和快速的开发模式。</p>
+<p><a href="https://baike.baidu.com/item/Neo4j/9952114?fr=aladdin" target="_blank" rel="noopener">百科</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NOSQL图形数据库/">NOSQL图形数据库</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neo4j/">Neo4j</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190307-Spark" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/08/20190307-Spark/" class="article-date">
+      <time datetime="2019-03-08T03:10:51.000Z" itemprop="datePublished">2019-03-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/08/20190307-Spark/">Spark</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。Spark是UC Berkeley AMP lab (加州大学伯克利分校的AMP实验室)所开源的类Hadoop MapReduce的通用并行框架，Spark，拥有Hadoop MapReduce所具有的优点；但不同于MapReduce的是——Job中间输出结果可以保存在内存中，从而不再需要读写HDFS，因此Spark能更好地适用于数据挖掘与机器学习等需要迭代的MapReduce的算法。</p>
+<p>Spark 是一种与 Hadoop 相似的开源集群计算环境，但是两者之间还存在一些不同之处，这些有用的不同之处使 Spark 在某些工作负载方面表现得更加优越，换句话说，Spark 启用了内存分布数据集，除了能够提供交互式查询外，它还可以优化迭代工作负载。<br>Spark 是在 Scala 语言中实现的，它将 Scala 用作其应用程序框架。与 Hadoop 不同，Spark 和 Scala 能够紧密集成，其中的 Scala 可以像操作本地集合对象一样轻松地操作分布式数据集。</p>
+<p>尽管创建 Spark 是为了支持分布式数据集上的迭代作业，但是实际上它是对 Hadoop 的补充，可以在 Hadoop 文件系统中并行运行。通过名为 Mesos 的第三方集群框架可以支持此行为。Spark 由加州大学伯克利分校 AMP 实验室 (Algorithms, Machines, and People Lab) 开发，可用来构建大型的、低延迟的数据分析应用程序。</p>
+<p><a href="https://baike.baidu.com/item/SPARK/2229312?fr=aladdin" target="_blank" rel="noopener">Spark 百科</a></p>
+<p><a href="https://www.cnblogs.com/qingyunzong/p/8886338.html" target="_blank" rel="noopener">Spark学习之路 （一）Spark初识</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spark/">Spark</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190307-go web开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/07/20190307-go web开发/" class="article-date">
+      <time datetime="2019-03-07T09:10:51.000Z" itemprop="datePublished">2019-03-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/20190307-go web开发/">go web 开发</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://www.cnblogs.com/desmond123/p/9821687.html" target="_blank" rel="noopener">go语言几个最快最好运用最广的web框架比较</a></p>
+<h3 id="一、框架选择"><a href="#一、框架选择" class="headerlink" title="一、框架选择"></a>一、框架选择</h3><ul>
+<li>后端服务使用<a href="https://beego.me/" target="_blank" rel="noopener">beego 框架</a></li>
+<li>前端界面使用<a href="http://www.bootcss.com/" target="_blank" rel="noopener">BootStrap</a></li>
+<li><a href="https://www.cnblogs.com/zhangboyu/p/7760693.html" target="_blank" rel="noopener">beego 使用指南</a></li>
+<li><a href="https://blog.csdn.net/fly_520/article/details/81448930" target="_blank" rel="noopener">go get 无反应、访问github.com速度慢、没反应问题的解决方案</a></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> vim /etc/hosts</span><br><span class="line">192.30.253.112 github.com</span><br><span class="line">151.101.185.194 github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
+<p>安装 beego</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ go get github.com/astaxie/beego</span><br><span class="line">mac:~ zhengbing$ go get github.com/beego/bee</span><br><span class="line">mac:~ zhengbing$ </span><br><span class="line">mac:~ zhengbing$ <span class="built_in">cd</span> <span class="variable">$GOPATH</span>/src</span><br><span class="line">mac:src zhengbing$ bee new beedemo</span><br><span class="line">______</span><br><span class="line">| ___ \</span><br><span class="line">| |_/ /  ___   ___</span><br><span class="line">| ___ \ / _ \ / _ \</span><br><span class="line">| |_/ /|  __/|  __/</span><br><span class="line">\____/  \___| \___| v1.10.0</span><br><span class="line">2019/03/07 16:40:56 INFO     ▶ 0001 Creating application...</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/conf/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/controllers/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/models/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/routers/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/tests/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/static/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/static/js/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/static/css/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/static/img/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/views/</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/conf/app.conf</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/controllers/default.go</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/views/index.tpl</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/routers/router.go</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/tests/default_test.go</span><br><span class="line">	create	 /Users/zhengbing/go/src/beedemo/main.go</span><br><span class="line">2019/03/07 16:40:56 SUCCESS  ▶ 0002 New application successfully created!</span><br><span class="line">mac:src zhengbing$ </span><br><span class="line">mac:src zhengbing$ <span class="built_in">cd</span> beedemo/</span><br><span class="line">mac:beedemo zhengbing$ bee run</span><br><span class="line">______</span><br><span class="line">| ___ \</span><br><span class="line">| |_/ /  ___   ___</span><br><span class="line">| ___ \ / _ \ / _ \</span><br><span class="line">| |_/ /|  __/|  __/</span><br><span class="line">\____/  \___| \___| v1.10.0</span><br><span class="line">2019/03/07 16:41:30 INFO     ▶ 0001 Using <span class="string">'beedemo'</span> as <span class="string">'appname'</span></span><br><span class="line">2019/03/07 16:41:30 INFO     ▶ 0002 Initializing watcher...</span><br><span class="line">2019/03/07 16:41:31 SUCCESS  ▶ 0003 Built Successfully!</span><br><span class="line">2019/03/07 16:41:31 INFO     ▶ 0004 Restarting <span class="string">'beedemo'</span>...</span><br><span class="line">2019/03/07 16:41:31 SUCCESS  ▶ 0005 <span class="string">'./beedemo'</span> is running...</span><br><span class="line">2019/03/07 16:41:31.898 [I] [asm_amd64.s:1337]  http server Running on http://:8080</span><br></pre></td></tr></table></figure>
+<p><img src="http://thyrsi.com/t6/677/1551948344x1822614050.png" alt="访问项目"></p>
+<p><img src="http://thyrsi.com/t6/677/1551948269x1822614080.png" alt="项目结构图"></p>
+<h3 id="二、bee-框架知识点"><a href="#二、bee-框架知识点" class="headerlink" title="二、bee 框架知识点"></a>二、bee 框架知识点</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1551960666969&amp;di=86bdf234e39538c55ed04203863d0552&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D3821161640%2C2939016299%26fm%3D214%26gp%3D0.jpg" alt></p>
+<h3 id="三、beego-开源项目"><a href="#三、beego-开源项目" class="headerlink" title="三、beego 开源项目"></a>三、beego 开源项目</h3><ul>
+<li><a href="https://gitee.com/myteng/goa" target="_blank" rel="noopener">基于Beego开发的问答系统</a> </li>
+<li><a href="https://gitee.com/truthhun/DocHub" target="_blank" rel="noopener">参考百度文库，使用Beego（Golang）开发的开源文库系统</a></li>
+<li><a href="https://gitee.com/jicg/liteblog" target="_blank" rel="noopener">基于beego实现的轻聊版博客，目标：简单，易用，方便。</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/go/">go</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190306-go 语言基础" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/06/20190306-go 语言基础/" class="article-date">
+      <time datetime="2019-03-06T09:10:51.000Z" itemprop="datePublished">2019-03-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/20190306-go 语言基础/">go 语言基础</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Go（又称Golang）是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。</p>
+<p>与C++相比，Go并不包括如枚举、异常处理、继承、泛型、断言、虚函数等功能，但增加了 切片(Slice) 型、并发、管道、垃圾回收、接口（Interface）等特性的语言级支持。</p>
+<p>Go 2.0版本将支持泛型，对于断言的存在，则持负面态度，同时也为自己不提供类型继承来辩护。</p>
+<p>不同于Java，Go内嵌了关联数组（也称为哈希表（Hashes）或字典（Dictionaries）），就像字符串类型一样。</p>
+<p>在Go中有几项规定，而且这些是强制的，当不匹配以下规定时编译将会产生错误。</p>
+<ul>
+<li>每行程序结束后不需要撰写分号（;）。</li>
+<li>大括号（{）不能够换行放置。</li>
+<li>if判断式和for循环不需要以小括号包覆起来。</li>
+</ul>
+<p>Go亦有内置gofmt工具，能够自动整理代码多余的空白、变量名称对齐、并将对齐空格转换成Tab。</p>
+<h3 id="一、环境安装"><a href="#一、环境安装" class="headerlink" title="一、环境安装"></a>一、<a href="https://golang.org/dl/" target="_blank" rel="noopener">环境安装</a></h3><p><a href="https://www.cnblogs.com/hopkings/p/5809850.html" target="_blank" rel="noopener">Mac下安装与配置Go语言开发环境</a></p>
+<h4 id="1、brew-安装go"><a href="#1、brew-安装go" class="headerlink" title="1、brew 安装go"></a>1、brew 安装go</h4><p><img src="http://thyrsi.com/t6/677/1551949049x1822614104.png" alt></p>
+<h4 id="2、pkg-安装-go"><a href="#2、pkg-安装-go" class="headerlink" title="2、pkg 安装 go"></a>2、pkg 安装 go</h4><ul>
+<li><a href="https://golang.org/dl/" target="_blank" rel="noopener">下载 pkg</a></li>
+</ul>
+<h4 id="3、配置环境变量"><a href="#3、配置环境变量" class="headerlink" title="3、配置环境变量"></a>3、配置环境变量</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mac:~ zhengbing$ open -e .bash_profile</span><br></pre></td></tr></table></figure>
+<p>写入</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># go</span></span><br><span class="line"><span class="built_in">export</span> GOPATH=/Users/zhengbing/go</span><br><span class="line"><span class="built_in">export</span> GOBIN=<span class="variable">$GOPATH</span>/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOBIN</span></span><br></pre></td></tr></table></figure>
+<p>如图：</p>
+<p><img src="http://thyrsi.com/t6/677/1551949388x1822614260.png" alt></p>
+<h3 id="二、开发工具"><a href="#二、开发工具" class="headerlink" title="二、开发工具"></a>二、开发工具</h3><ul>
+<li><a href="https://sourceforge.net/projects/liteide/" target="_blank" rel="noopener">LiteIDE 下载</a></li>
+<li><a href="http://liteide.org/cn/doc/install/" target="_blank" rel="noopener">LiteIDE 安装</a></li>
+<li><a href="http://liteide.org/cn/documents/" target="_blank" rel="noopener">LiteIDE 文档</a></li>
+</ul>
+<h3 id="三、golang-官网"><a href="#三、golang-官网" class="headerlink" title="三、golang 官网"></a>三、<a href="https://golang.org/" target="_blank" rel="noopener">golang 官网</a></h3><h3 id="四、教程"><a href="#四、教程" class="headerlink" title="四、教程"></a>四、教程</h3><ul>
+<li><a href="http://c.biancheng.net/golang/" target="_blank" rel="noopener">Go语言入门教程</a></li>
+<li><a href="http://www.runoob.com/go/go-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/go/">go</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/go/">go</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20190217-python的2019" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/02/17/20190217-python的2019/" class="article-date">
+      <time datetime="2019-02-17T05:10:51.000Z" itemprop="datePublished">2019-02-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/17/20190217-python的2019/">Python 的 2019</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="一、目前Python主要应用领域"><a href="#一、目前Python主要应用领域" class="headerlink" title="一、目前Python主要应用领域"></a>一、目前Python主要应用领域</h3><ul>
+<li><code>WEB开发</code>——最火的Python web框架Django, 支持异步高并发的Tornado框架，短小精悍的flask,bottle, Django官方的标语把Django定义为the framework for perfectionist with deadlines(大意是一个为完全主义者开发的高效率web框架)</li>
+<li><code>网络爬虫</code>——在爬虫领域，Python几乎是霸主地位，Scrapy\Request\BeautifuSoap\urllib等，你想要什么数据都可以通过python爬虫来实现。</li>
+<li><code>网络编程</code>——支持高并发的Twisted网络框架， py3引入的asyncio使异步编程变的非常简单。</li>
+<li><code>云计算</code>——目前最火最知名的云计算框架就是OpenStack，Python现在的火，很大一部分就是因为云计算。</li>
+<li><code>人工智能</code>——python成为AI 和大数据时代的第一开发语言。</li>
+<li><code>自动化运维</code>——每个运维人员必须会的语言。</li>
+<li><code>科学运算</code>—— 你知道么，97年开始，NASA就在大量使用Python在进行各种复杂的科学运算，随着NumPy, SciPy, Pandas, Matplotlib, Enthought， librarys等众多程序库的开发，使的Python越来越适合于做科学计算、绘制高质量的<code>2D和3D图像</code>。和科学计算领域最流行的商业软件Matlab相比，Python是一门通用的程序设计语言，比Matlab所采用的脚本语言的应用范围更广泛。</li>
+<li><code>游戏开发</code>——在网络游戏开发中Python也有很多应用。相比Lua or C++,Python 比 Lua 有更高阶的抽象能力，可以用更少的代码描述游戏业务逻辑，与 Lua 相比，Python 更适合作为一种 Host 语言，即程序的入口点是在 Python 那一端会比较好，然后用 C/C++ 在非常必要的时候写一些扩展。Python 非常适合编写 1 万行以上的项目，而且能够很好地把网游项目的规模控制在 10 万行代码以内。据说，知名的游戏&lt;文明&gt; 就是用Python写的。</li>
+<li><code>金融</code>：量化交易，金融分析，在金融工程领域，Python不但在用，且用的最多，而且重要性逐年提高。原因：作为动态语言的Python，语言结构清晰简单，库丰富，成熟稳定，科学计算和统计分析都很厉害，生产效率远远高于c,c++,java,尤其擅长策略回测。</li>
+<li><code>图形GUI</code>: PyQT, WxPython,TkInter。</li>
+</ul>
+<h3 id="二、Python在一些公司的应用"><a href="#二、Python在一些公司的应用" class="headerlink" title="二、Python在一些公司的应用"></a>二、Python在一些公司的应用</h3><ul>
+<li><code>谷歌</code>：Google App Engine 、code.google.com 、Google earth，谷歌爬虫、Google广告等项目都在大量使用Python开发。</li>
+<li><code>CIA</code>: 美国中情局网站就是用Python开发的 NASA。</li>
+<li><code>美国航天局</code>(NASA)大量使用Python进行数据分析和运算 YouTube:世界上最大的视频网站YouTube就是用Python开发的。</li>
+<li><code>Dropbox</code>:美国最大的在线云存储网站，全部用Python实现，每天网站处理10亿个文件的上传和下载。</li>
+<li><code>Instagram</code>:美国最大的图片分享社交网站，每天超过3千万张照片被分享，全部用python开发。</li>
+<li><code>Facebook</code>:大量的基础库均通过Python实现的 Redhat。</li>
+<li><code>豆瓣</code>: 公司几乎所有的业务均是通过Python开发的。</li>
+<li><code>知乎</code>:国内最大的问答社区，通过Python开发(国外Quora) 春雨医生：国内知名的在线医疗网站是用Python开发的。</li>
+</ul>
+<p>除上面之外，还有搜狐、金山、腾讯、盛大、网易、百度、阿里、淘宝 、土豆、新浪、果壳等公司都在使用Python完成各种各样的任务。</p>
+<p>世界上最流行的Linux发行版本中的<code>yum包管理工具</code>就是用python开发的。</p>
+<h3 id="三、python的优点"><a href="#三、python的优点" class="headerlink" title="三、python的优点"></a>三、python的优点</h3><p>Python的定位是“优雅”、“明确”、“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写那些非常非常复杂的程序。Python 开发效率非常高，Python有非常强大的第三方库，基本上你想通过计算机实现任何功能，Python官方库里都有相应的模块进行支持，直接下载调用后，在基础库的基础上再进行开发，大大降低开发周期，避免重复造轮子。</p>
+<ul>
+<li><code>高级语言</code>————当你用Python语言编写程序的时候，你无需考虑诸如如何管理你的程序使用的内存一类的底层细节。</li>
+<li><code>可移植性</code>————由于它的开源本质，Python已经被移植在许多平台上（经过改动使它能够工 作在不同平台上）。如果你小心地避免使用依赖于系统的特性，那么你的所有Python程序无需修改就几乎可以在市场上所有的系统平台上运行。</li>
+<li><code>可扩展性</code>————如果你需要你的一段关键代码运行得更快或者希望某些算法不公开，你可以把你的部分程序用C或C++编写，然后在你的Python程序中使用它们。</li>
+<li><code>可嵌入性</code>————你可以把Python嵌入你的C/C++程序，从而向你的程序用户提供脚本功能。</li>
+</ul>
+<h3 id="四、python-语言类型"><a href="#四、python-语言类型" class="headerlink" title="四、python 语言类型"></a>四、python 语言类型</h3><p>python是一门动态解释型的强类型定义语言。</p>
+<h4 id="解释型与编译型语言对比"><a href="#解释型与编译型语言对比" class="headerlink" title="解释型与编译型语言对比"></a>解释型与编译型语言对比</h4><p><code>解释型</code>：当程序运行时，将代码逐行进行解释成二进制编码，再运行，随时解释随时运行。</p>
+<ul>
+<li>优点：排错快，开发效率高，可以跨平台</li>
+<li>缺点：执行效率低</li>
+</ul>
+<p><code>编译型</code>：将代码一次性全部编译成二进制，然后再运行。</p>
+<ul>
+<li>优点：执行效率高</li>
+<li>缺点：排错慢，开发效率低，不能跨平台</li>
+</ul>
+<h4 id="动态语言和静态语言"><a href="#动态语言和静态语言" class="headerlink" title="动态语言和静态语言"></a>动态语言和静态语言</h4><p>通常我们所说的动态语言、静态语言是指动态类型语言和静态类型语言。</p>
+<ul>
+<li><p><code>动态类型语言</code>：动态类型语言是指在<code>运行期间才去做数据类型检查</code>的语言，也就是说，在用动态类型的语言编程时，永远也不用给任何变量指定数据类型，该语言会在你第一次赋值给变量时，在内部将数据类型记录下来。<code>Python和Ruby就是一种典型的动态类型语言</code>，其他的各种脚本语言如VBScript也多少属于动态类型语言。</p>
+</li>
+<li><p><code>静态类型语言</code>：静态类型语言与动态类型语言刚好相反，它的<code>数据类型是在编译其间检查</code>的，也就是说在写程序时要声明所有变量的数据类型，<code>C/C++是静态类型语言的典型代表</code>，其他的静态类型语言还有<code>C#、JAVA</code>等。</p>
+</li>
+</ul>
+<h4 id="强类型定义语言和弱类型定义语言"><a href="#强类型定义语言和弱类型定义语言" class="headerlink" title="强类型定义语言和弱类型定义语言"></a>强类型定义语言和弱类型定义语言</h4><ul>
+<li><p><code>强类型定义语言</code>：强制数据类型定义的语言。也就是说，一旦一个变量被指定了某个数据类型，如果不经过强制转换，那么它就永远是这个数据类型了。举个例子：如果你定义了一个整型变量a,那么程序根本不可能将a当作字符串类型处理。强类型定义语言是类型安全的语言。</p>
+</li>
+<li><p><code>弱类型定义语言</code>：数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p>
+</li>
+</ul>
+<p>强类型定义语言在速度上可能略逊色于弱类型定义语言，但是强类型定义语言带来的严谨性能够有效的避免许多错误。另外，“这门语言是不是动态语言”与“这门语言是否类型安全”之间是完全没有联系的。例如：</p>
+<ul>
+<li>Python是动态语言，是强类型定义语言（类型安全的语言）; </li>
+<li>VBScript是动态语言，是弱类型定义语言（类型不安全的语言）; </li>
+<li>JAVA是静态语言，是强类型定义语言（类型安全的语言）。</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20180903-matplotlib" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/03/20180903-matplotlib/" class="article-date">
+      <time datetime="2018-09-03T04:16:32.000Z" itemprop="datePublished">2018-09-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/03/20180903-matplotlib/">Matplotlib 学习大纲</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Matplotlib 是一个 <code>Python 的 2D 绘图库</code>，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图。<br>通过 Matplotlib，开发者可以仅需要几行代码，便可以生成绘图，直方图，功率谱，条形图，错误图，散点图等。</p>
+<h3 id="一、Matplotlib-官网"><a href="#一、Matplotlib-官网" class="headerlink" title="一、Matplotlib 官网"></a>一、<a href="https://matplotlib.org/" target="_blank" rel="noopener">Matplotlib 官网</a></h3><h3 id="二、官方-API-文档"><a href="#二、官方-API-文档" class="headerlink" title="二、官方 API 文档"></a>二、<a href="https://matplotlib.org/genindex.html" target="_blank" rel="noopener">官方 API 文档</a></h3><h3 id="三、入门知识讲解"><a href="#三、入门知识讲解" class="headerlink" title="三、入门知识讲解"></a>三、入门知识讲解</h3><ul>
+<li><a href>plot</a></li>
+<li><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" target="_blank" rel="noopener">figure</a></li>
+</ul>
+<h4 id="坐标轴文字说明"><a href="#坐标轴文字说明" class="headerlink" title="坐标轴文字说明"></a>坐标轴文字说明</h4><ul>
+<li><a href="https://matplotlib.org/gallery/lines_bars_and_markers/nan_test.html#sphx-glr-gallery-lines-bars-and-markers-nan-test-py" target="_blank" rel="noopener">xlabel</a></li>
+<li><a href="https://matplotlib.org/gallery/lines_bars_and_markers/nan_test.html#sphx-glr-gallery-lines-bars-and-markers-nan-test-py" target="_blank" rel="noopener">ylabel</a></li>
+</ul>
+<p><img src="https://matplotlib.org/_images/sphx_glr_nan_test_001.png" alt="imge"></p>
+<h4 id="坐标点的显示值"><a href="#坐标点的显示值" class="headerlink" title="坐标点的显示值"></a>坐标点的显示值</h4><ul>
+<li><a href="https://matplotlib.org/gallery/lines_bars_and_markers/bar_stacked.html#sphx-glr-gallery-lines-bars-and-markers-bar-stacked-py" target="_blank" rel="noopener">xticks</a></li>
+<li><a href="https://matplotlib.org/gallery/lines_bars_and_markers/bar_stacked.html#sphx-glr-gallery-lines-bars-and-markers-bar-stacked-py" target="_blank" rel="noopener">yticks</a></li>
+</ul>
+<p><img src="https://matplotlib.org/_images/sphx_glr_bar_stacked_001.png" alt="image"></p>
+<h4 id="调整坐标轴原点"><a href="#调整坐标轴原点" class="headerlink" title="调整坐标轴原点"></a>调整坐标轴原点</h4><ul>
+<li>gca<ul>
+<li>spines</li>
+<li>xaxis</li>
+<li>yaxis</li>
+</ul>
+</li>
+</ul>
+<h4 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h4><ul>
+<li><p><a href="https://matplotlib.org/tutorials/intermediate/legend_guide.html" target="_blank" rel="noopener">legend</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_legend_guide_001.png" alt="image"></p>
+</li>
+</ul>
+<h4 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h4><ul>
+<li><p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.annotate.html#matplotlib.pyplot.annotate" target="_blank" rel="noopener">annotate</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_xkcd_001.png" alt="image"></p>
+</li>
+<li><p><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.text.html#matplotlib.pyplot.text" target="_blank" rel="noopener">text</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_pgf_texsystem_001.png" alt="image"></p>
+</li>
+</ul>
+<h3 id="四、图形"><a href="#四、图形" class="headerlink" title="四、图形"></a>四、图形</h3><h4 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h4><ul>
+<li><p><a href="https://matplotlib.org/gallery/pyplots/align_ylabels.html#sphx-glr-gallery-pyplots-align-ylabels-py" target="_blank" rel="noopener">plot</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_align_ylabels_0011.png" alt="image"></p>
+</li>
+</ul>
+<h4 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h4><ul>
+<li><p><a href="https://matplotlib.org/gallery/shapes_and_collections/scatter.html#sphx-glr-gallery-shapes-and-collections-scatter-py" target="_blank" rel="noopener">scatter</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_scatter_001.png" alt="image"></p>
+</li>
+</ul>
+<h4 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h4><ul>
+<li><p><a href="https://matplotlib.org/gallery/lines_bars_and_markers/bar_stacked.html#sphx-glr-gallery-lines-bars-and-markers-bar-stacked-py" target="_blank" rel="noopener">bar</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_bar_stacked_001.png" alt="image"></p>
+</li>
+</ul>
+<h4 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h4><ul>
+<li><p><a href="https://matplotlib.org/gallery/pie_and_polar_charts/pie_and_donut_labels.html#sphx-glr-gallery-pie-and-polar-charts-pie-and-donut-labels-py" target="_blank" rel="noopener">pie</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_pie_and_donut_labels_001.png" alt="image"></p>
+</li>
+</ul>
+<h4 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h4><ul>
+<li><p><a href="https://matplotlib.org/gallery/pyplots/pyplot_text.html#sphx-glr-gallery-pyplots-pyplot-text-py" target="_blank" rel="noopener">hist</a></p>
+<p>  <img src="https://matplotlib.org/_images/sphx_glr_pyplot_text_001.png" alt="image"></p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matplotlib/">Matplotlib</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bar/">bar</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pie/">pie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图表/">图表</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+
+</div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 MarkBin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
-<script src="/js/script.js"></script>
 
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
   </div>
