@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
+  
+  
+  
+  
+  <title>Python 文件操作 | StudyForU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="文件分类文本文件 txt doc xls ... 二进制文件 图片 视频 音频 ... 文件读写 打开 读写 关闭  r、w、a123456789101112131415161718# 打开文件，文件不存在，会自动创建新文件# open(&quot;文件路径&quot;, &quot;操作方式&quot;)f = open(&quot;a.txt&quot;, &quot;r&quot;)  # a.txt 为相对路径，相对于当前文件# r 只读，文件指针在文件开头# w 只">
+<meta name="keywords" content="文件操作,文件内容读写,目录操作,os 模块,shutil 模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 文件操作">
+<meta property="og:url" content="http://studyforu.com/2017/07/04/20170704-python文件操作/index.html">
+<meta property="og:site_name" content="StudyForU">
+<meta property="og:description" content="文件分类文本文件 txt doc xls ... 二进制文件 图片 视频 音频 ... 文件读写 打开 读写 关闭  r、w、a123456789101112131415161718# 打开文件，文件不存在，会自动创建新文件# open(&quot;文件路径&quot;, &quot;操作方式&quot;)f = open(&quot;a.txt&quot;, &quot;r&quot;)  # a.txt 为相对路径，相对于当前文件# r 只读，文件指针在文件开头# w 只">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-13T02:40:42.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 文件操作">
+<meta name="twitter:description" content="文件分类文本文件 txt doc xls ... 二进制文件 图片 视频 音频 ... 文件读写 打开 读写 关闭  r、w、a123456789101112131415161718# 打开文件，文件不存在，会自动创建新文件# open(&quot;文件路径&quot;, &quot;操作方式&quot;)f = open(&quot;a.txt&quot;, &quot;r&quot;)  # a.txt 为相对路径，相对于当前文件# r 只读，文件指针在文件开头# w 只">
+  
+    <link rel="alternative" href="/atom.xml" title="StudyForU" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="#">MarkBin</a></h1>
+        </hgroup>
+        
+        
+        <form>
+            <!-- <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off"> -->
+            <span style="color:white">gccbug@163.com</span>
+        </form>
+        <div id="local-search-result"></div>
+        
+        
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                function getMatchData(keyword, data) {
+                    var matchData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].title.toLowerCase().indexOf(keyword) >= 0)
+                            matchData.push(data[i])
+                    }
+                    return matchData;
+                }
+                var $input = $('#local-search-input');
+                var $resultContent = $('#local-search-result');
+                $input.keyup(function () {
+                    $.ajax({
+                        url: '/search.json',
+                        dataType: "json",
+                        success: function (json) {
+                            var str = '<ul class=\"search-result-list\">';
+                            var keyword = $input.val().trim().toLowerCase();
+                            $resultContent.innerHTML = "";
+                            if ($input.val().trim().length <= 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            var results = getMatchData(keyword, json);
+                            if (results.length === 0) {
+                                $resultContent.empty();
+                                $('#switch-area').show();
+                                return;
+                            }
+                            for (var i = 0; i < results.length; i++) {
+                                str += "<li><a href='" + results[i].url + "' class='search-result-title'>" + results[i].title + "</a></li>";
+                            }
+                            str += "</ul>";
+                            $resultContent.empty();
+                            $resultContent.append(str);
+                            $('#switch-area').hide();
+                        }
+                    });
+                });
+            })();
+        </script>
+        
+        
+        <div id="switch-btn" class="switch-btn">
+            <div class="icon">
+                <div class="icon-ctn">
+                    <div class="icon-wrap icon-house" data-idx="0">
+                        <div class="birdhouse"></div>
+                        <div class="birdhouse_holes"></div>
+                    </div>
+                    <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                        <div class="ribbon"></div>
+                    </div>
+                    
+                        
+                    <div class="icon-wrap icon-me hide" data-idx="3">
+                        <div class="user"></div>
+                        <div class="shoulder"></div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                    <li>关于我</li>
+                    
+                    </ul>
+                </div>
+            </div>
+        
+                    <div id="switch-area" class="switch-area">
+                        <div class="switch-wrap">
+                            <section class="switch-part switch-part1">
+                                <nav class="header-menu">
+                                    <ul>
+                                        
+                                        <li><a href="/categories/ios">IOS</a></li>
+                                        
+                                        <li><a href="/categories/web">WEB</a></li>
+                                        
+                                        <li><a href="/categories/go">GO</a></li>
+                                        
+                                        <li><a href="/categories/java">JAVA</a></li>
+                                        
+                                        <li><a href="/categories/python">PYTHON</a></li>
+                                        
+                                        <li><a href="/categories/database">DATA BASE</a></li>
+                                        
+                                        <li><a href="/categories/server">SERVER</a></li>
+                                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                                        
+                                        <a class="fl github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                                        
+                                        <a class="fl weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                                        
+                        </ul>
+                    </nav>
+                </section>
+                
+                                        <section class="switch-part switch-part2">
+                                            <div class="widget tagcloud" id="js-tagcloud">
+                                                <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/Beautiful-Soup/" style="font-size: 13.33px;">Beautiful Soup</a> <a href="/tags/BootStrap/" style="font-size: 10px;">BootStrap</a> <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Flask/" style="font-size: 13.33px;">Flask</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Jupyter/" style="font-size: 10px;">Jupyter</a> <a href="/tags/Less/" style="font-size: 10px;">Less</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MJRefresh/" style="font-size: 10px;">MJRefresh</a> <a href="/tags/Matplotlib/" style="font-size: 10px;">Matplotlib</a> <a href="/tags/Memcached/" style="font-size: 13.33px;">Memcached</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL-在线添加字段/" style="font-size: 10px;">MySQL 在线添加字段</a> <a href="/tags/MySQL-扩展/" style="font-size: 10px;">MySQL 扩展</a> <a href="/tags/Mysql-性能优化/" style="font-size: 10px;">Mysql 性能优化</a> <a href="/tags/Mysql-索引/" style="font-size: 10px;">Mysql 索引</a> <a href="/tags/NOSQL图形数据库/" style="font-size: 10px;">NOSQL图形数据库</a> <a href="/tags/Neo4j/" style="font-size: 10px;">Neo4j</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Numpy/" style="font-size: 10px;">Numpy</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/Pandas/" style="font-size: 10px;">Pandas</a> <a href="/tags/Protobuf/" style="font-size: 10px;">Protobuf</a> <a href="/tags/PySpider/" style="font-size: 13.33px;">PySpider</a> <a href="/tags/Pycharm/" style="font-size: 10px;">Pycharm</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/Requests/" style="font-size: 13.33px;">Requests</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Scrapy/" style="font-size: 13.33px;">Scrapy</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/Tornado/" style="font-size: 13.33px;">Tornado</a> <a href="/tags/WSGI/" style="font-size: 10px;">WSGI</a> <a href="/tags/bar/" style="font-size: 10px;">bar</a> <a href="/tags/beego框架/" style="font-size: 10px;">beego框架</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/consul/" style="font-size: 10px;">consul</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/dict/" style="font-size: 10px;">dict</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/etcd/" style="font-size: 10px;">etcd</a> <a href="/tags/gRPC/" style="font-size: 10px;">gRPC</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/go基础语法/" style="font-size: 10px;">go基础语法</a> <a href="/tags/hibernate/" style="font-size: 13.33px;">hibernate</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/http2-0/" style="font-size: 10px;">http2.0</a> <a href="/tags/http协议区别/" style="font-size: 10px;">http协议区别</a> <a href="/tags/java基础语法/" style="font-size: 10px;">java基础语法</a> <a href="/tags/jenkens/" style="font-size: 10px;">jenkens</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/macdown/" style="font-size: 10px;">macdown</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 13.33px;">mybatis</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/os-模块/" style="font-size: 10px;">os 模块</a> <a href="/tags/pie/" style="font-size: 10px;">pie</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python版本管理/" style="font-size: 10px;">python版本管理</a> <a href="/tags/servlet/" style="font-size: 10px;">servlet</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/shutil-模块/" style="font-size: 10px;">shutil 模块</a> <a href="/tags/socket/" style="font-size: 10px;">socket</a> <a href="/tags/spring/" style="font-size: 16.67px;">spring</a> <a href="/tags/spring-mvc/" style="font-size: 13.33px;">spring mvc</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/struts/" style="font-size: 10px;">struts</a> <a href="/tags/struts2/" style="font-size: 10px;">struts2</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/uWSGI/" style="font-size: 10px;">uWSGI</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/uwsgi/" style="font-size: 10px;">uwsgi</a> <a href="/tags/web-py/" style="font-size: 10px;">web.py</a> <a href="/tags/web前端入门/" style="font-size: 10px;">web前端入门</a> <a href="/tags/二维数组/" style="font-size: 10px;">二维数组</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/动态网页/" style="font-size: 10px;">动态网页</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反爬虫/" style="font-size: 10px;">反爬虫</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/多维数组/" style="font-size: 13.33px;">多维数组</a> <a href="/tags/套接字/" style="font-size: 10px;">套接字</a> <a href="/tags/容器/" style="font-size: 10px;">容器</a> <a href="/tags/容器通信/" style="font-size: 10px;">容器通信</a> <a href="/tags/库/" style="font-size: 10px;">库</a> <a href="/tags/异常/" style="font-size: 10px;">异常</a> <a href="/tags/数据类型/" style="font-size: 13.33px;">数据类型</a> <a href="/tags/文件内容读写/" style="font-size: 10px;">文件内容读写</a> <a href="/tags/文件操作/" style="font-size: 10px;">文件操作</a> <a href="/tags/服务端实用技术/" style="font-size: 10px;">服务端实用技术</a> <a href="/tags/服务端缓存/" style="font-size: 10px;">服务端缓存</a> <a href="/tags/查询优化/" style="font-size: 10px;">查询优化</a> <a href="/tags/标签语言/" style="font-size: 10px;">标签语言</a> <a href="/tags/样式表/" style="font-size: 10px;">样式表</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/模块/" style="font-size: 10px;">模块</a> <a href="/tags/流程控制/" style="font-size: 10px;">流程控制</a> <a href="/tags/消息队列/" style="font-size: 10px;">消息队列</a> <a href="/tags/环境版本/" style="font-size: 10px;">环境版本</a> <a href="/tags/生成器/" style="font-size: 10px;">生成器</a> <a href="/tags/目录操作/" style="font-size: 10px;">目录操作</a> <a href="/tags/矢量计算/" style="font-size: 13.33px;">矢量计算</a> <a href="/tags/矩阵/" style="font-size: 10px;">矩阵</a> <a href="/tags/科学计算/" style="font-size: 13.33px;">科学计算</a> <a href="/tags/装饰器/" style="font-size: 10px;">装饰器</a> <a href="/tags/运算符/" style="font-size: 10px;">运算符</a> <a href="/tags/镜像/" style="font-size: 13.33px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                                            </div>
+                                        </section>
+                                        
+                
+                
+                                        
+                                        <section class="switch-part switch-part3">
+                                            
+                    <div id="js-aboutme">技术是个无底洞，唯有学以致用！
+                        </div>
+                        </section>
+                        
+            </div>
+        </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">MarkBin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">MarkBin</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/categories/ios">IOS</a></li>
+                
+                    <li><a href="/categories/web">WEB</a></li>
+                
+                    <li><a href="/categories/go">GO</a></li>
+                
+                    <li><a href="/categories/java">JAVA</a></li>
+                
+                    <li><a href="/categories/python">PYTHON</a></li>
+                
+                    <li><a href="/categories/database">DATA BASE</a></li>
+                
+                    <li><a href="/categories/server">SERVER</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/specialdrug/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/susebing" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/p/1005056213743248/home?from=page_100505&mod=TAB#place" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-20170704-python文件操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-meta">
+    <a href="/2017/07/04/20170704-python文件操作/" class="article-date">
+      <time datetime="2017-07-04T11:23:55.000Z" itemprop="datePublished">2017-07-04</time>
+</a>
+
+  </div>
+  
+  <div class="article-inner">
+    
+  <input type="hidden" class="isFancy">
+  
+  
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Python 文件操作
+    </h1>
+  
+
+
+  </header>
+  
+  <div class="article-info article-info-post">
+    
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+
+    
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/os-模块/">os 模块</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shutil-模块/">shutil 模块</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件内容读写/">文件内容读写</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件操作/">文件操作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/目录操作/">目录操作</a></li></ul>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+  
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文本文件</p>
+<pre><code>txt
+doc
+xls
+...
+</code></pre><p>二进制文件</p>
+<pre><code>图片
+视频
+音频
+...
+</code></pre><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><ul>
+<li>打开</li>
+<li>读写</li>
+<li>关闭</li>
+</ul>
+<h4 id="r、w、a"><a href="#r、w、a" class="headerlink" title="r、w、a"></a>r、w、a</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开文件，文件不存在，会自动创建新文件</span></span><br><span class="line"><span class="comment"># open("文件路径", "操作方式")</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"a.txt"</span>, <span class="string">"r"</span>)  </span><br><span class="line"><span class="comment"># a.txt 为相对路径，相对于当前文件</span></span><br><span class="line"><span class="comment"># r 只读，文件指针在文件开头</span></span><br><span class="line"><span class="comment"># w 只写，文件指针在文件开头</span></span><br><span class="line"><span class="comment"># a 追加，文件指针在文件结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读</span></span><br><span class="line">content = f.read()</span><br><span class="line">print(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写</span></span><br><span class="line">f.write(<span class="string">"123"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h4 id="rb-wb-ab"><a href="#rb-wb-ab" class="headerlink" title="rb,wb,ab"></a>rb,wb,ab</h4><p>操作二进制文件（如图片）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开读取文件</span></span><br><span class="line">f = open(<span class="string">"a.jpg"</span>, <span class="string">"rb"</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图片二进制</span></span><br><span class="line">content = f.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建写入文件</span></span><br><span class="line">f2 = open(<span class="string">"b.jpg"</span>, <span class="string">"wb"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入图片二进制</span></span><br><span class="line">f2.write(content[<span class="number">0</span> : len(content)//<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭</span></span><br><span class="line">f2.close()</span><br></pre></td></tr></table></figure>
+<h4 id="r-w-a-rb-rw-ra"><a href="#r-w-a-rb-rw-ra" class="headerlink" title="r+,w+,a+,rb+,rw+,ra+"></a>r+,w+,a+,rb+,rw+,ra+</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="seek、tell"><a href="#seek、tell" class="headerlink" title="seek、tell"></a>seek、tell</h3><p>文件指针设置与查询</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"a.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line"></span><br><span class="line">print(f.tell())</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># seek 参数1，参数2</span></span><br><span class="line"><span class="comment"># 参数1 表示偏移量</span></span><br><span class="line"><span class="comment"># 参数2 可选值：0，1，2。其中 1，2 只能在二进制下才可用</span></span><br><span class="line"></span><br><span class="line">print(f.tell())</span><br><span class="line">print(f.tell())</span><br></pre></td></tr></table></figure>
+<h3 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h3><h4 id="read、readline、readlines"><a href="#read、readline、readlines" class="headerlink" title="read、readline、readlines"></a>read、readline、readlines</h4><h4 id="使用-for-in-遍历-f"><a href="#使用-for-in-遍历-f" class="headerlink" title="使用 for in 遍历 f"></a>使用 for in 遍历 f</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"a.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">    print(i, end=<span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h3 id="写入文件内容"><a href="#写入文件内容" class="headerlink" title="写入文件内容"></a>写入文件内容</h3><ul>
+<li>f.flush()</li>
+<li>f.close()</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"a.txt"</span>, <span class="string">"w"</span>)</span><br><span class="line"></span><br><span class="line">f.write(<span class="string">"111"</span>)</span><br><span class="line"></span><br><span class="line">f.flush() <span class="comment"># 把缓冲区中的 111 先写入到文件</span></span><br><span class="line"></span><br><span class="line">f.write(<span class="string">"222"</span>)</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>readable 判断是否可读</li>
+<li>writeable 判断是否可写</li>
+</ul>
+<h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">source_file = open(<span class="string">"d.txt"</span>, <span class="string">"r"</span>, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">dst_file = open(<span class="string">"d_bat.txt"</span>, <span class="string">"a"</span>, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 小文件复制</span></span><br><span class="line"><span class="comment"># content = source_file.read()</span></span><br><span class="line"><span class="comment"># dst_file.write(content)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 大文件复制，分段的读写</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    content = source_file.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> len(content) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    dst_file.write(content)</span><br><span class="line"></span><br><span class="line">source_file.close()</span><br><span class="line">dst_file.close()</span><br></pre></td></tr></table></figure>
+<h3 id="os-模块"><a href="#os-模块" class="headerlink" title="os 模块"></a>os 模块</h3><p>rename 修改文件名</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(<span class="string">"a.txt"</span>, <span class="string">"b.txt"</span>)</span><br></pre></td></tr></table></figure>
+<p>renames 修改目录与文件名</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.renames(<span class="string">"one/a.txt"</span>, <span class="string">"two/b.txt"</span>)</span><br></pre></td></tr></table></figure>
+<p>remove 删除文件</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.remove(<span class="string">"a.txt"</span>)</span><br></pre></td></tr></table></figure>
+<p>rmdir 只能删除空目录</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(<span class="string">"one"</span>)</span><br></pre></td></tr></table></figure>
+<p>rmovedirs  递归删除目录</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.redirs(<span class="string">"one/one2"</span>)</span><br></pre></td></tr></table></figure>
+<p>mkdir 创建目录，只能创建不存在的目录，参数2表示权限</p>
+<ul>
+<li>r -4</li>
+<li>w -2</li>
+<li>x -1</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.mkdir(<span class="string">"a"</span>)</span><br><span class="line">os.mkdir(<span class="string">"a"</span>，<span class="number">0o777</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>getcwd 获取当前目录</li>
+<li>chdir 改变默认目录</li>
+<li>listdir 获取目录内容列表</li>
+<li>os.path.isdir 判断是否为目录</li>
+<li>os.path.exist 判断是否存在</li>
+</ul>
+<h3 id="shutil-模块"><a href="#shutil-模块" class="headerlink" title="shutil 模块"></a>shutil 模块</h3><p>move 移动文件</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><h4 id="文件分类存储"><a href="#文件分类存储" class="headerlink" title="文件分类存储"></a>文件分类存储</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="目录清单"><a href="#目录清单" class="headerlink" title="目录清单"></a>目录清单</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+  
+  </div>
+  
+  
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/04/20170704-python文件操作/">Python 文件操作</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 MarkBin 的个人博客">MarkBin</a></p>
+        <p><span>发布时间:</span>2017年07月04日 - 19时23分</p>
+        <p><span>最后更新:</span>2019年03月13日 - 10时40分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/04/20170704-python文件操作/" title="Python 文件操作">http://studyforu.com/2017/07/04/20170704-python文件操作/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://studyforu.com/2017/07/04/20170704-python文件操作/　　作者: MarkBin" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/07/05/20170705-python面向对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Python 面向对象与异常
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/03/20170703-python函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 函数</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+<div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件分类"><span class="toc-number">1.</span> <span class="toc-text">文件分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件读写"><span class="toc-number">2.</span> <span class="toc-text">文件读写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#r、w、a"><span class="toc-number">2.1.</span> <span class="toc-text">r、w、a</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rb-wb-ab"><span class="toc-number">2.2.</span> <span class="toc-text">rb,wb,ab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#r-w-a-rb-rw-ra"><span class="toc-number">2.3.</span> <span class="toc-text">r+,w+,a+,rb+,rw+,ra+</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seek、tell"><span class="toc-number">3.</span> <span class="toc-text">seek、tell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取文件内容"><span class="toc-number">4.</span> <span class="toc-text">读取文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#read、readline、readlines"><span class="toc-number">4.1.</span> <span class="toc-text">read、readline、readlines</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-for-in-遍历-f"><span class="toc-number">4.2.</span> <span class="toc-text">使用 for in 遍历 f</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写入文件内容"><span class="toc-number">5.</span> <span class="toc-text">写入文件内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件复制"><span class="toc-number">6.</span> <span class="toc-text">文件复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#os-模块"><span class="toc-number">7.</span> <span class="toc-text">os 模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shutil-模块"><span class="toc-number">8.</span> <span class="toc-text">shutil 模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习"><span class="toc-number">9.</span> <span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件分类存储"><span class="toc-number">9.1.</span> <span class="toc-text">文件分类存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目录清单"><span class="toc-number">9.2.</span> <span class="toc-text">目录清单</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+<section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/07/05/20170705-python面向对象/" title="上一篇: Python 面向对象与异常">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/03/20170703-python函数/" title="下一篇: Python 函数">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-etcd/">etcd</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-gRPC/">gRPC</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Hadoop/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Protobuf/">Protobuf</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Neo4j/">Neo4j</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/20190307-Spark/">Spark</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/20190307-beego/">beego</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/20190306-go 语言基础/">go 语言基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/17/20190217-python的2019/">Python 的 2019</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/20180903-matplotlib/">Matplotlib 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/20180902-pandas/">Pandas 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/01/20180901-numpy/">Numpy 学习大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180607-WSGI、uWSGI、uwsgi、Nginx/">WSGI，uWSGI，uwsgi，Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/07/20180507-Tornado 框架实战的/">Tornado 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/20180308-Flask 框架实战/">Flask 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180107-consul/">consul 集群间网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/06/20180106-jenkens/">jenkens 持续集成</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/20180105-Docker 存储管理/">Docker 存储管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 容器间通信/">Docker 容器间通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/04/20180104-Docker 网络管理/">Docker 网络管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/20180103-Docker/">Docker 入门学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/20180102-RabbitMQ/">RabbitMQ</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/20180101-服务端实用技术/">服务端实用技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/03/20170903-django 框架实战/">Django 框架实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/02/20170902-python 主流 web 框架/">Python 主流 web 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/22/20170822-爬虫常见问题与策略/">爬虫常见问题与策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/20170821-pyspider/">PySpider 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/18/20170818-beautiful soup/">Beautiful Soup 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-scrapy/">Scrapy 爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/15/20170815-python 主流爬虫框架/">Python 主流爬虫框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/20170810-http协议详解/">HTTP 协议详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/20170809-tcp&udp/">tcp & udp 协议</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/08/20170808-python-socket/">socket 套接字编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/06/20170706-python包与模块/">Python 包与模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/20170705-python面向对象/">Python 面向对象与异常</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/20170704-python文件操作/">Python 文件操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/03/20170703-python函数/">Python 函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/02/20170702-python数据结构/">Python 数据类型与数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/01/20170701-python基础语法/">Python 基础语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/22/20170622-开发工具/">python 开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/21/20170621-conda/">conda 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170607-深入理解java虚拟机/">深入理解 java 虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/20170608-Linux常用命令/">Linux 常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/05/20170605-SSH 开发框架/">SSH 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/20170527-hibernate 框架/">hibernate 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/20/20170520-struts 框架/">struts2 框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/20170420-基于springboot的项目开发/">基于 springboot 的项目开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/20170416-SSM 开发整合/">SSM 开发整合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/10/20170410-mybatis/">java orm 框架 Mybatis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/02/20170402-spring/">java 开发框架 Spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/20/20170320-mysql扩展/">MySQL 扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/19/20170319-mysql在线添加字段/">MySQL 在线添加字段</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/18/20170318-mysql性能优化/">MySQL 性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/20170317-mysql索引与查询/">MySQL 索引与查询</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170230-maven/">java 项目管理工具 maven 使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170302-tomcat服务器/">Apache Tomcat 服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/02/20170302-jsp&servlet/">java web 开发之 jsp & servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/20170216-redis和memcached的区别/">Redis 和 Memcached 的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/20170215-redis/">高性能的 key-value 数据库 Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/14/20170214-memcached/">分布式的高速缓存系统 Memcached</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/10/20170210-mongodb/">NoSQL 数据库大佬 MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/30/20170130-mysql/">关系型数据库课代表 MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/03/20170103-java 基础语法/">java 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/20161001-Less & Sass/">Less && Sass 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/20/20160920-nodejs/">Nodejs 快速入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/05/20160905-jquery/">超好用的 JavaScript 库 JQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/20160829-git & svn/">代码版本控制 GIT & SVN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/23/20160823-BootStrap详解/">BootStrap 详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/05/20160805-JavaScript详解/">JavaScript 语法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/03/20160803-css层叠式样式表详解/">css 层叠式样式表详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/02/20160802-html标签语言详解/">html 标签语言详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/01/20160801-MDN web 开发指南/">MDN web 开发指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/20160606-ios开发技术大汇总/">ios 开发技术大汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/20160601-macdown语法与使用指南/">Macdown 标记语言</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+<script>
+        
+</script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 MarkBin All Right Reserved.
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Powered By Hexo</a>
+            </div>
+            
+            <div class="visit">
+                
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="site-visit">极客到访数:
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                </span>
+                
+                
+                <span></span>
+                
+                
+                <span id="busuanzi_container_page_pv" style="display:none">
+                    <span id="page-visit">本页阅读量:
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                </span>
+                
+            </div>
+            
+        </div>
+</div></footer>
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
